@@ -1,0 +1,41 @@
+# --- secrets ---
+.env
+config/odoo.conf
+
+# --- backups / dumps ---
+backups/*
+!backups/.gitkeep
+*.dump
+*.sql
+*.sql.gz
+*.tar.gz
+
+# --- python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- big data pipeline outputs (spark/hadoop/kafka local data) ---
+pipeline/**/data/
+pipeline/**/checkpoints/
+pipeline/**/logs/
+spark-warehouse/
+metastore_db/
+derby.log
+*.parquet
+*.avro
+
+# --- node / frontend ---
+node_modules/
+
+# --- editors / OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# --- claude / graphify local ---
+graphify-out/

@@ -1,0 +1,9 @@
+; Copy to odoo.conf and set a real admin_passwd: cp config/odoo.conf.example config/odoo.conf
+[options]
+addons_path = /mnt/extra-addons
+data_dir = /var/lib/odoo
+; listen on all interfaces INSIDE the container so Docker can forward the port
+; (host side stays local-only via 127.0.0.1:8069 in docker-compose.yml)
+http_interface = 0.0.0.0
+; master password for the database manager page (create/backup/delete DBs)
+admin_passwd = change-me
