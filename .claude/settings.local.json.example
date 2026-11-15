@@ -1,0 +1,9 @@
+{
+  "_comment": "Copy to .claude/settings.local.json (git-ignored) for personal overrides. Never put secrets here.",
+  "permissions": {
+    "allow": [
+      "Bash(docker compose restart odoo)",
+      "Bash(python3 scripts/catalog/images.py:*)"
+    ]
+  }
+}

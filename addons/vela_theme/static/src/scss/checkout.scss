@@ -1,0 +1,228 @@
+// Cart, checkout steps, address/payment forms, empty states, cookie bar.
+
+// ---------------------------------------------------------------- forms (site-wide)
+.form-control, .form-select {
+    min-height: 48px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--r-md);
+    background-color: var(--surface-raised);
+    color: var(--text-primary);
+    transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast);
+    &:hover { border-color: var(--text-muted); }
+    &:focus { border-color: var(--accent-primary); box-shadow: 0 0 0 3px rgba(15, 95, 176, .2); }
+    &::placeholder { color: var(--text-muted); opacity: .8; }
+    &.is-invalid { border-color: var(--state-danger); }
+}
+.col-form-label, .form-label, label.form-label { font-size: var(--fs-sm); font-weight: 600; color: var(--text-primary); }
+.form-check:has(> .form-check-input) { padding-left: calc(20px + var(--space-1)); }
+.form-check > .form-check-input { margin-left: calc(-1 * (20px + var(--space-1))); }
+.text-success { color: var(--state-success) !important; }
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    border-color: var(--border-strong);
+    &:checked { background-color: var(--accent-primary); border-color: var(--accent-primary); }
+}
+
+// ---------------------------------------------------------------- checkout container
+.o_website_sale_checkout_container {
+    h3, h4, .h4 {
+        font-family: var(--font-display);
+        font-variation-settings: "wdth" 125;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        font-size: var(--fs-2xl) !important;
+    }
+    h5 { font-size: var(--fs-lg); }
+
+    // steps: Order › Address › Payment
+    .o_wizard {
+        gap: var(--space-1);
+        margin-block: var(--space-4) var(--space-3) !important;
+        > a, > span {
+            min-height: 40px;
+            align-items: center;
+            padding: 0 var(--space-2) 0 var(--space-1);
+            border-radius: var(--r-pill);
+            border: 1px solid var(--border-subtle);
+            background: var(--surface-raised);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: var(--fs-sm);
+            counter-increment: vela-step;
+            p::before {
+                content: counter(vela-step);
+                display: inline-grid;
+                place-items: center;
+                width: 24px;
+                height: 24px;
+                margin-right: var(--space-1);
+                border-radius: 50%;
+                background: var(--surface-secondary);
+                font: 500 var(--fs-xs)/1 var(--font-mono);
+            }
+            .oi { display: none; }     // the chevrons; pills already read as a sequence
+        }
+        > a:hover { border-color: var(--text-primary); color: var(--text-primary); }
+        > :has(.fw-bold) {
+            color: var(--text-primary);
+            border-color: var(--text-primary);
+            p::before { background: var(--accent-primary); color: var(--accent-contrast); }
+        }
+        counter-reset: vela-step;
+    }
+
+    // guests have no order history: a disabled "Quick reorder" is noise
+    #quick_reorder_button[disabled], #quick_reorder_button.disabled,
+    div:has(> #quick_reorder_button[disabled]) { display: none !important; }
+    // an empty cart needs no stepper or reorder
+    &:has(.vela-empty) .o_wizard, &:has(.vela-empty) #quick_reorder_button { display: none !important; }
+    @media (max-width: 575.98px) {
+        // steps: number-only circles, label only on the current step
+        .o_wizard { flex-wrap: nowrap; }
+        .o_wizard > a, .o_wizard > span { padding: 0 var(--space-1); min-height: 44px; }
+        .o_wizard > :not(:has(.fw-bold)) p { font-size: 0; }
+        .o_wizard > :not(:has(.fw-bold)) p::before { font-size: var(--fs-xs); margin-right: 0; }
+    }
+
+    // cart lines
+    .o_cart_product {
+        padding: var(--space-2) !important;
+        margin-bottom: var(--space-2);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--r-lg);
+        background: var(--surface-raised);
+        box-shadow: var(--shadow-1);
+        .o_cart_product_image img {
+            width: 96px;
+            height: 96px;
+            object-fit: contain;
+            border-radius: var(--r-md);
+            background: var(--plinth);
+            mix-blend-mode: multiply;
+        }
+        h6, .h6, a strong { font-weight: 700; color: var(--text-primary); }
+        .oe_currency_value, .monetary_field { font-variant-numeric: tabular-nums; }
+        a.js_delete_product, a[name='o_cart_line_remove'], .o_cart_line_actions a { color: var(--text-muted); font-size: var(--fs-sm); }
+    }
+    .css_quantity {
+        border: 1px solid var(--border-strong);
+        border-radius: var(--r-pill);
+        overflow: hidden;
+        .btn { min-width: 44px; min-height: 44px; background: transparent !important; border: 0 !important; }
+        input { border: 0 !important; background: transparent !important; text-align: center; font-variant-numeric: tabular-nums; }
+    }
+
+    // suggested accessories
+    #suggested_products > div {
+        border-color: var(--border-subtle) !important;
+        img { border-radius: var(--r-md); background: var(--plinth); mix-blend-mode: multiply; object-fit: contain; }
+    }
+
+    // summary card
+    .o_total_card {
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--r-lg);
+        background: var(--surface-raised);
+        box-shadow: var(--shadow-2);
+        top: 104px !important;            // clear the floating header
+        .o_cart_total { font-variant-numeric: tabular-nums; }
+        #order_total, tr.border-black, .o_cart_total_total { font-size: var(--fs-lg); font-weight: 700; }
+        .btn { min-height: 48px; border-radius: var(--r-pill) !important; }
+        hr { border-color: var(--border-subtle); }
+    }
+
+    // payment methods
+    .o_payment_option_card, .o_payment_option {
+        border-radius: var(--r-md) !important;
+        border-color: var(--border-subtle) !important;
+        &:has(input:checked) { border-color: var(--accent-primary) !important; box-shadow: 0 0 0 1px var(--accent-primary); }
+    }
+}
+.o_mobile_summary {
+    border-top: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-3);
+    background: var(--surface-primary) !important;
+    .btn { min-height: 48px; border-radius: var(--r-pill) !important; }
+}
+
+// ---------------------------------------------------------------- empty states
+.vela-empty {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: var(--space-2);
+    padding: var(--space-8) var(--space-2);
+    &__art { width: 120px; height: auto; margin-bottom: var(--space-1); }
+    &__title { font-size: var(--fs-2xl); margin: 0; }
+    &__text { max-width: 44ch; margin: 0; color: var(--text-muted); }
+    &__cta { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2); margin-top: var(--space-1); }
+    &__cats {
+        list-style: none;
+        padding: 0;
+        margin: var(--space-3) 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-1);
+        a {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            padding: 0 var(--space-2);
+            border-radius: var(--r-pill);
+            border: 1px solid var(--border-subtle);
+            background: var(--surface-raised);
+            color: var(--text-primary);
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            &:hover { border-color: var(--text-primary); }
+        }
+    }
+}
+// Odoo's "No results" text around our art
+.vela-empty__art ~ h3, div:not(.vela-empty):has(> .vela-empty__art) + h3 { font-size: var(--fs-2xl) !important; margin-top: var(--space-2) !important; }
+div:not(.vela-empty):has(> .vela-empty__art) { display: flex; justify-content: center; }
+
+// ---------------------------------------------------------------- cookie bar → floating glass card
+#website_cookies_bar {
+    .modal.s_popup_bottom { pointer-events: none; }
+    .modal-dialog {
+        pointer-events: auto;
+        max-width: 520px !important;
+        margin: var(--space-2) !important;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        // desktop: bottom-right, so it never covers the hero's main CTA (bottom-left)
+        @media (min-width: 992px) { left: auto; right: 0; max-width: 400px !important; }
+    }
+    .modal-content {
+        border: 1px solid var(--border-subtle) !important;
+        border-radius: var(--r-lg) !important;
+        background: var(--glass) !important;
+        backdrop-filter: blur(16px) saturate(1.4);
+        -webkit-backdrop-filter: blur(16px) saturate(1.4);
+        box-shadow: var(--shadow-3);
+        overflow: hidden;
+        section { background: transparent !important; padding-right: var(--space-5) !important; }
+        .row > div { width: 100%; flex: 0 0 100%; max-width: 100%; text-align: left !important; }
+        p { font-size: var(--fs-sm); margin-bottom: var(--space-1); }
+        .btn {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--r-pill) !important;
+            padding-inline: var(--space-2) !important;
+            font-size: var(--fs-sm);
+            margin: 0 var(--space-1) var(--space-1) 0 !important;
+        }
+        #cookies-consent-all { background: var(--accent-primary); color: var(--accent-contrast); border-color: transparent; }
+        .o_cookies_bar_close { width: 44px; height: 44px; top: var(--space-1) !important; right: var(--space-1) !important; }
+    }
+}
+
+// no search results: hide sort/filter controls that have nothing to act on
+#products_grid:has(.vela-empty__art) .o_wsale_products_header_dropdown_wrap { display: none !important; }
+.vela-empty--inline { padding: var(--space-2) 0 var(--space-8); gap: var(--space-1); }

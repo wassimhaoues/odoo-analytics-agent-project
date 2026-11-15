@@ -39,3 +39,10 @@ node_modules/
 
 # --- claude / graphify local ---
 graphify-out/
+
+# --- catalog tool cache ---
+scripts/catalog/.cache/
+
+# --- claude code personal ---
+.claude/settings.local.json
+.claude/worktrees/

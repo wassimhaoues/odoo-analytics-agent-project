@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="footer" inherit_id="website.footer_custom" name="Vela: footer">
+        <xpath expr="//div[@id='footer']/section" position="replace">
+            <section class="s_vela_footer pt64 pb48" data-name="Vela footer">
+                <div class="container">
+                    <div class="row gx-4 gy-5">
+                        <div class="col-lg-5">
+                            <a href="/" class="vela-footer__brand d-inline-block" data-track="footer.logo.home" data-track-type="click">
+                                <img src="/vela_theme/static/src/img/logo.svg" alt="Vela Tech" width="146" height="36"/>
+                            </a>
+                            <p class="vela-footer__lede">Tech for Tunisia, delivered to your door. You pay when it arrives.</p>
+                            <ul class="vela-footer__promises">
+                                <li>Cash on delivery in all 24 governorates</li>
+                                <li>Pickup and pay in store in Tunis</li>
+                                <li>Two-year warranty on every product</li>
+                            </ul>
+                            <t t-set="vela_list" t-value="request.env.ref('mass_mailing.mailing_list_data', raise_if_not_found=False)"/>
+                            <div class="vela-footer__news s_newsletter_subscribe_form s_newsletter_list js_subscribe"
+                                 t-att-data-list-id="vela_list.id if vela_list else 0" data-vxml="001" data-name="Newsletter Form">
+                                <label class="vela-footer__label" for="vela_news_email">Weekly deals, no spam</label>
+                                <div class="js_subscribed_wrap d-none">
+                                    <p class="text-success mb-0">You're subscribed. Deals arrive every week.</p>
+                                </div>
+                                <div class="js_subscribe_wrap">
+                                    <div class="input-group">
+                                        <input id="vela_news_email" type="email" name="email"
+                                               class="s_newsletter_subscribe_form_input js_subscribe_value form-control"
+                                               placeholder="Email address" autocomplete="email"/>
+                                        <a role="button" href="#" class="js_subscribe_btn o_submit btn btn-primary"
+                                           data-track="footer.newsletter.submit" data-track-type="submit">Subscribe</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <h2 class="vela-footer__title">Shop</h2>
+                            <ul class="vela-footer__shop">
+                                <t t-foreach="request.env['product.public.category'].sudo().search([('parent_id', '=', False)], order='sequence, id')" t-as="vela_cat">
+                                    <t t-set="vela_slug" t-value="slug(vela_cat).rsplit('-', 1)[0]"/>
+                                    <li><a t-att-href="'/shop/category/%s' % slug(vela_cat)" t-out="vela_cat.name"
+                                           t-att-data-track="'footer.shop.' + vela_slug.replace('-', '_')"
+                                           t-att-data-track-category="vela_slug" data-track-type="click"/></li>
+                                </t>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <h2 class="vela-footer__title">Help</h2>
+                            <ul>
+                                <li><a href="/contactus" data-track="footer.help.contact" data-track-type="click">Contact us</a></li>
+                                <li><a href="/my/orders" data-track="footer.help.orders" data-track-type="click">Track your order</a></li>
+                                <li><a href="/my" data-track="footer.help.account" data-track-type="click">Your account</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-2">
+                            <h2 class="vela-footer__title">Vela Tech</h2>
+                            <ul>
+                                <li><a href="/blog" data-track="footer.about.blog" data-track-type="click">Blog</a></li>
+                                <li><a href="/shop/compare" data-track="footer.about.compare" data-track-type="click">Compare products</a></li>
+                                <li><a href="/shop/wishlist" data-track="footer.about.wishlist" data-track-type="click">Wishlist</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,323 @@
+// Shop grid, filters and product page: Odoo's website_sale markup, Vela tokens.
+// Layout options (columns, gap, card design classes) are website fields set by vela_setup.
+
+// ---------------------------------------------------------------- shop header
+.o_wsale_products_page, #products_grid {
+    #o_wsale_products_header {
+        padding-top: var(--space-4) !important;
+        .o_wsale_shop_title h1 {
+            font-size: var(--fs-3xl) !important;
+            font-family: var(--font-display);
+            font-variation-settings: "wdth" 125;
+            letter-spacing: -0.035em;
+            margin: 0;
+        }
+    }
+
+    // category filmstrip → pills with a scroll fade
+    .o_wsale_filmstrip_container {
+        mask-image: linear-gradient(to right, #000 calc(100% - var(--space-6)), transparent);
+    }
+    .o_wsale_filmstrip { gap: var(--space-1); }
+    .o_wsale_filmstrip_link {
+        border-radius: var(--r-pill);
+        .o_wsale_filmstrip_item {
+            min-height: 44px;
+            align-items: center;
+            padding: 0 var(--space-2);
+            border-radius: var(--r-pill);
+            background: var(--surface-raised) !important;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            transition: border-color var(--dur-fast) var(--ease-out), background-color var(--dur-fast);
+            img { display: none; }   // tiny category thumbs look like noise at pill size
+        }
+        &:hover .o_wsale_filmstrip_item { border-color: var(--text-primary); }
+        &:active .o_wsale_filmstrip_item { transform: scale(.98); }
+        &.active .o_wsale_filmstrip_item, &[aria-current] .o_wsale_filmstrip_item {
+            background: var(--text-primary) !important;
+            color: var(--surface-primary);
+            border-color: transparent;
+        }
+    }
+
+    // search + sort + filters button
+    .o_wsale_products_searchbar_form .o_search_input_group {
+        border-radius: var(--r-pill);
+        border: 1px solid var(--border-strong);
+        background: var(--surface-raised);
+        overflow: hidden;
+        .form-control { background: transparent !important; min-height: 44px; padding-inline: var(--space-2); }
+        .btn { background: transparent !important; border: 0; min-width: 44px; }
+    }
+    .o_sortby_dropdown .dropdown-toggle, .products_header .btn-light {
+        min-height: 44px;
+        border-radius: var(--r-pill);
+        border: 1px solid var(--border-strong) !important;
+        background: var(--surface-raised) !important;
+        padding-inline: var(--space-2) !important;
+        color: var(--text-primary);
+        &:hover { border-color: var(--text-primary) !important; }
+    }
+    .dropdown-menu {
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--r-md);
+        box-shadow: var(--shadow-3);
+        padding: var(--space-1);
+        .dropdown-item { min-height: 44px; display: flex; align-items: center; border-radius: var(--r-sm); }
+        .dropdown-item.active { background: var(--surface-secondary); color: var(--text-primary); font-weight: 600; }
+    }
+}
+
+// ---------------------------------------------------------------- filters (sidebar + offcanvas)
+#products_grid_before, #o_wsale_offcanvas {
+    .accordion-item { border: 0; border-bottom: 1px solid var(--border-subtle); background: transparent; }
+    .accordion-button {
+        min-height: 48px;
+        font-size: var(--fs-sm);
+        font-weight: 700;
+        color: var(--text-primary);
+        background: transparent !important;
+        box-shadow: none !important;
+        &:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 2px; }
+    }
+    .form-check {
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+        gap: var(--space-1);
+        font-size: var(--fs-sm);
+        color: var(--text-muted);
+        .form-check-input { margin: 0; width: 18px; height: 18px; border-color: var(--border-strong); }
+        .form-check-input:checked { background-color: var(--accent-primary); border-color: var(--accent-primary); }
+    }
+    .css_attribute_color { width: 28px; height: 28px; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--border-subtle); }
+    // price range slider
+    .o_wsale_price_filter, input[type="range"] { accent-color: var(--accent-primary); }
+}
+
+// ---------------------------------------------------------------- product tiles
+// shop grid + dynamic product snippets (alternative/accessory products)
+#o_wsale_products_grid, .s_dynamic_snippet_products {
+    .oe_product_cart {
+        background: var(--surface-raised);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--r-lg) !important;
+        box-shadow: var(--shadow-1);
+        overflow: hidden;
+        transition: box-shadow var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+        &:hover { box-shadow: var(--shadow-2); transform: translateY(-4px); }
+        &:focus-within { box-shadow: var(--shadow-2); }
+    }
+    .oe_product_image {
+        background: var(--plinth);
+        border-radius: 0 !important;
+        img { object-fit: contain !important; padding: var(--space-2); mix-blend-mode: multiply; }
+    }
+    .o_wsale_product_information { padding: var(--space-2) var(--space-2) var(--space-1) !important; }
+    .o_wsale_product_sub { padding-inline: 0 !important; }   // nested inside .o_wsale_product_information
+    .o_wsale_product_sub .product_price, .o_wsale_product_sub .product_price > * { margin-inline: 0 !important; padding-inline: 0 !important; }
+    @media (max-width: 575.98px) {
+        .o_wsale_products_item_title { font-size: var(--fs-sm); }
+        .product_price > span { font-size: var(--fs-base) !important; }
+        .o_wsale_product_information { padding: var(--space-1) var(--space-1) 4px !important; }
+        .o_wsale_product_sub { padding-bottom: var(--space-1); }
+    }
+    .o_wsale_products_item_title {
+        font-family: var(--font-body);
+        font-variation-settings: "wdth" 100;
+        font-size: var(--fs-base);
+        font-weight: 600;
+        letter-spacing: -0.005em;
+        line-height: 1.3;
+        margin-bottom: var(--space-1);
+        a { color: var(--text-primary); }
+    }
+    .oe_subdescription { display: none; }       // progressive disclosure: details live on the product page
+    .o_wsale_product_sub { padding-bottom: var(--space-1); align-items: flex-end; }
+    .product_price {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        column-gap: var(--space-1);
+        > span { font-size: var(--fs-lg); font-weight: 700; color: var(--text-primary); }
+        del { color: var(--text-muted); font-size: var(--fs-sm); }
+        &:has(del) > span { color: var(--sale); }
+    }
+    // add to cart: round icon button that expands on hover/focus
+    .o_wsale_product_btn_primary {
+        min-width: 44px;
+        min-height: 44px;
+        border-radius: var(--r-pill) !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .o_wsale_product_grid_wrapper, .o_carousel_product_card { position: relative; }
+    // wishlist: top-right corner of the card, clear of the ribbon (left)
+    .o_add_wishlist {
+        position: absolute;
+        top: var(--space-2);
+        right: var(--space-2);
+        z-index: 2;
+        margin: 0 !important;
+        .o_label { display: none; }
+    }
+    .o_add_wishlist, .o_add_compare {
+        width: 44px;
+        height: 44px;
+        border-radius: var(--r-pill) !important;
+        background: var(--glass) !important;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid var(--border-subtle) !important;
+        display: inline-grid;
+        place-items: center;
+        &:hover { background: var(--surface-raised) !important; }
+    }
+    .css_attribute_color { width: 16px; height: 16px; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--border-subtle); }
+    // swatch dots are 16px links: too small to tap on phones, the tile already links
+    @media (max-width: 575.98px) { .o_wsale_attribute_previewer { display: none !important; } }
+    // ribbon must stop short of the wishlist heart (top-right)
+    .o_wsale_ribbon { max-width: calc(100% - 72px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
+// dynamic product snippets (alternative products): actions + titles match the grid
+.s_dynamic_snippet_products {
+    .o_wsale_products_item_title a, .card-title a, h6 a { color: var(--text-primary) !important; }
+    .o_wsale_product_information, .o_wsale_products_item_title { padding-inline-end: var(--space-6); }
+    .o_add_wishlist, .o_add_compare {
+        background: var(--surface-secondary) !important;
+        color: var(--text-primary) !important;
+        .o_label { display: none !important; }
+    }
+}
+
+// ribbons → badges (style/colours from vela_setup; this sets shape + type)
+.o_wsale_ribbon, .o_ribbons {
+    font: 500 var(--fs-xs)/1.4 var(--font-mono) !important;
+    border-radius: var(--r-pill) !important;
+    padding: 4px 10px !important;
+    margin: var(--space-2) !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+}
+
+// ---------------------------------------------------------------- product page
+#product_detail {
+    .o_wsale_breadcrumb {
+        font-size: var(--fs-sm);
+        a { color: var(--text-muted); &:hover { color: var(--text-primary); } }
+        .breadcrumb-item.active { color: var(--text-primary); }
+    }
+    .o_wsale_product_images {
+        .carousel-outer, .o_product_detail_img_wrapper {
+            background: var(--plinth);
+            border-radius: var(--r-lg);
+        }
+        .carousel-outer { border: 1px solid var(--border-subtle); }
+        .product_detail_img { mix-blend-mode: multiply; object-fit: contain; }
+        .carousel-item.active, .carousel-item > div { display: flex; align-items: center; justify-content: center; }
+        .carousel-indicators li {
+            border-radius: var(--r-md);
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            background: var(--plinth);
+            transition: border-color var(--dur-fast);
+            &.active { border-color: var(--text-primary); }
+            img { mix-blend-mode: multiply; }
+        }
+        .carousel-control-prev, .carousel-control-next { min-width: 44px; }
+        .carousel-control-prev i, .carousel-control-next i {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            border-radius: var(--r-pill);
+            border: 1px solid var(--border-subtle) !important;
+            background: var(--glass) !important;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: var(--shadow-2);
+        }
+    }
+
+    #product_details {
+        h1 {
+            font-size: var(--fs-2xl) !important;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: var(--space-2);
+        }
+        .oe_structure.text-muted { font-size: var(--fs-base); color: var(--text-muted) !important; }
+        .o_product_tags a { min-height: 32px; display: inline-flex; align-items: center; }
+        .o_product_tags a > * {
+            border-radius: var(--r-pill) !important;
+            font: 500 var(--fs-xs)/1.4 var(--font-mono) !important;
+        }
+        .product_price {
+            .oe_price, .oe_currency_value { font-variant-numeric: tabular-nums; }
+            .oe_price { font-size: var(--fs-2xl); font-weight: 700; color: var(--text-primary); }
+            .oe_default_price, del { color: var(--text-muted); font-size: var(--fs-base); font-weight: 400; }
+        }
+        .product_price:has(del) .oe_price, .product_price:has(.oe_default_price:not(.d-none)) .oe_price { color: var(--sale); }
+
+        // variants: colour swatches + pills, 44px targets
+        .attribute_name { font-size: var(--fs-sm) !important; font-weight: 700; }
+        .css_attribute_color {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 1px var(--border-subtle);
+            outline-offset: 3px;
+            &.active { outline: 2px solid var(--text-primary); }
+        }
+        .o_wsale_product_attribute .btn, .o_variant_pills .btn, .o_variant_pills label {
+            min-height: 44px;
+            border-radius: var(--r-pill) !important;
+            border: 1px solid var(--border-strong) !important;
+            padding-inline: var(--space-2) !important;
+            font-weight: 600;
+            &.active, &:has(input:checked) { background: var(--text-primary) !important; color: var(--surface-primary) !important; border-color: transparent !important; }
+        }
+
+        // CTA
+        #add_to_cart_wrap .btn, #o_wsale_cta_wrapper .btn-primary {
+            min-height: 56px;
+            padding-inline: var(--space-4);
+            border-radius: var(--r-pill) !important;
+            font-size: var(--fs-base);
+        }
+        .css_quantity {
+            border-radius: var(--r-pill);
+            border: 1px solid var(--border-strong);
+            overflow: hidden;
+            min-height: 56px;
+            .btn { min-width: 44px; background: transparent !important; border: 0 !important; }
+            input { border: 0 !important; background: transparent !important; font-variant-numeric: tabular-nums; }
+        }
+        .availability_messages { font-size: var(--fs-sm); }
+
+        // accordion (shipping, warranty...)
+        #product_accordion .accordion-button { font-weight: 700; min-height: 48px; background: transparent !important; box-shadow: none !important; }
+    }
+}
+
+// full spec table below the product
+#product_full_spec {
+    h3, .h3 { font-size: var(--fs-2xl) !important; }
+    table {
+        font-family: var(--font-mono);
+        font-size: var(--fs-xs);
+        th, td { padding: var(--space-1) 0 !important; border-color: var(--border-subtle) !important; vertical-align: top; }
+        th, td:first-child { color: var(--text-muted); font-weight: 400; width: 40%; }
+        th, td { padding-inline: var(--space-2) !important; }
+    }
+}
+
+// cart badge bump (header). Animation shortens to nothing under reduced motion (base.scss).
+.my_cart_quantity.vela-bump { animation: vela-bump 420ms var(--ease-out); }
+@keyframes vela-bump { 40% { transform: scale(1.4); } }

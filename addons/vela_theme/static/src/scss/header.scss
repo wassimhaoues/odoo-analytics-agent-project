@@ -1,0 +1,150 @@
+// Floating glass pill header over Odoo's own header markup (builder keeps working).
+//
+// The glass lives on a ::before pseudo-element, NOT on .o_main_nav itself:
+// backdrop-filter on an ancestor turns it into the containing block of every
+// position:fixed child (the mobile offcanvas menu), which caused horizontal scroll
+// and a misplaced/clipped mobile menu. The pseudo is inset by half the Bootstrap
+// gutter so the pill lines up with the page content columns.
+$vela-gutter: calc(var(--bs-gutter-x, 1.5rem) * .5);
+
+:root { --bs-body-color: var(--text-primary); }
+
+header#top {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    padding: var(--space-2) 0 0;
+    background: transparent !important;
+    pointer-events: none;            // only the pill catches clicks
+
+    // soft fade above the pill so content doesn't scroll through unblurred
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: var(--space-3);
+        background: linear-gradient(var(--surface-primary), transparent);
+        pointer-events: none;
+    }
+
+    > nav.navbar {
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0;
+    }
+
+    .o_main_nav {
+        pointer-events: auto;
+        position: relative;
+        isolation: isolate;
+        min-height: 64px;
+        padding: var(--space-1) calc(#{$vela-gutter} + var(--space-1)) var(--space-1) calc(#{$vela-gutter} + var(--space-3));
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0 $vela-gutter;
+            z-index: -1;
+            border-radius: var(--r-pill);
+            background: var(--glass);
+            backdrop-filter: blur(16px) saturate(1.4);
+            -webkit-backdrop-filter: blur(16px) saturate(1.4);
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-2);
+        }
+    }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+        .o_main_nav::before { background: var(--surface-primary); }
+    }
+
+    .navbar-brand.logo {
+        padding: 0;
+        img { height: 32px; width: auto; }
+    }
+
+    #top_menu {
+        gap: var(--space-1);
+        .nav-link {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            padding: 0 var(--space-1);
+            font-size: var(--fs-sm);
+            font-weight: 500;
+            color: var(--text-muted);
+            border-radius: var(--r-sm);
+            transition: color var(--dur-fast) var(--ease-out);
+            &:hover { color: var(--text-primary); }
+            &:active { color: var(--accent-hover); }
+            &.active { color: var(--text-primary); font-weight: 650; }
+        }
+    }
+
+    // Bootstrap's `.nav-link:focus-visible { outline: 0 }` outranks base.scss; restate here.
+    .nav-link, .btn, a, button {
+        &:focus-visible {
+            outline: 2px solid var(--accent-primary) !important;
+            outline-offset: 3px;
+            box-shadow: none !important;
+        }
+    }
+
+    // round icon buttons (cart, wishlist, search): 44px targets
+    .o_navlink_background, .o_navlink_background_hover, .o_search_btn {
+        width: 44px;
+        height: 44px;
+        display: inline-grid !important;
+        place-items: center;
+        padding: 0 !important;
+        border-radius: var(--r-pill) !important;
+        background: transparent !important;
+        color: var(--text-primary) !important;
+        transition: background-color var(--dur-fast) var(--ease-out), transform var(--dur-instant);
+        &:hover { background: var(--surface-secondary) !important; }
+        &:active { transform: scale(.94); }
+    }
+    .my_cart_quantity, .my_wish_quantity {
+        background: var(--accent-primary) !important;
+        font: 500 var(--fs-xs)/1.5 var(--font-mono);
+    }
+
+    // language toggle + sign in: token colours, pill hover, press feedback
+    .o_header_language_selector .nav-link,
+    .o_nav_link_btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 var(--space-2);
+        font-size: var(--fs-sm);
+        color: var(--text-muted) !important;
+        border-radius: var(--r-pill) !important;
+        transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast), transform var(--dur-instant);
+        &:hover { background: var(--surface-secondary); color: var(--text-primary) !important; }
+        &:active { transform: scale(.97); }
+    }
+    .o_nav_link_btn { border: 1px solid var(--border-strong) !important; }
+
+    .dropdown-menu {
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--r-md);
+        box-shadow: var(--shadow-3);
+        padding: var(--space-1);
+        .dropdown-item {
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            border-radius: var(--r-sm);
+        }
+    }
+
+    // mobile: same pill, 44px menu button
+    .o_header_mobile {
+        .o_main_nav { padding-left: calc(#{$vela-gutter} + var(--space-2)); }
+        .nav-link.btn, [data-bs-toggle="offcanvas"] {
+            min-width: 44px;
+            min-height: 44px;
+            display: inline-grid;
+            place-items: center;
+        }
+    }
+}

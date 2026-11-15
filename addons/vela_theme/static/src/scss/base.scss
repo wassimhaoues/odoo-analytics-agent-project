@@ -1,0 +1,61 @@
+// Global typography and interaction defaults.
+body {
+    --bs-body-font-family: var(--font-body);
+    font-family: var(--font-body);
+    font-variation-settings: "wdth" 100;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .h1, .h2, .h3, .display-1, .display-2, .display-3, .display-4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-variation-settings: "wdth" 125;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+}
+h4, h5, h6, .h4, .h5, .h6 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-variation-settings: "wdth" 112;
+    letter-spacing: -0.015em;
+}
+p, li { line-height: 1.55; }
+
+// data, specs, SKUs, tags
+.vela-mono, code, kbd, samp { font-family: var(--font-mono); font-size: var(--fs-xs); }
+
+// every number that is a price, quantity or metric lines up
+.oe_currency_value, .oe_price, .product_price, [itemprop="price"], .badge,
+.o_wsale_product_information, .td-qty, .js_quantity, .vela-num {
+    font-variant-numeric: tabular-nums;
+}
+
+::selection { background: var(--accent-primary); color: var(--accent-contrast); }
+
+// visible focus everywhere, never removed
+a, button, .btn, input, select, textarea, [tabindex] {
+    &:focus-visible {
+        outline: 2px solid var(--accent-primary);
+        outline-offset: 3px;
+        box-shadow: none;
+    }
+}
+
+// buttons: press feedback and calm transitions
+.btn {
+    font-weight: 600;
+    transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out),
+                color var(--dur-fast) var(--ease-out), transform var(--dur-instant), box-shadow var(--dur-fast);
+    &:active { transform: translateY(1px) scale(.98); }
+}
+.btn-primary { box-shadow: var(--shadow-1); }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

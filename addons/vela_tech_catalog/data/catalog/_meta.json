@@ -1,0 +1,184 @@
+{
+  "company": {
+    "name": "Vela Tech",
+    "website": "Vela Tech",
+    "currency": "TND"
+  },
+  "variant_attributes": {
+    "Color": {
+      "display_type": "color",
+      "preview_variants": "visible"
+    },
+    "Storage": {
+      "display_type": "pills"
+    },
+    "Memory": {
+      "display_type": "pills"
+    },
+    "Size": {
+      "display_type": "pills"
+    },
+    "Switch Type": {
+      "display_type": "radio"
+    },
+    "Length": {
+      "display_type": "pills"
+    },
+    "Capacity": {
+      "display_type": "pills"
+    },
+    "Connector": {
+      "display_type": "pills"
+    },
+    "Edition": {
+      "display_type": "radio"
+    },
+    "Pack": {
+      "display_type": "pills"
+    },
+    "Connectivity Option": {
+      "display_type": "radio"
+    }
+  },
+  "spec_groups": [
+    "General",
+    "Display",
+    "Performance",
+    "Battery & Power",
+    "Connectivity",
+    "Audio",
+    "Camera",
+    "Physical"
+  ],
+  "spec_attributes": {
+    "Brand": "General",
+    "Model Year": "General",
+    "Operating System": "General",
+    "Compatibility": "General",
+    "Warranty": "General",
+    "Screen Size": "Display",
+    "Resolution": "Display",
+    "Refresh Rate": "Display",
+    "Panel Type": "Display",
+    "Processor": "Performance",
+    "Graphics": "Performance",
+    "Read Speed": "Performance",
+    "Polling Rate": "Performance",
+    "Battery Life": "Battery & Power",
+    "Charging": "Battery & Power",
+    "Power Output": "Battery & Power",
+    "Connectivity": "Connectivity",
+    "Ports": "Connectivity",
+    "Wireless Standard": "Connectivity",
+    "Smart Assistant": "Connectivity",
+    "Driver Size": "Audio",
+    "Noise Cancelling": "Audio",
+    "Audio Output": "Audio",
+    "Camera": "Camera",
+    "Video Resolution": "Camera",
+    "Field of View": "Camera",
+    "Night Vision": "Camera",
+    "Dimensions": "Physical",
+    "Weight": "Physical",
+    "Material": "Physical",
+    "Water Resistance": "Physical",
+    "Form Factor": "Physical"
+  },
+  "colors": {
+    "Black": "#1b1b1b",
+    "White": "#f5f5f5",
+    "Silver": "#c9cbcf",
+    "Space Gray": "#5b5d61",
+    "Gray": "#8a8d91",
+    "Graphite": "#3e3f42",
+    "Midnight": "#2e3642",
+    "Starlight": "#e9dfcf",
+    "Blue": "#2f5fb3",
+    "Navy": "#1f2a44",
+    "Red": "#c62828",
+    "Green": "#3f7d4e",
+    "Pink": "#f2b8c6",
+    "Purple": "#7e57c2",
+    "Gold": "#d4b06a",
+    "Beige": "#d8c8ac",
+    "Titanium": "#8e8a84",
+    "Natural Titanium": "#b8b2a7",
+    "Orange": "#ef7d32",
+    "Yellow": "#f2c94c",
+    "Cream": "#efe6d2",
+    "Mint": "#a8d8c0",
+    "Rose Gold": "#e0b4a4"
+  },
+  "ribbons": {
+    "Sale": {
+      "bg_color": "#C21E6B",
+      "text_color": "#FFFFFF",
+      "assign": "sale",
+      "style": "tag",
+      "position": "left"
+    },
+    "Out of Stock": {
+      "bg_color": "#4E5A70",
+      "text_color": "#FFFFFF",
+      "assign": "out_of_stock",
+      "style": "tag",
+      "position": "right"
+    },
+    "New": {
+      "bg_color": "#0F5FB0",
+      "text_color": "#FFFFFF",
+      "assign": "manual",
+      "style": "tag",
+      "position": "left"
+    },
+    "Best Seller": {
+      "bg_color": "#14213D",
+      "text_color": "#FFFFFF",
+      "assign": "manual",
+      "style": "tag",
+      "position": "left"
+    },
+    "Limited": {
+      "bg_color": "#E9ECE8",
+      "text_color": "#14213D",
+      "assign": "manual",
+      "style": "tag",
+      "position": "left"
+    }
+  },
+  "tags": {
+    "Apple Ecosystem": "#555555",
+    "Gaming": "#c62828",
+    "Wireless": "#1565c0",
+    "Work From Home": "#2e7d32",
+    "Gift Idea": "#ad1457",
+    "Student Pick": "#6a1b9a",
+    "Premium": "#212121",
+    "Budget Pick": "#00838f",
+    "Smart Home": "#ef6c00",
+    "Creator": "#4527a0",
+    "Travel": "#00695c",
+    "Fitness": "#d84315"
+  },
+  "sku_prefix": {
+    "Laptops": "LAP",
+    "Smartphones": "PHN",
+    "Tablets": "TAB",
+    "Smartwatches & Wearables": "WEA",
+    "Headphones": "HPH",
+    "Earbuds": "EAR",
+    "Speakers": "SPK",
+    "Keyboards & Mice": "KBM",
+    "Monitors": "MON",
+    "Storage (SSD, USB)": "STO",
+    "Cables & Chargers": "CBL",
+    "Consoles": "CON",
+    "Controllers": "CTL",
+    "Gaming Chairs": "CHR",
+    "Smart Lights": "LGT",
+    "Security Cameras": "CAM",
+    "Smart Plugs": "PLG",
+    "Laptop Bags": "LBG",
+    "Phone Cases": "PCS"
+  }
+}

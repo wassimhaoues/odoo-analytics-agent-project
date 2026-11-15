@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- The Sidi Bou Said doorway, with an icon inside. vela_icon: cart | heart | search -->
+    <template id="empty_art" name="Vela: empty state art">
+        <svg class="vela-empty__art" viewBox="0 0 160 200" width="120" height="150" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 196V84a64 64 0 0 1 128 0v112z" fill="var(--surface-secondary)"/>
+            <path d="M30 196V86a50 50 0 0 1 100 0v110" fill="none" stroke="var(--accent-primary)" stroke-width="2" opacity=".35"/>
+            <g fill="none" stroke="var(--accent-primary)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" transform="translate(52 96)">
+                <t t-if="vela_icon == 'heart'">
+                    <path d="M28 50S4 36 4 20a12 12 0 0 1 24-4 12 12 0 0 1 24 4c0 16-24 30-24 30z"/>
+                </t>
+                <t t-elif="vela_icon == 'search'">
+                    <circle cx="24" cy="24" r="16"/>
+                    <path d="M36 36l14 14"/>
+                </t>
+                <t t-else="">
+                    <path d="M2 6h8l6 30h30l6-22H14"/>
+                    <circle cx="20" cy="46" r="3"/>
+                    <circle cx="42" cy="46" r="3"/>
+                </t>
+            </g>
+        </svg>
+    </template>
+
+    <!-- Shared empty state. Params: vela_icon, vela_title, vela_text, vela_area (tracking area) -->
+    <template id="empty_state" name="Vela: empty state">
+        <div class="vela-empty">
+            <t t-call="vela_theme.empty_art" vela_icon="vela_icon"/>
+            <h2 class="vela-empty__title" t-out="vela_title"/>
+            <p class="vela-empty__text" t-out="vela_text"/>
+            <t t-call="vela_theme.empty_actions" vela_area="vela_area" vela_deals="True"/>
+        </div>
+    </template>
+
+    <!-- Next steps for every empty state. Params: vela_area, vela_deals (bool) -->
+    <template id="empty_actions" name="Vela: empty state actions">
+            <div class="vela-empty__cta">
+                <a t-if="vela_deals" class="btn btn-primary btn-lg" href="/#vela-deals"
+                   t-att-data-track="'%s.empty.deals' % vela_area" data-track-type="click">See this week's deals</a>
+                <a t-attf-class="btn btn-lg #{'vela-btn-ghost' if vela_deals else 'btn-primary'}" href="/shop"
+                   t-att-data-track="'%s.empty.shop' % vela_area" data-track-type="click">Browse all products</a>
+            </div>
+            <ul class="vela-empty__cats" aria-label="Popular categories">
+                <t t-foreach="request.env['product.public.category'].sudo().search([('parent_id', '=', False)], order='sequence, id')" t-as="vela_c">
+                    <t t-set="vela_c_slug" t-value="slug(vela_c).rsplit('-', 1)[0]"/>
+                    <li><a t-att-href="'/shop/category/%s' % slug(vela_c)" t-out="vela_c.name"
+                           t-att-data-track="'%s.empty.category' % vela_area" data-track-type="click"
+                           t-att-data-track-category="vela_c_slug"/></li>
+                </t>
+            </ul>
+    </template>
+
+    <!-- Empty cart -->
+    <template id="cart_empty" inherit_id="website_sale.cart_lines" name="Vela: empty cart">
+        <xpath expr="//div[@t-if='not website_sale_order or not website_sale_order.website_order_line']" position="replace">
+            <div t-if="not website_sale_order or not website_sale_order.website_order_line" class="js_cart_lines w-100">
+                <t t-call="vela_theme.empty_state" vela_icon="'cart'" vela_area="'cart'"
+                   vela_title.f="Your cart is empty"
+                   vela_text.f="Find something you'll love. Delivery anywhere in Tunisia, and you pay when it arrives."/>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Empty wishlist (id + classes kept: website_sale JS toggles it) -->
+    <template id="wishlist_empty" inherit_id="website_sale.product_wishlist" name="Vela: empty wishlist">
+        <xpath expr="//div[@id='empty-wishlist-message']" position="replace">
+            <div id="empty-wishlist-message" t-attf-class="w-100 #{'d-none' if wishes else ''}">
+                <t t-call="vela_theme.empty_state" vela_icon="'heart'" vela_area="'wishlist'"
+                   vela_title.f="Nothing saved yet"
+                   vela_text.f="Tap the heart on any product to keep it here and compare later."/>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- No search results: Odoo keeps its text, we replace the illustration -->
+    <template id="empty_search_art" inherit_id="website.empty_search_svg" name="Vela: no results art">
+        <xpath expr="//*[local-name()='svg']" position="replace">
+            <t t-call="vela_theme.empty_art" vela_icon="'search'"/>
+        </xpath>
+    </template>
+    <!-- No search results: give the same next steps (Odoo keeps its own "No results" text) -->
+    <template id="no_results_actions" inherit_id="website_sale.products" name="Vela: no results actions">
+        <xpath expr="(//t[@t-call='website.empty_search_svg'])[1]/../.." position="inside">
+            <div class="vela-empty vela-empty--inline"><t t-call="vela_theme.empty_actions" vela_area="'search'" vela_deals="False"/></div>
+        </xpath>
+        <xpath expr="(//t[@t-call='website.empty_search_svg'])[2]/../.." position="inside">
+            <div class="vela-empty vela-empty--inline"><t t-call="vela_theme.empty_actions" vela_area="'search'" vela_deals="False"/></div>
+        </xpath>
+    </template>
+</odoo>

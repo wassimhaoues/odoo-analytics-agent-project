@@ -1,0 +1,640 @@
+{
+  "category": "Bags & Cases",
+  "description": "Carry and protect your gear: laptop backpacks, messenger bags and phone cases from trusted brands.",
+  "vendors": {
+    "Peak Design": {
+      "lead_days": 21
+    },
+    "Incase": {
+      "lead_days": 14
+    },
+    "Herschel Supply Co.": {
+      "lead_days": 18
+    },
+    "Timbuk2": {
+      "lead_days": 21
+    },
+    "Apple": {
+      "lead_days": 10
+    },
+    "OtterBox": {
+      "lead_days": 12
+    },
+    "Spigen": {
+      "lead_days": 8
+    }
+  },
+  "colors": {
+    "Charcoal": "#3a3b3d",
+    "Ash": "#b9b4a8",
+    "Camo": "#8a8f6e",
+    "Crystal Clear": "#e8eef2"
+  },
+  "subcategories": [
+    {
+      "name": "Laptop Bags",
+      "description": "Backpacks and messenger bags with padded laptop compartments for commuting, campus and travel.",
+      "products": [
+        {
+          "sku": "VT-LBG-001",
+          "name": "Peak Design Everyday Backpack 30L",
+          "brand": "Peak Design",
+          "vendor": "Peak Design",
+          "list_price": 989.0,
+          "cost": 760.0,
+          "weight": 1.95,
+          "short": "Award-winning camera and laptop backpack with FlexFold dividers and side access.",
+          "description": "<p>The Everyday Backpack is built for photographers and creators who carry a laptop, a camera and daily essentials in one bag. Origami-inspired FlexFold dividers adapt the main compartment to your kit.</p><ul><li>Dedicated sleeve fits laptops up to 16\"</li><li>Dual side access with MagLatch top closure</li><li>Weatherproof 400D nylon canvas shell</li><li>Expandable from 22 L to 30 L</li></ul>",
+          "specs": {
+            "Brand": "Peak Design",
+            "Compatibility": "Laptops up to 16\"",
+            "Material": "400D weatherproof nylon canvas",
+            "Dimensions": "52 x 33 x 20 cm",
+            "Weight": "1.95 kg",
+            "Water Resistance": "Weatherproof shell, DWR coating"
+          },
+          "variants": [
+            {
+              "attribute": "Color",
+              "values": [
+                [
+                  "Black",
+                  0
+                ],
+                [
+                  "Charcoal",
+                  0
+                ],
+                [
+                  "Ash",
+                  0
+                ]
+              ]
+            }
+          ],
+          "stock": {
+            "Black": 3,
+            "Charcoal": 2,
+            "Ash": 1
+          },
+          "reorder": {
+            "min": 4,
+            "max": 12
+          },
+          "tags": [
+            "Creator",
+            "Premium",
+            "Travel"
+          ],
+          "ribbon": "Best Seller",
+          "alternatives": [
+            "VT-LBG-004",
+            "VT-LBG-002"
+          ],
+          "featured": true
+        },
+        {
+          "sku": "VT-LBG-002",
+          "name": "Incase City Compact Backpack",
+          "brand": "Incase",
+          "vendor": "Incase",
+          "list_price": 329.0,
+          "compare_list_price": 399.0,
+          "cost": 230.0,
+          "weight": 0.9,
+          "short": "Slim urban backpack with a faux-fur lined laptop sleeve for 15\" notebooks.",
+          "description": "<p>A clean, compact commuter backpack designed around the laptop. The padded, faux-fur lined sleeve protects a 15\" notebook while organizer pockets keep cables and chargers in place.</p><ul><li>Padded faux-fur lined sleeve for laptops up to 15\"</li><li>Front pocket with organizer for accessories</li><li>Durable, water-resistant nylon</li><li>Padded mesh back panel and shoulder straps</li></ul>",
+          "specs": {
+            "Brand": "Incase",
+            "Compatibility": "Laptops up to 15\"",
+            "Material": "Water-resistant nylon",
+            "Dimensions": "46.5 x 30 x 17 cm",
+            "Weight": "0.9 kg"
+          },
+          "variants": [
+            {
+              "attribute": "Color",
+              "values": [
+                [
+                  "Graphite",
+                  0
+                ],
+                [
+                  "Black",
+                  0
+                ]
+              ]
+            }
+          ],
+          "stock": 14,
+          "reorder": {
+            "min": 5,
+            "max": 20
+          },
+          "tags": [
+            "Work From Home",
+            "Apple Ecosystem"
+          ],
+          "alternatives": [
+            "VT-LBG-005",
+            "VT-LBG-003"
+          ]
+        },
+        {
+          "sku": "VT-LBG-003",
+          "name": "Incase Campus Compact Backpack",
+          "brand": "Incase",
+          "vendor": "Incase",
+          "list_price": 249.0,
+          "cost": 135.0,
+          "weight": 0.7,
+          "short": "Lightweight two-tone campus backpack with a padded 15\" laptop sleeve.",
+          "description": "<p>The Campus Compact pairs a bright two-tone look with practical everyday storage. A padded laptop sleeve, a front organizer pocket and a side water-bottle pocket cover a full school or work day.</p><ul><li>Padded sleeve for laptops up to 15\"</li><li>Front zip pocket with organizer</li><li>Side water-bottle pocket</li><li>Lightweight polyester construction</li></ul>",
+          "specs": {
+            "Brand": "Incase",
+            "Compatibility": "Laptops up to 15\"",
+            "Material": "Polyester",
+            "Dimensions": "45 x 29 x 14 cm",
+            "Weight": "0.7 kg"
+          },
+          "variants": [
+            {
+              "attribute": "Color",
+              "values": [
+                [
+                  "Orange",
+                  0
+                ],
+                [
+                  "Camo",
+                  0
+                ]
+              ]
+            }
+          ],
+          "stock": 68,
+          "tags": [
+            "Student Pick",
+            "Budget Pick"
+          ],
+          "alternatives": [
+            "VT-LBG-002",
+            "VT-LBG-006"
+          ]
+        },
+        {
+          "sku": "VT-LBG-004",
+          "name": "Incase ICON Backpack",
+          "brand": "Incase",
+          "vendor": "Incase",
+          "list_price": 599.0,
+          "cost": 445.0,
+          "weight": 1.5,
+          "short": "Flagship Incase pack with a suspended laptop compartment and Tensaerlite back panel.",
+          "description": "<p>The ICON Backpack is Incase's flagship carry. Its laptop compartment is suspended away from the bottom of the bag, and the Tensaerlite back panel distributes weight for long commutes.</p><ul><li>Suspended, faux-fur lined compartment for laptops up to 16\"</li><li>Separate tablet sleeve</li><li>Ballistic nylon exterior with weather-resistant zippers</li><li>Tensaerlite molded back panel and padded straps</li></ul>",
+          "specs": {
+            "Brand": "Incase",
+            "Compatibility": "Laptops up to 16\" + tablet sleeve",
+            "Material": "Ballistic nylon",
+            "Dimensions": "49 x 33 x 20 cm",
+            "Weight": "1.5 kg",
+            "Water Resistance": "Weather-resistant zippers"
+          },
+          "variants": [
+            {
+              "attribute": "Color",
+              "values": [
+                [
+                  "Black",
+                  0
+                ],
+                [
+                  "Gray",
+                  0
+                ],
+                [
+                  "Red",
+                  0
+                ]
+              ]
+            }
+          ],
+          "stock": 0,
+          "reorder": {
+            "min": 3,
+            "max": 10
+          },
+          "tags": [
+            "Premium",
+            "Travel",
+            "Apple Ecosystem"
+          ],
+          "alternatives": [
+            "VT-LBG-001",
+            "VT-LBG-005"
+          ]
+        },
+        {
+          "sku": "VT-LBG-005",
+          "name": "Incase ICON Slim Backpack",
+          "brand": "Incase",
+          "vendor": "Incase",
+          "list_price": 499.0,
+          "cost": 360.0,
+          "weight": 1.0,
+          "short": "Streamlined version of the ICON pack for a laptop up to 15\" and daily essentials.",
+          "description": "<p>All the protection of the ICON line in a slimmer profile. Ideal when you only carry a laptop, a charger and a few essentials and want a bag that stays close to your back.</p><ul><li>Faux-fur lined sleeve for laptops up to 15\"</li><li>Quick-access top pocket for phone and keys</li><li>Ballistic nylon exterior</li><li>Low-profile Tensaerlite back panel</li></ul>",
+          "specs": {
+            "Brand": "Incase",
+            "Compatibility": "Laptops up to 15\"",
+            "Material": "Ballistic nylon",
+            "Dimensions": "46 x 30 x 13 cm",
+            "Weight": "1.0 kg"
+          },
+          "variants": [
+            {
+              "attribute": "Color",
+              "values": [
+                [
+                  "Gray",
+                  0
+                ],
+                [
+                  "Black",
+                  0
+                ]
+              ]
+            }
+          ],
+          "stock": 9,
+          "tags": [
+            "Work From Home",
+            "Premium"
+          ],
+          "alternatives": [
+            "VT-LBG-004",
+            "VT-LBG-002"
+          ]
+        },
+        {
+          "sku": "VT-LBG-006",
+          "name": "Herschel Little America Backpack",
+          "brand": "Herschel Supply Co.",
+          "vendor": "Herschel Supply Co.",
+          "list_price": 379.0,
+          "cost": 230.0,
+          "weight": 0.86,
+          "short": "Iconic mountaineering-style backpack with a padded 15\" laptop sleeve and leather straps.",
+          "description": "<p>Inspired by classic mountaineering packs, the Little America combines a drawstring top, magnetic strap closures and a fleece-lined laptop sleeve for a timeless everyday bag.</p><ul><li>Padded, fleece-lined sleeve for laptops up to 15\"</li><li>Magnetic strap closures with genuine leather details</li><li>Drawstring main compartment</li><li>Signature striped fabric liner</li></ul>",
+          "specs": {
+            "Brand": "Herschel Supply Co.",
+            "Compatibility": "Laptops up to 15\"",
+            "Material": "Recycled polyester, leather straps",
+            "Dimensions": "49.5 x 30.5 x 17.5 cm",
+            "Weight": "0.86 kg"
+          },
+          "variants": [
+            {
+              "attribute": "Color",
+              "values": [
+                [
+                  "Navy",
+                  0
+                ],
+                [
+                  "Black",
+                  0
+                ]
+              ]
+            }
+          ],
+          "stock": {
+            "Navy": 12,
+            "Black": 0
+          },
+          "reorder": {
+            "min": 4,
+            "max": 15
+          },
+          "tags": [
+            "Student Pick",
+            "Gift Idea"
+          ],
+          "alternatives": [
+            "VT-LBG-003",
+            "VT-LBG-007"
+          ]
+        },
+        {
+          "sku": "VT-LBG-007",
+          "name": "Timbuk2 Classic Messenger Bag",
+          "brand": "Timbuk2",
+          "vendor": "Timbuk2",
+          "list_price": 389.0,
+          "cost": 255.0,
+          "weight": 1.0,
+          "short": "The original San Francisco messenger bag, waterproof-lined, in three sizes.",
+          "description": "<p>Made famous by San Francisco bike couriers, the Classic Messenger is a tough, waterproof-lined bag with a cross-body strap that is easy to swing around for quick access.</p><ul><li>Padded laptop sleeve (size M fits 15\")</li><li>Waterproof TPU liner</li><li>Quick-adjust cam buckle strap</li><li>Internal organizer and water-bottle pocket</li></ul>",
+          "specs": {
+            "Brand": "Timbuk2",
+            "Compatibility": "Laptops up to 13\" (S), 15\" (M), 17\" (L)",
+            "Material": "Ballistic nylon, waterproof TPU liner",
+            "Water Resistance": "Waterproof liner"
+          },
+          "variants": [
+            {
+              "attribute": "Color",
+              "values": [
+                [
+                  "Yellow",
+                  0
+                ],
+                [
+                  "Black",
+                  0
+                ],
+                [
+                  "Pink",
+                  0
+                ]
+              ]
+            },
+            {
+              "attribute": "Size",
+              "values": [
+                [
+                  "S",
+                  0
+                ],
+                [
+                  "M",
+                  40
+                ],
+                [
+                  "L",
+                  80
+                ]
+              ]
+            }
+          ],
+          "stock": {
+            "Yellow / M": 6,
+            "Black / M": 8,
+            "Black / L": 3,
+            "*": 4
+          },
+          "tags": [
+            "Travel",
+            "Gift Idea"
+          ],
+          "ribbon": "New",
+          "alternatives": [
+            "VT-LBG-006"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phone Cases",
+      "description": "Protective, rugged and battery cases for iPhone and Samsung Galaxy phones.",
+      "products": [
+        {
+          "sku": "VT-PCS-001",
+          "name": "Apple iPhone 17 Silicone Case with MagSafe",
+          "brand": "Apple",
+          "vendor": "Apple",
+          "list_price": 169.0,
+          "cost": 98.0,
+          "weight": 0.03,
+          "short": "Apple's soft-touch silicone case with a microfiber lining and built-in MagSafe magnets.",
+          "description": "<p>Designed by Apple to fit snugly over the buttons and curves of iPhone 17 without adding bulk. The silky silicone exterior is easy to grip and the soft microfiber lining protects your iPhone.</p><ul><li>Built-in MagSafe magnets for chargers and wallets</li><li>Soft-touch silicone exterior, microfiber lining</li><li>Precise fit over buttons and camera</li></ul>",
+          "specs": {
+            "Brand": "Apple",
+            "Compatibility": "iPhone 17 series",
+            "Material": "Silicone with microfiber lining",
+            "Charging": "MagSafe and Qi2 compatible"
+          },
+          "variants": [
+            {
+              "attribute": "Size",
+              "values": [
+                [
+                  "iPhone 17",
+                  0
+                ],
+                [
+                  "iPhone 17 Pro",
+                  0
+                ],
+                [
+                  "iPhone 17 Pro Max",
+                  10
+                ]
+              ]
+            }
+          ],
+          "stock": {
+            "iPhone 17": 25,
+            "iPhone 17 Pro": 3,
+            "iPhone 17 Pro Max": 18
+          },
+          "reorder": {
+            "min": 10,
+            "max": 40
+          },
+          "tags": [
+            "Apple Ecosystem",
+            "Gift Idea"
+          ],
+          "ribbon": "New",
+          "alternatives": [
+            "VT-PCS-005",
+            "VT-PCS-002"
+          ],
+          "featured": true
+        },
+        {
+          "sku": "VT-PCS-002",
+          "name": "Apple iPhone 7 Leather Case",
+          "brand": "Apple",
+          "vendor": "Apple",
+          "list_price": 119.0,
+          "compare_list_price": 179.0,
+          "cost": 72.0,
+          "weight": 0.03,
+          "short": "Apple's European leather case for iPhone 7 that develops a natural patina over time.",
+          "description": "<p>Made from specially tanned and finished European leather, this Apple case feels soft in the hand and develops a natural patina with use. Clearance pricing on the last units.</p><ul><li>European leather exterior, microfiber lining</li><li>Aluminium button covers</li><li>Precise fit for iPhone 7</li></ul>",
+          "specs": {
+            "Brand": "Apple",
+            "Compatibility": "iPhone 7 / iPhone 8",
+            "Material": "European leather with microfiber lining"
+          },
+          "variants": [
+            {
+              "attribute": "Color",
+              "values": [
+                [
+                  "Black",
+                  0
+                ],
+                [
+                  "Navy",
+                  0
+                ]
+              ]
+            },
+            {
+              "attribute": "Size",
+              "values": [
+                [
+                  "iPhone 7",
+                  0
+                ],
+                [
+                  "iPhone 7 Plus",
+                  20
+                ]
+              ]
+            }
+          ],
+          "stock": 0,
+          "tags": [
+            "Apple Ecosystem"
+          ],
+          "alternatives": [
+            "VT-PCS-001"
+          ]
+        },
+        {
+          "sku": "VT-PCS-003",
+          "name": "OtterBox Commuter Series Case for Samsung Galaxy S6",
+          "brand": "OtterBox",
+          "vendor": "OtterBox",
+          "list_price": 119.0,
+          "cost": 62.0,
+          "weight": 0.05,
+          "short": "Slim two-layer OtterBox protection with port covers for the Galaxy S6.",
+          "description": "<p>The Commuter Series combines a soft inner slipcover with a hard outer shell for drop protection in a pocket-friendly profile. Port covers keep dust and lint out.</p><ul><li>Dual-layer protection: synthetic rubber + polycarbonate shell</li><li>Port covers block dust and debris</li><li>Raised edge protects the screen</li></ul>",
+          "specs": {
+            "Brand": "OtterBox",
+            "Compatibility": "Samsung Galaxy S6",
+            "Material": "Synthetic rubber + polycarbonate",
+            "Form Factor": "Dual-layer slim case"
+          },
+          "variants": [
+            {
+              "attribute": "Color",
+              "values": [
+                [
+                  "Black",
+                  0
+                ]
+              ]
+            }
+          ],
+          "stock": 2,
+          "reorder": {
+            "min": 3,
+            "max": 10
+          },
+          "tags": [
+            "Budget Pick"
+          ],
+          "alternatives": [
+            "VT-PCS-006"
+          ]
+        },
+        {
+          "sku": "VT-PCS-005",
+          "name": "Apple Smart Battery Case for iPhone XS",
+          "brand": "Apple",
+          "vendor": "Apple",
+          "list_price": 349.0,
+          "cost": 255.0,
+          "weight": 0.11,
+          "short": "Apple battery case that extends iPhone XS talk time and shows charge on the Lock Screen.",
+          "description": "<p>The Smart Battery Case adds hours of extra battery life to iPhone XS. Its intelligent battery status appears on the Lock Screen and in Notification Center, and it supports Qi wireless charging.</p><ul><li>Up to 33 hours of talk time with the case</li><li>Battery status on the Lock Screen</li><li>Qi wireless charging and Lightning fast charge</li><li>Soft silicone exterior with microfiber lining</li></ul>",
+          "specs": {
+            "Brand": "Apple",
+            "Compatibility": "iPhone XS / iPhone X",
+            "Battery Life": "Up to 33 h talk time",
+            "Charging": "Lightning, Qi wireless",
+            "Material": "Silicone with microfiber lining"
+          },
+          "variants": [
+            {
+              "attribute": "Color",
+              "values": [
+                [
+                  "Pink",
+                  0
+                ],
+                [
+                  "Black",
+                  0
+                ],
+                [
+                  "White",
+                  0
+                ]
+              ]
+            }
+          ],
+          "stock": {
+            "Pink": 4,
+            "Black": 7,
+            "White": 5
+          },
+          "reorder": {
+            "min": 3,
+            "max": 12
+          },
+          "tags": [
+            "Apple Ecosystem",
+            "Travel"
+          ],
+          "ribbon": "Limited",
+          "alternatives": [
+            "VT-PCS-001"
+          ]
+        },
+        {
+          "sku": "VT-PCS-006",
+          "name": "Spigen Ultra Hybrid Case for iPhone 6 Plus",
+          "brand": "Spigen",
+          "vendor": "Spigen",
+          "list_price": 59.0,
+          "cost": 28.0,
+          "weight": 0.03,
+          "short": "Crystal-clear hybrid case that shows off your iPhone with Air Cushion protection.",
+          "description": "<p>Ultra Hybrid combines a scratch-resistant clear polycarbonate back with a shock-absorbing TPU bumper, so the design of your iPhone stays visible while corners are protected.</p><ul><li>Clear, scratch-resistant polycarbonate back</li><li>TPU bumper with Air Cushion corners</li><li>Raised lip protects screen and camera</li></ul>",
+          "specs": {
+            "Brand": "Spigen",
+            "Compatibility": "iPhone 6 Plus / 6s Plus",
+            "Material": "Polycarbonate back + TPU bumper",
+            "Form Factor": "Clear hybrid case"
+          },
+          "variants": [
+            {
+              "attribute": "Color",
+              "values": [
+                [
+                  "Crystal Clear",
+                  0
+                ]
+              ]
+            }
+          ],
+          "stock": 92,
+          "tags": [
+            "Budget Pick",
+            "Gift Idea"
+          ],
+          "alternatives": [
+            "VT-PCS-003"
+          ]
+        }
+      ]
+    }
+  ]
+}
