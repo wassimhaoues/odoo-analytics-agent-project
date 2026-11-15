@@ -126,16 +126,21 @@ jobs:
             "select product_tmpl_id from product_product where default_code like 'VT-HPH-001%' limit 1")
           echo "path=/shop/p-${pid}" >> "$GITHUB_OUTPUT"     # Odoo redirects to the canonical slug
 
+      # Step outputs go through env, never `${{ }}` inside `run:` (script injection).
       - name: Page checks, light (overflow, JS errors, tracking contract)
+        env:
+          PRODUCT_PATH: ${{ steps.product.outputs.path }}
         run: |
           node scripts/page_check.mjs artifacts/light \
-            / /shop "${{ steps.product.outputs.path }}" /shop/cart /shop/wishlist "/shop?search=zzzqqq" \
+            / /shop "$PRODUCT_PATH" /shop/cart /shop/wishlist "/shop?search=zzzqqq" \
             --reduced-motion --strict
 
       - name: Page checks, dark
+        env:
+          PRODUCT_PATH: ${{ steps.product.outputs.path }}
         run: |
           node scripts/page_check.mjs artifacts/dark \
-            / /shop "${{ steps.product.outputs.path }}" /shop/cart /shop/wishlist "/shop?search=zzzqqq" \
+            / /shop "$PRODUCT_PATH" /shop/cart /shop/wishlist "/shop?search=zzzqqq" \
             --reduced-motion --dark --strict
 
       - name: Collect Odoo logs
