@@ -12,6 +12,7 @@
 //   {path, width, scrollWidth, overflowX, jsErrors[], untracked[], ms}
 import { spawn } from "node:child_process";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 
 const args = process.argv.slice(2);
@@ -27,7 +28,9 @@ fs.mkdirSync(OUT, { recursive: true });
 
 const BASE = process.env.VELA_BASE_URL || "http://127.0.0.1:8069";
 const PORT = 9300 + Math.floor(Math.random() * 500);
-const profile = fs.mkdtempSync(path.join(OUT, ".chrome-"));
+// Chrome profile lives in the OS temp dir (not in the uploaded artifacts) and cleanup is
+// best-effort: Chrome helper processes can still be writing to it right after kill().
+const profile = fs.mkdtempSync(path.join(os.tmpdir(), "vela-page-check-"));
 const chrome = spawn("google-chrome", ["--headless=new", "--disable-gpu", "--hide-scrollbars",
     `--remote-debugging-port=${PORT}`, `--user-data-dir=${profile}`, "about:blank"], { stdio: "ignore" });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -106,7 +109,9 @@ for (const p of paths) {
 ws.close();
 chrome.kill();
 await new Promise((r) => chrome.once("exit", r));
-fs.rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+try {
+    fs.rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+} catch { /* leftover temp profile is harmless */ }
 if (failures.length) {
     console.error(`\n${failures.length} page check failure(s):\n- ` + failures.join("\n- "));
     if (flags.has("--strict")) process.exit(1);
