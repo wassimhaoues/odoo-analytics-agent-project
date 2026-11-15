@@ -94,7 +94,7 @@
         place-items: center;
         box-shadow: 0 40px 80px rgba(8, 30, 70, .35);
         will-change: transform;
-        img { width: 72%; height: auto; mix-blend-mode: multiply; }
+        img { width: 72%; height: auto; }      // no blend mode: white photo on white plinth, cheaper to composite
     }
     &__tag {
         position: absolute;
@@ -295,7 +295,19 @@
         letter-spacing: -0.03em;
         color: var(--text-muted);
     }
-    &:hover &__track { animation-play-state: paused; }
+    &:hover &__track, &.is-offscreen &__track { animation-play-state: paused; }
+    &__track { will-change: transform; }
+}
+[data-vela-depth] { will-change: transform; }          // parallax tiles get their own GPU layer
+
+// perf while the pinned hero scene plays (class set by home_motion.js)
+.vela-scene-active {
+    .s_vela_hero__arch, .s_vela_hero__product { box-shadow: none; }
+    header#top .o_main_nav::before {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: var(--surface-primary);
+    }
 }
 @keyframes vela-marquee { to { transform: translateX(-50%); } }
 

@@ -34,6 +34,9 @@ $dark: ':root[data-vela-theme="dark"]';
         color: var(--text-primary);
         border-color: var(--border-subtle) !important;
     }
+    .dropdown-item { color: var(--text-primary) !important; }
+    .dropdown-item:hover, .dropdown-item:focus { background: var(--surface-secondary) !important; color: var(--text-primary) !important; }
+    .dropdown-item.active, .dropdown-item:active { background: var(--accent-primary) !important; color: var(--accent-contrast) !important; }
     .accordion-button, .accordion-button:not(.collapsed) { background: transparent !important; color: var(--text-primary) !important; }
     .accordion-button::after { filter: invert(1) brightness(1.4); }
     .table > :not(caption) > * > * { background-color: transparent !important; color: var(--text-primary); border-color: var(--border-subtle) !important; }

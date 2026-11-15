@@ -20,6 +20,7 @@ export class VelaSmoothScroll extends Interaction {
             return;
         }
         gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.config({ ignoreMobileResize: true });   // no re-layout when mobile URL bar hides
         const lenis = new Lenis({
             lerp: 0.1,
             // let modals, offcanvas, dropdowns and scrollable rails scroll natively
@@ -57,13 +58,17 @@ export class VelaHeroScene extends Interaction {
             if (isDesktop()) {
                 gsap.timeline({
                     // pinSpacing:false: the next sections slide over the pinned hero (no blank viewport after it)
-                    scrollTrigger: { trigger: el, start: "top top+=88", end: "+=100%", scrub: 0.6, pin: true, pinSpacing: false, anticipatePin: 1 },
+                    scrollTrigger: {
+                        trigger: el, start: "top top+=88", end: "+=100%", scrub: 0.6, pin: true, pinSpacing: false, anticipatePin: 1,
+                        // perf: drop expensive paint effects only while the scene is playing
+                        onToggle: (self) => document.documentElement.classList.toggle("vela-scene-active", self.isActive),
+                    },
                 })
                     // explicit start values: this timeline is built while the intro is still
                     // mid-flight, so plain .to() would capture the intro's squashed state.
                     // The doorway opens from its centre, not the intro's bottom origin.
                     .fromTo(".s_vela_hero__arch", { scaleX: 1, scaleY: 1, transformOrigin: "50% 50%" },
-                        { scaleX: 4.2, scaleY: 4.2, borderRadius: "48px", ease: "power2.inOut", duration: 1, immediateRender: false }, 0)
+                        { scaleX: 4.2, scaleY: 4.2, ease: "power2.inOut", duration: 1, immediateRender: false }, 0)
                     .fromTo(".s_vela_hero__product", { rotate: 0, scale: 1, yPercent: 0, autoAlpha: 1 },
                         { rotate: -18, scale: 1.25, yPercent: -6, ease: "none", duration: 1, immediateRender: false }, 0)
                     .fromTo(".s_vela_hero__copy", { autoAlpha: 1, x: 0 },
@@ -79,6 +84,7 @@ export class VelaHeroScene extends Interaction {
         window.addEventListener("load", refresh, { once: true });
         this.registerCleanup(() => {
             window.removeEventListener("load", refresh);
+            document.documentElement.classList.remove("vela-scene-active");
             this.ctx.revert();
         });
     }
@@ -105,6 +111,13 @@ export class VelaHomeReveal extends Interaction {
                 });
             }
         }, this.el);
+        // perf: the brand marquee only runs while it is on screen
+        const marquee = this.el.querySelector(".s_vela_brands");
+        if (marquee && "IntersectionObserver" in window) {
+            const io = new IntersectionObserver(([entry]) => marquee.classList.toggle("is-offscreen", !entry.isIntersecting));
+            io.observe(marquee);
+            this.registerCleanup(() => io.disconnect());
+        }
         this.registerCleanup(() => this.ctx.revert());
     }
 }

@@ -52,7 +52,7 @@
 // Night harbour (dark). Enabled by data-vela-theme="dark" on <html> (toggle in phase B).
 :root[data-vela-theme="dark"] {
     --surface-primary: #0E1726; --surface-secondary: #16223A; --surface-raised: #1B2944;
-    --plinth: #F7F8F6;
+    --plinth: #FFFFFF;          // product photos have pure-white backgrounds
     --text-primary: #F1F3EF; --text-muted: #A9B4C8; --border-subtle: rgba(241, 243, 239, .12);
     --accent-primary: #5AA2F0; --accent-hover: #7DB6F4; --accent-contrast: #0E1726;
     --sale: #F0679F; --glass: rgba(14, 23, 38, .80);

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- Stock wording (owner decision: low-stock urgency).
+         ≤ threshold (product.available_threshold, 5): "Only N left" pill. 0: "Sold out".
+         Otherwise Odoo's "Delivery available" / "Pickup available" stays. -->
+    <t t-inherit="website_sale_collect.StockAvailabilityMessage" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('text-warning')]" position="replace">
+            <span class="vela-stock vela-stock--low" t-att-data-quantity="stockData.quantity">
+                Only <t t-out="stockData.quantity"/> left
+            </span>
+        </xpath>
+        <xpath expr="//div[@t-else='' and hasclass('text-danger')]" position="replace">
+            <div t-else="" class="vela-stock vela-stock--out">Sold out</div>
+        </xpath>
+    </t>
+</templates>

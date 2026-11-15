@@ -23,6 +23,7 @@ python3 scripts/ci/static_checks.py              # XML/JSON/py syntax, manifests
 docker run --rm -v "$PWD:/mnt:ro" -w /mnt koalaman/shellcheck:v0.10.0 -S warning scripts/*.sh .claude/hooks/*.sh
 .claude/hooks/bash-guard.test.sh && python3 scripts/catalog/validate.py
 node scripts/page_check.mjs /tmp/pc / /shop --reduced-motion --strict          # needs Odoo running
+node scripts/scroll_perf.mjs / --runs 2          # frame timing + paint/raster cost of the scroll scenes
 ```
 
 The CI `store` job also rebuilds the whole store from scratch with `setup.sh`. If you

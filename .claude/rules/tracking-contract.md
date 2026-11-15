@@ -26,7 +26,7 @@ Every element a visitor can click, or a section whose visibility matters, carrie
 Areas: `header`, `megamenu`, `hero`, `rail`, `bento`, `deals`, `shop`, `filters`, `product`,
 `recommend` (alternative/accessory product snippets), `carousel`, `cart`, `checkout`, `search`,
 `footer`, `promo`, `chat`, `consent` (cookie bar), `empty` / `<area>.empty.*` (empty states),
-`auto` (fallback only, see below). Added by ADR 0007.
+`account` (login, signup, password reset), `auto` (fallback only, see below). Added by ADR 0007.
 
 ## Where ids are set
 
