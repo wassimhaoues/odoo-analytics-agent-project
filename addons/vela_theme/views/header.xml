@@ -22,4 +22,21 @@
             <attribute name="data-track-type">click</attribute>
         </xpath>
     </template>
+
+    <!-- Sign in → account icon in the header bar (label stays for screen readers, and is
+         visible inside the mobile menu where an icon alone reads oddly). -->
+    <template id="account_icon" inherit_id="portal.user_sign_in" name="Vela: account icon">
+        <xpath expr="//a" position="attributes">
+            <attribute name="t-attf-class">#{_link_class} vela-account</attribute>
+            <attribute name="title">Sign in or create an account</attribute>
+            <attribute name="aria-label">Sign in or create an account</attribute>
+        </xpath>
+        <xpath expr="//a" position="inside">
+            <svg class="vela-account__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linecap="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8.5" r="3.8"/>
+                <path d="M4.5 20c1.3-3.6 4.2-5.4 7.5-5.4s6.2 1.8 7.5 5.4"/>
+            </svg>
+        </xpath>
+    </template>
 </odoo>

@@ -149,3 +149,23 @@ header#top {
         }
     }
 }
+
+// account icon (views/header.xml): round 44px icon in the bar, labelled inside the mobile menu
+.vela-account {
+    display: inline-flex !important;
+    align-items: center;
+    gap: var(--space-1);
+    .vela-account__icon { flex-shrink: 0; order: -1; }
+}
+header#top .navbar .vela-account {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 !important;
+    justify-content: center;
+    border: 0 !important;
+    font-size: 0;                         // hide the "Sign in" text, keep it for screen readers
+    color: var(--text-primary) !important;
+    &:hover { background: var(--surface-secondary); }
+}
+header#top .offcanvas .vela-account { width: auto; font-size: var(--fs-base); padding: 0 var(--space-2) !important; }
