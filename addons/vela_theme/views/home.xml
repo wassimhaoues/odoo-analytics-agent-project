@@ -41,7 +41,10 @@
                                      width="1024" height="1024" fetchpriority="high"/>
                             </a>
                             <div class="s_vela_hero__tag">
-                                <span class="vela-mono" t-if="hp.qty_available &gt; 0"><t t-out="int(hp.qty_available)"/> in stock</span>
+                                <t t-set="hp_qty" t-value="hp.qty_available"/>
+                                <span t-if="hp_qty &lt;= 0" class="vela-stock vela-stock--out">Sold out</span>
+                                <span t-elif="hp_qty &lt;= hp.available_threshold" class="vela-stock vela-stock--low">Only <t t-out="int(hp_qty)"/> left</span>
+                                <span t-else="" class="vela-mono">In stock</span>
                                 <strong t-out="hp.name"/>
                                 <span class="vela-num" t-out="hp.list_price" t-options="money"/>
                             </div>
