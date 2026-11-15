@@ -119,6 +119,11 @@ jobs:
           company=$(q "select name from res_company limit 1")
           [ "$company" = "Vela Tech" ] || { echo "::error::company is '${company}', vela_setup did not apply"; exit 1; }
 
+      - name: Warm up asset bundles (first request compiles JS/CSS)
+        run: |
+          for path in / /shop /web/login; do curl -s -o /dev/null "http://127.0.0.1:8069${path}"; done
+          sleep 5
+
       - name: Resolve a product page
         id: product
         run: |

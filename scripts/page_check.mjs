@@ -95,7 +95,15 @@ for (const p of paths) {
         await send("Emulation.setDeviceMetricsOverride", { width, height: mobile ? 812 : 900, deviceScaleFactor: 1, mobile });
         const t0 = Date.now();
         await send("Page.navigate", { url: BASE + p });
-        await sleep(4000);
+        // Ready = document loaded AND our interactions ran (header controls annotated).
+        // A fixed sleep was flaky on cold runners, where the first request compiles assets.
+        for (let waited = 0; waited < 20000; waited += 250) {
+            const ready = await evaluate(`document.readyState === "complete" && (!document.querySelector("header#top")
+                || !!document.querySelector("header#top .o_wsale_my_cart a[data-track], header#top [data-track='header.menu.open']"))`);
+            if (ready) break;
+            await sleep(250);
+        }
+        await sleep(1200);   // let dynamic snippets / late dialogs settle
         const probe = await evaluate(probeFor(width));
         const height = await evaluate("Math.min(document.documentElement.scrollHeight, 8000)");
         await send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile });
