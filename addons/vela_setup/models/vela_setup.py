@@ -46,6 +46,9 @@ SHOP = {
     "product_page_image_ratio": "1_1",
     "product_page_image_roundness": "medium",
     "product_page_image_spacing": "small",
+    # Customer accounts: anyone can sign up (b2c); at checkout an account is optional (guest OK)
+    "auth_signup_uninvited": "b2c",
+    "account_on_checkout": "optional",
 }
 # Shop filters: only what buyers actually filter by (progressive disclosure).
 # Every other spec attribute stays on the product page spec table.

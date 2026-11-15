@@ -107,7 +107,7 @@ jobs:
             [ "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8069/web/login)" = "200" ] && break
             sleep 2
           done
-          for path in / /shop /shop/cart /shop/wishlist; do
+          for path in / /shop /shop/cart /shop/wishlist /web/login /web/signup; do
             code=$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:8069${path}")
             echo "${path} -> ${code}"
             [ "$code" = "200" ] || { echo "::error::${path} returned ${code}"; exit 1; }
@@ -132,7 +132,7 @@ jobs:
           PRODUCT_PATH: ${{ steps.product.outputs.path }}
         run: |
           node scripts/page_check.mjs artifacts/light \
-            / /shop "$PRODUCT_PATH" /shop/cart /shop/wishlist "/shop?search=zzzqqq" \
+            / /shop "$PRODUCT_PATH" /shop/cart /shop/wishlist "/shop?search=zzzqqq" /web/login /web/signup \
             --reduced-motion --strict
 
       - name: Page checks, dark
@@ -140,7 +140,7 @@ jobs:
           PRODUCT_PATH: ${{ steps.product.outputs.path }}
         run: |
           node scripts/page_check.mjs artifacts/dark \
-            / /shop "$PRODUCT_PATH" /shop/cart /shop/wishlist "/shop?search=zzzqqq" \
+            / /shop "$PRODUCT_PATH" /shop/cart /shop/wishlist "/shop?search=zzzqqq" /web/login /web/signup \
             --reduced-motion --dark --strict
 
       - name: Collect Odoo logs

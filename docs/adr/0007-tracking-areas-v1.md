@@ -18,6 +18,7 @@ fixed now.
 - `<area>.empty.*`: empty-state actions (`cart.empty.deals`, `wishlist.empty.shop`, `search.empty.category`…)
 - `product.configurator.*`: the add-to-cart options dialog, carrying the SKU that opened it
 - `checkout.*` / `cart.*`: steps, summary, coupon, quick reorder
+- `account.*`: `account.login.submit`, `account.signup.submit`, `account.signup.open`, password reset/visibility
 - `auto.<container>` + `data-track-auto="1"`: fallback only. It's a gap to name, never a stable id.
 
 ## Consequences

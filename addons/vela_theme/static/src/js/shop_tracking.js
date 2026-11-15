@@ -142,6 +142,16 @@ const RULES = [
     ["button[name='sale_product_configurator_cancel_button']", "product.configurator.cancel", "click", () => lastSkuExtra()],
     [".modal:has(button[name^='website_sale_product_configurator']) .modal-header .btn-close", "product.configurator.close", "click", () => lastSkuExtra()],
     [".modal:has(button[name^='website_sale_product_configurator']) .js_variant_change", "product.configurator.variant_change", "click", () => lastSkuExtra()],
+    // customer accounts (login / signup / reset)
+    ["form.oe_login_form button[type='submit']", "account.login.submit", "submit"],
+    ["form.oe_signup_form button[type='submit']", "account.signup.submit", "submit"],
+    ["form.oe_reset_password_form button[type='submit']", "account.password.reset_submit", "submit"],
+    ["form.oe_login_form .input-group button, form.oe_signup_form .input-group button", "account.password.toggle_visibility", "click"],
+    [".passkey_login_link a, a.passkey_login_link", "account.login.passkey", "click"],
+    [".o_auth_oauth_providers a", "account.login.oauth", "click"],
+    ["a[href^='/web/signup']", "account.signup.open", "click"],
+    ["a[href^='/web/reset_password']", "account.password.reset_open", "click"],
+    ["form.oe_signup_form a[href^='/web/login'], form.oe_reset_password_form a[href^='/web/login']", "account.login.open", "click"],
     // empty states (no-results page uses its own area)
     [".vela-empty__cats a", "empty.category.open", "click"],
 ];

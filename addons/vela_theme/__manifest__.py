@@ -11,7 +11,7 @@ gets the identical site from git.
     "category": "Website/Website",
     "author": "Vela Tech study project",
     "license": "LGPL-3",
-    "depends": ["website_sale", "website_mass_mailing"],
+    "depends": ["website_sale", "website_mass_mailing", "website_sale_collect"],
     "data": [
         "views/header.xml",
         "views/footer.xml",
@@ -43,6 +43,7 @@ gets the identical site from git.
             "vela_theme/static/src/js/shop_tracking.js",
             "vela_theme/static/src/js/shop_motion.js",
             "vela_theme/static/src/js/theme_toggle.js",
+            "vela_theme/static/src/xml/stock_message.xml",
         ],
     },
     "installable": True,
