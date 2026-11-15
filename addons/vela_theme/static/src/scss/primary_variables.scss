@@ -1,0 +1,35 @@
+// Vela Tech palette registered with Odoo's website builder, so builder colour
+// pickers and o_cc colour combinations speak the same language as our tokens.
+//   o-color-1 accent · o-color-2 promo · o-color-3 plaster · o-color-4 whitewash · o-color-5 ink
+$o-color-palettes: map-merge($o-color-palettes, (
+    'vela': (
+        'o-color-1': #0F5FB0,   // Sidi Bou Said blue
+        'o-color-2': #C21E6B,   // bougainvillea
+        'o-color-3': #E9ECE8,   // plaster
+        'o-color-4': #F7F8F6,   // whitewash
+        'o-color-5': #14213D,   // harbour ink
+
+        'menu': 1,
+        'footer': 1,
+        'copyright': 1,
+    ),
+));
+$o-selected-color-palettes-names: append($o-selected-color-palettes-names, 'vela');
+
+$o-website-values-palettes: (
+    (
+        'color-palettes-name':  'vela',
+        'header-template':      'default',
+        'footer-template':      'default',
+        'logo-height':          2rem,
+        'fixed-logo-height':    2rem,
+        'menu-shadow-class':    '',
+        'btn-padding-x':        1.5rem,
+        'btn-padding-y':        .625rem,
+        'btn-border-radius':    10rem,
+        'btn-border-radius-sm': 10rem,
+        'btn-border-radius-lg': 10rem,
+        'input-border-radius':  .5rem,
+        'link-underline':       'never',
+    ),
+);

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Set the colour theme before first paint (no light→dark flash). Saved choice wins,
+         otherwise follow the OS. Frontend only (web.frontend_layout). -->
+    <template id="theme_bootstrap" inherit_id="web.frontend_layout" name="Vela: theme before paint">
+        <xpath expr="//head/meta[last()]" position="after">
+            <script id="vela-theme-boot">
+                (function () {
+                    var t = null;
+                    try { t = localStorage.getItem("vela-theme"); } catch (e) {}
+                    if (t !== "dark" &amp;&amp; t !== "light") {
+                        t = window.matchMedia &amp;&amp; window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                    }
+                    document.documentElement.setAttribute("data-vela-theme", t);
+                })();
+            </script>
+            <meta name="color-scheme" content="light dark"/>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,64 @@
+// Semantic design tokens (.claude/rules/design-system.md). Components use these only.
+:root {
+    // 8pt spacing
+    --space-1: 8px;  --space-2: 16px; --space-3: 24px; --space-4: 32px; --space-5: 40px;
+    --space-6: 48px; --space-8: 64px; --space-10: 80px; --space-12: 96px; --space-16: 128px;
+
+    // palette
+    --vela-whitewash: #F7F8F6; --vela-plaster: #E9ECE8; --vela-ink: #14213D;
+    --vela-blue: #0F5FB0; --vela-bougainvillea: #C21E6B;
+    --vela-blue-deep: #0B4E93;       // arch/tile blue in dark mode
+    --on-blue: #FFFFFF;              // text on the Sidi Bou Said blue surfaces
+
+    // semantic
+    --surface-primary: var(--vela-whitewash);
+    --surface-secondary: var(--vela-plaster);
+    --surface-raised: #FFFFFF;
+    --plinth: #FFFFFF;
+    --text-primary: var(--vela-ink);
+    --text-muted: #4E5A70;
+    --border-subtle: rgba(20, 33, 61, .10);
+    --border-strong: rgba(20, 33, 61, .40);   // form fields & outlined buttons: ≥ 3:1
+    --accent-primary: var(--vela-blue);
+    --accent-hover: #0B4E93;
+    --accent-contrast: #FFFFFF;
+    --sale: var(--vela-bougainvillea);
+    --state-success: #1E7F4F; --state-warning: #8F6200; --state-danger: #B3261E;
+    --glass: rgba(247, 248, 246, .92);       // body copy must not show through the header
+
+    // depth: multi-layer shadows
+    --shadow-1: 0 1px 1px rgba(20,33,61,.04), 0 2px 4px rgba(20,33,61,.04);
+    --shadow-2: 0 1px 2px rgba(20,33,61,.05), 0 4px 8px rgba(20,33,61,.05), 0 12px 24px rgba(20,33,61,.06);
+    --shadow-3: 0 2px 4px rgba(20,33,61,.06), 0 12px 24px rgba(20,33,61,.08), 0 32px 64px rgba(20,33,61,.10);
+    --shadow-4: 0 4px 8px rgba(20,33,61,.08), 0 24px 48px rgba(20,33,61,.12), 0 64px 128px rgba(20,33,61,.16);
+
+    // type: modular scale, ratio 1.25 (base 16)
+    // Display and body are BOTH Archivo on purpose: distinct roles via the width axis
+    // (display wdth 125 / 800, body wdth 100). Mono (Martian) is the third role. Do not "fix".
+    --font-display: "Archivo", system-ui, sans-serif;
+    --font-body: "Archivo", system-ui, sans-serif;
+    --font-mono: "Martian Mono", ui-monospace, monospace;
+    --fs-xs: 12px; --fs-sm: 14px; --fs-base: 16px; --fs-lg: 20px; --fs-xl: 25px;
+    --fs-2xl: 31px; --fs-3xl: 39px; --fs-4xl: 49px; --fs-5xl: clamp(44px, 6.2vw, 92px);
+
+    // shape & motion
+    --r-sm: 8px; --r-md: 16px; --r-lg: 24px; --r-pill: 999px;
+    --r-arch: 999px 999px var(--r-lg) var(--r-lg);
+    --dur-instant: 80ms; --dur-fast: 160ms; --dur-base: 240ms; --dur-slow: 480ms;
+    --ease-out: cubic-bezier(.2, .8, .2, 1);
+    --ease-expo: cubic-bezier(.16, 1, .3, 1);
+}
+
+// Night harbour (dark). Enabled by data-vela-theme="dark" on <html> (toggle in phase B).
+:root[data-vela-theme="dark"] {
+    --surface-primary: #0E1726; --surface-secondary: #16223A; --surface-raised: #1B2944;
+    --plinth: #F7F8F6;
+    --text-primary: #F1F3EF; --text-muted: #A9B4C8; --border-subtle: rgba(241, 243, 239, .12);
+    --accent-primary: #5AA2F0; --accent-hover: #7DB6F4; --accent-contrast: #0E1726;
+    --sale: #F0679F; --glass: rgba(14, 23, 38, .80);
+    --border-strong: rgba(241, 243, 239, .40);
+    --state-success: #5BC98A;
+    --shadow-1: 0 1px 2px rgba(0,0,0,.3);
+    --shadow-2: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    --shadow-3: 0 2px 4px rgba(0,0,0,.35), 0 24px 64px rgba(0,0,0,.45);
+}

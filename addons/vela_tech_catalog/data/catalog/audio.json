@@ -1,0 +1,670 @@
+{
+  "category": "Audio",
+  "description": "Headphones, true wireless earbuds and speakers from Sony, Bose, Apple, JBL and more.",
+  "vendors": {
+    "Sony": {"lead_days": 12},
+    "Bose": {"lead_days": 14},
+    "Apple": {"lead_days": 10},
+    "Audio-Technica": {"lead_days": 18},
+    "Sennheiser": {"lead_days": 16},
+    "Samsung": {"lead_days": 10},
+    "Jabra": {"lead_days": 14},
+    "Google": {"lead_days": 12},
+    "Nothing": {"lead_days": 15},
+    "JBL": {"lead_days": 10},
+    "Sonos": {"lead_days": 20},
+    "Amazon": {"lead_days": 14},
+    "Ultimate Ears": {"lead_days": 15},
+    "Marshall": {"lead_days": 18}
+  },
+  "colors": {
+    "Sky Blue": "#a9c6de",
+    "Brown": "#6d4c3d",
+    "Bora Purple": "#b9a6d6",
+    "Coral": "#f08262",
+    "Charcoal": "#3a3a3c",
+    "Fog": "#dfe3e6"
+  },
+  "subcategories": [
+    {
+      "name": "Headphones",
+      "description": "Over-ear and on-ear headphones: noise cancelling, wireless, studio monitoring.",
+      "products": [
+        {
+          "sku": "VT-HPH-001",
+          "name": "Sony WH-1000XM3 Wireless Noise Cancelling Headphones",
+          "brand": "Sony",
+          "vendor": "Sony",
+          "list_price": 899.0,
+          "compare_list_price": 1049.0,
+          "cost": 690.0,
+          "weight": 0.255,
+          "short": "Industry-leading noise cancelling with 30-hour battery and quick charging.",
+          "description": "<p>Sony's flagship over-ear headphones combine the HD Noise Cancelling Processor QN1 with dual noise sensors to block out planes, trains and open offices.</p><ul><li>Adaptive noise cancelling with Ambient Sound mode</li><li>Up to 30 hours of battery, 10 min charge = 5 h playback</li><li>Touch controls and Quick Attention mode</li><li>Foldable design with hard carry case</li></ul>",
+          "specs": {
+            "Brand": "Sony",
+            "Model Year": "2018",
+            "Driver Size": "40 mm dome",
+            "Noise Cancelling": "Active (HD Processor QN1, dual sensors)",
+            "Battery Life": "Up to 30 h (ANC on)",
+            "Charging": "USB-C, 10 min = 5 h",
+            "Connectivity": "Bluetooth 4.2, NFC, 3.5 mm",
+            "Weight": "255 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Black", 0], ["Silver", 0]]}
+          ],
+          "stock": {"Black": 14, "Silver": 3},
+          "reorder": {"min": 5, "max": 20},
+          "tags": ["Wireless", "Travel", "Work From Home"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-HPH-002", "VT-HPH-003", "VT-HPH-008"],
+          "featured": true
+        },
+        {
+          "sku": "VT-HPH-002",
+          "name": "Bose QuietComfort 35 II Wireless Headphones",
+          "brand": "Bose",
+          "vendor": "Bose",
+          "list_price": 999.0,
+          "cost": 780.0,
+          "weight": 0.234,
+          "short": "Legendary Bose noise cancelling with Google Assistant and Alexa built in.",
+          "description": "<p>The QuietComfort 35 II pair three levels of world-class noise cancelling with balanced, volume-optimised audio and all-day comfort.</p><ul><li>Three adjustable noise cancelling levels</li><li>Up to 20 hours of wireless playback</li><li>Action button for Google Assistant or Amazon Alexa</li><li>Dual-microphone system for clear calls</li></ul>",
+          "specs": {
+            "Brand": "Bose",
+            "Model Year": "2017",
+            "Noise Cancelling": "Active, 3 levels",
+            "Battery Life": "Up to 20 h wireless",
+            "Connectivity": "Bluetooth 4.1, NFC, 2.5 mm audio cable",
+            "Smart Assistant": "Google Assistant, Amazon Alexa",
+            "Weight": "234 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Black", 0], ["Silver", 0]]}
+          ],
+          "stock": 0,
+          "reorder": {"min": 4, "max": 12},
+          "tags": ["Wireless", "Travel", "Work From Home"],
+          "alternatives": ["VT-HPH-001", "VT-HPH-008"]
+        },
+        {
+          "sku": "VT-HPH-003",
+          "name": "Apple AirPods Max",
+          "brand": "Apple",
+          "vendor": "Apple",
+          "list_price": 2199.0,
+          "cost": 1790.0,
+          "weight": 0.385,
+          "short": "High-fidelity audio, Active Noise Cancellation and spatial audio in a premium over-ear design.",
+          "description": "<p>AirPods Max reimagine over-ear headphones with an Apple-designed dynamic driver, computational audio and a breathable knit-mesh canopy.</p><ul><li>Active Noise Cancellation and Transparency mode</li><li>Personalised Spatial Audio with dynamic head tracking</li><li>Apple H1 chip in each ear cup, 20 h battery</li><li>Digital Crown for precise volume control</li></ul>",
+          "specs": {
+            "Brand": "Apple",
+            "Model Year": "2020",
+            "Processor": "Apple H1 chip in each ear cup",
+            "Driver Size": "40 mm Apple-designed dynamic driver",
+            "Noise Cancelling": "Active Noise Cancellation + Transparency",
+            "Battery Life": "Up to 20 h",
+            "Charging": "Lightning",
+            "Connectivity": "Bluetooth 5.0",
+            "Weight": "385 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Space Gray", 0], ["Silver", 0], ["Sky Blue", 0], ["Green", 0], ["Pink", 0]]}
+          ],
+          "stock": {"Space Gray": 4, "Silver": 2, "*": 1},
+          "reorder": {"min": 2, "max": 6},
+          "tags": ["Apple Ecosystem", "Premium", "Wireless"],
+          "ribbon": "Limited",
+          "alternatives": ["VT-HPH-001", "VT-HPH-002"]
+        },
+        {
+          "sku": "VT-HPH-004",
+          "name": "Audio-Technica ATH-M50 Professional Studio Monitor Headphones",
+          "brand": "Audio-Technica",
+          "vendor": "Audio-Technica",
+          "list_price": 549.0,
+          "cost": 385.0,
+          "weight": 0.284,
+          "short": "Critically acclaimed closed-back studio monitors with 45 mm drivers.",
+          "description": "<p>A studio favourite for mixing, tracking and DJ monitoring, the ATH-M50 delivers accurate, extended-range sound with deep, controlled bass.</p><ul><li>45 mm large-aperture drivers with rare-earth magnets</li><li>Closed-back circumaural design for excellent isolation</li><li>90° swiveling ear cups for one-ear monitoring</li><li>Coiled cable with 6.3 mm screw-on adapter</li></ul>",
+          "specs": {
+            "Brand": "Audio-Technica",
+            "Driver Size": "45 mm",
+            "Audio Output": "15–28,000 Hz, 38 Ω",
+            "Connectivity": "Wired, 3.5 mm coiled cable (6.3 mm adapter)",
+            "Form Factor": "Closed-back over-ear, foldable",
+            "Weight": "284 g"
+          },
+          "stock": 9,
+          "reorder": {"min": 3, "max": 10},
+          "tags": ["Creator"],
+          "alternatives": ["VT-HPH-006", "VT-HPH-007"]
+        },
+        {
+          "sku": "VT-HPH-005",
+          "name": "Sony WH-CH510 Wireless On-Ear Headphones",
+          "brand": "Sony",
+          "vendor": "Sony",
+          "list_price": 169.0,
+          "cost": 102.0,
+          "weight": 0.132,
+          "short": "Lightweight wireless on-ear headphones with up to 35 hours of battery.",
+          "description": "<p>An affordable everyday companion: the WH-CH510 weigh just 132 g and keep playing for up to 35 hours on a single charge.</p><ul><li>Up to 35 h battery with USB-C quick charging</li><li>30 mm drivers tuned for clear, balanced sound</li><li>Built-in mic for hands-free calls and voice assistants</li><li>Swivel ear cups for easy storage</li></ul>",
+          "specs": {
+            "Brand": "Sony",
+            "Model Year": "2019",
+            "Driver Size": "30 mm",
+            "Battery Life": "Up to 35 h",
+            "Charging": "USB-C, 10 min = 90 min",
+            "Connectivity": "Bluetooth 5.0",
+            "Form Factor": "On-ear, swivel cups",
+            "Weight": "132 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Blue", 0], ["Black", 0], ["White", 0]]}
+          ],
+          "stock": {"Blue": 65, "Black": 72, "White": 41},
+          "tags": ["Budget Pick", "Student Pick", "Wireless"],
+          "alternatives": ["VT-HPH-001"]
+        },
+        {
+          "sku": "VT-HPH-006",
+          "name": "Sony MDR-7506 Professional Studio Headphones",
+          "brand": "Sony",
+          "vendor": "Sony",
+          "list_price": 399.0,
+          "cost": 268.0,
+          "weight": 0.23,
+          "short": "The broadcast and studio industry standard for over 30 years.",
+          "description": "<p>Found in radio studios and on film sets worldwide, the MDR-7506 offer detailed, punchy sound and a rugged folding design.</p><ul><li>40 mm neodymium drivers, 10 Hz – 20 kHz</li><li>Closed-ear design for strong isolation</li><li>3 m coiled cord with gold-plated 3.5/6.3 mm plug</li><li>Folds compactly, soft carrying pouch included</li></ul>",
+          "specs": {
+            "Brand": "Sony",
+            "Driver Size": "40 mm neodymium",
+            "Audio Output": "10–20,000 Hz, 63 Ω",
+            "Connectivity": "Wired, 3 m coiled cable, 3.5/6.3 mm gold plug",
+            "Form Factor": "Closed-back over-ear, folding",
+            "Weight": "230 g"
+          },
+          "stock": 2,
+          "reorder": {"min": 3, "max": 10},
+          "tags": ["Creator"],
+          "alternatives": ["VT-HPH-004"]
+        },
+        {
+          "sku": "VT-HPH-007",
+          "name": "Sennheiser Momentum Over-Ear Headphones",
+          "brand": "Sennheiser",
+          "vendor": "Sennheiser",
+          "list_price": 749.0,
+          "cost": 560.0,
+          "weight": 0.19,
+          "short": "Audiophile sound in a stainless-steel and genuine leather design.",
+          "description": "<p>The original Sennheiser Momentum blends rich, natural sound with premium materials: a brushed stainless-steel headband and soft leather ear pads.</p><ul><li>Rich bass and crisp highs from Sennheiser transducers</li><li>Closed design with noise isolating ear pads</li><li>Detachable cable with in-line remote and mic</li><li>Stainless steel and leather construction</li></ul>",
+          "specs": {
+            "Brand": "Sennheiser",
+            "Model Year": "2012",
+            "Audio Output": "16–22,000 Hz, 18 Ω",
+            "Connectivity": "Wired, detachable cable with in-line remote",
+            "Material": "Stainless steel headband, leather pads",
+            "Weight": "190 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Black", 0], ["Brown", 0]]}
+          ],
+          "stock": {"Black": 6, "Brown": 5},
+          "tags": ["Premium", "Gift Idea"],
+          "alternatives": ["VT-HPH-004", "VT-HPH-003"]
+        },
+        {
+          "sku": "VT-HPH-008",
+          "name": "Bose QuietComfort 25 Acoustic Noise Cancelling Headphones",
+          "brand": "Bose",
+          "vendor": "Bose",
+          "list_price": 649.0,
+          "compare_list_price": 799.0,
+          "cost": 470.0,
+          "weight": 0.196,
+          "short": "Wired noise cancelling headphones with 35 hours on a single AAA battery.",
+          "description": "<p>The QuietComfort 25 bring Bose noise cancelling to a lightweight, foldable wired design, perfect for flights and long commutes.</p><ul><li>Acoustic noise cancelling, still plays passively when off</li><li>About 35 hours from a single AAA battery</li><li>In-line remote and mic</li><li>Folds flat into the included carry case</li></ul>",
+          "specs": {
+            "Brand": "Bose",
+            "Model Year": "2014",
+            "Noise Cancelling": "Active acoustic noise cancelling",
+            "Battery Life": "About 35 h (1× AAA battery)",
+            "Connectivity": "Wired, 3.5 mm with in-line mic",
+            "Weight": "196 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Black", 0], ["White", 0]]}
+          ],
+          "stock": {"Black": 22, "White": 11},
+          "tags": ["Travel", "Gift Idea"],
+          "alternatives": ["VT-HPH-002", "VT-HPH-001"]
+        }
+      ]
+    },
+    {
+      "name": "Earbuds",
+      "description": "True wireless earbuds with noise cancelling, long battery life and wireless charging.",
+      "products": [
+        {
+          "sku": "VT-EAR-001",
+          "name": "Apple AirPods Pro (2nd generation)",
+          "brand": "Apple",
+          "vendor": "Apple",
+          "list_price": 899.0,
+          "cost": 735.0,
+          "weight": 0.051,
+          "short": "Up to 2× more Active Noise Cancellation, Adaptive Audio and a MagSafe charging case.",
+          "description": "<p>Powered by the Apple H2 chip, AirPods Pro (2nd generation) deliver richer bass, crisper highs and noise cancelling that adapts to your environment.</p><ul><li>Active Noise Cancellation, Adaptive Audio and Transparency mode</li><li>Personalised Spatial Audio with dynamic head tracking</li><li>Touch control for volume on the stem</li><li>MagSafe charging case with speaker and lanyard loop</li></ul>",
+          "specs": {
+            "Brand": "Apple",
+            "Model Year": "2022",
+            "Processor": "Apple H2 chip",
+            "Noise Cancelling": "Active Noise Cancellation + Adaptive Audio",
+            "Battery Life": "6 h (30 h with case)",
+            "Charging": "USB-C / Lightning, MagSafe, Qi",
+            "Water Resistance": "IP54 (earbuds and case)",
+            "Connectivity": "Bluetooth 5.3"
+          },
+          "stock": 18,
+          "reorder": {"min": 8, "max": 30},
+          "tags": ["Apple Ecosystem", "Wireless", "Gift Idea"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-EAR-003", "VT-EAR-004", "VT-EAR-002"],
+          "featured": true
+        },
+        {
+          "sku": "VT-EAR-002",
+          "name": "Apple AirPods (2nd generation)",
+          "brand": "Apple",
+          "vendor": "Apple",
+          "list_price": 449.0,
+          "compare_list_price": 529.0,
+          "cost": 345.0,
+          "weight": 0.046,
+          "short": "The classic AirPods with the H1 chip, hands-free Siri and 24 hours with the case.",
+          "description": "<p>Easy setup, automatic switching between Apple devices and quick access to Siri make AirPods the simplest way to go wireless.</p><ul><li>Apple H1 chip for fast, stable connection</li><li>“Hey Siri” always on</li><li>Up to 5 h listening, 24 h with the charging case</li><li>Double-tap to play, skip or answer calls</li></ul>",
+          "specs": {
+            "Brand": "Apple",
+            "Model Year": "2019",
+            "Processor": "Apple H1 chip",
+            "Battery Life": "5 h (24 h with case)",
+            "Charging": "Lightning",
+            "Smart Assistant": "Siri",
+            "Connectivity": "Bluetooth 5.0"
+          },
+          "stock": 64,
+          "tags": ["Apple Ecosystem", "Student Pick", "Gift Idea"],
+          "alternatives": ["VT-EAR-001", "VT-EAR-007"]
+        },
+        {
+          "sku": "VT-EAR-003",
+          "name": "Samsung Galaxy Buds2 Pro",
+          "brand": "Samsung",
+          "vendor": "Samsung",
+          "list_price": 699.0,
+          "cost": 520.0,
+          "weight": 0.055,
+          "short": "24-bit Hi-Fi sound, intelligent ANC and 360 Audio in a compact, comfortable fit.",
+          "description": "<p>Galaxy Buds2 Pro bring studio-quality 24-bit Hi-Fi audio and intelligent noise cancelling in a design 15% smaller than before.</p><ul><li>Intelligent Active Noise Cancellation with voice detect</li><li>24-bit Hi-Fi audio and 360 Audio with head tracking</li><li>IPX7 water resistance</li><li>Wireless charging case</li></ul>",
+          "specs": {
+            "Brand": "Samsung",
+            "Model Year": "2022",
+            "Noise Cancelling": "Intelligent Active Noise Cancellation",
+            "Audio Output": "24-bit Hi-Fi, 360 Audio",
+            "Battery Life": "5 h ANC on (18 h with case)",
+            "Charging": "USB-C, Qi wireless",
+            "Water Resistance": "IPX7",
+            "Connectivity": "Bluetooth 5.3"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Graphite", 0], ["White", 0], ["Bora Purple", 0]]}
+          ],
+          "stock": {"Graphite": 12, "White": 7, "Bora Purple": 3},
+          "reorder": {"min": 4, "max": 15},
+          "tags": ["Wireless"],
+          "alternatives": ["VT-EAR-001", "VT-EAR-004", "VT-EAR-006"]
+        },
+        {
+          "sku": "VT-EAR-004",
+          "name": "Sony WF-1000XM4 Noise Cancelling Earbuds",
+          "brand": "Sony",
+          "vendor": "Sony",
+          "list_price": 849.0,
+          "compare_list_price": 999.0,
+          "cost": 640.0,
+          "weight": 0.056,
+          "short": "Sony's Integrated Processor V1, Hi-Res LDAC audio and 24 hours of battery.",
+          "description": "<p>The WF-1000XM4 pair Sony's Integrated Processor V1 with new noise isolation tips for deep, effective noise cancelling in a small, ergonomic design.</p><ul><li>Industry-leading noise cancelling, Processor V1</li><li>High-Resolution Audio Wireless with LDAC</li><li>8 h with ANC, 24 h total with case</li><li>Speak-to-Chat and IPX4 splash resistance</li></ul>",
+          "specs": {
+            "Brand": "Sony",
+            "Model Year": "2021",
+            "Processor": "Sony Integrated Processor V1",
+            "Noise Cancelling": "Active, dual noise sensors",
+            "Battery Life": "8 h ANC on (24 h with case)",
+            "Charging": "USB-C, Qi wireless",
+            "Water Resistance": "IPX4",
+            "Connectivity": "Bluetooth 5.2, LDAC"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Silver", 0], ["Black", 0]]}
+          ],
+          "stock": 0,
+          "reorder": {"min": 3, "max": 10},
+          "tags": ["Wireless", "Travel"],
+          "alternatives": ["VT-EAR-001", "VT-EAR-003"]
+        },
+        {
+          "sku": "VT-EAR-005",
+          "name": "Jabra Elite 8 Active",
+          "brand": "Jabra",
+          "vendor": "Jabra",
+          "list_price": 749.0,
+          "cost": 560.0,
+          "weight": 0.062,
+          "short": "The world's toughest earbuds: IP68, military-grade durability and adaptive ANC.",
+          "description": "<p>Built for sport and the outdoors, Jabra Elite 8 Active combine ShakeGrip technology that keeps them in place with rugged IP68 protection.</p><ul><li>Adaptive Hybrid Active Noise Cancellation</li><li>IP68 earbuds, tested to military standard MIL-STD-810H</li><li>8 h with ANC, 32 h with the case</li><li>Dolby Audio spatial sound</li></ul>",
+          "specs": {
+            "Brand": "Jabra",
+            "Model Year": "2023",
+            "Noise Cancelling": "Adaptive Hybrid ANC",
+            "Battery Life": "8 h ANC on (32 h with case)",
+            "Charging": "USB-C, Qi wireless",
+            "Water Resistance": "IP68 earbuds, IP54 case",
+            "Material": "ShakeGrip silicone coating, MIL-STD-810H",
+            "Connectivity": "Bluetooth 5.3"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Navy", 0], ["Black", 0]]}
+          ],
+          "stock": {"Navy": 2, "Black": 4},
+          "reorder": {"min": 4, "max": 12},
+          "tags": ["Fitness", "Wireless"],
+          "ribbon": "New",
+          "alternatives": ["VT-EAR-003", "VT-EAR-006"]
+        },
+        {
+          "sku": "VT-EAR-006",
+          "name": "Google Pixel Buds Pro",
+          "brand": "Google",
+          "vendor": "Google",
+          "list_price": 629.0,
+          "cost": 470.0,
+          "weight": 0.075,
+          "short": "Active Noise Cancellation with Silent Seal and hands-free Google Assistant.",
+          "description": "<p>Pixel Buds Pro use a custom 6-core audio chip and Silent Seal to adapt to your ears, cancelling more noise while keeping music full and rich.</p><ul><li>Active Noise Cancellation with Silent Seal</li><li>Up to 7 h listening with ANC, 20 h with case</li><li>Hands-free “Hey Google” and real-time translation</li><li>Multipoint connection between devices</li></ul>",
+          "specs": {
+            "Brand": "Google",
+            "Model Year": "2022",
+            "Processor": "Custom 6-core audio chip",
+            "Noise Cancelling": "Active with Silent Seal",
+            "Battery Life": "7 h ANC on (20 h with case)",
+            "Charging": "USB-C, Qi wireless",
+            "Water Resistance": "IPX4",
+            "Smart Assistant": "Google Assistant"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Coral", 0], ["Charcoal", 0], ["Fog", 0]]}
+          ],
+          "stock": {"Coral": 6, "Charcoal": 10, "Fog": 5},
+          "tags": ["Wireless"],
+          "alternatives": ["VT-EAR-003", "VT-EAR-005"]
+        },
+        {
+          "sku": "VT-EAR-007",
+          "name": "Nothing Ear (1)",
+          "brand": "Nothing",
+          "vendor": "Nothing",
+          "list_price": 299.0,
+          "cost": 205.0,
+          "weight": 0.067,
+          "short": "Transparent design, active noise cancellation and wireless charging at an accessible price.",
+          "description": "<p>Nothing's debut earbuds show off their internals with a transparent design and pack ANC, wireless charging and custom 11.6 mm drivers.</p><ul><li>Active Noise Cancellation (Light / Maximum) and Transparency</li><li>11.6 mm drivers tuned with Teenage Engineering</li><li>Up to 34 h total with the case (ANC off)</li><li>Wireless charging and IPX4 splash resistance</li></ul>",
+          "specs": {
+            "Brand": "Nothing",
+            "Model Year": "2021",
+            "Driver Size": "11.6 mm",
+            "Noise Cancelling": "Active (Light / Maximum) + Transparency",
+            "Battery Life": "4 h ANC on (24 h with case)",
+            "Charging": "USB-C, Qi wireless",
+            "Water Resistance": "IPX4",
+            "Connectivity": "Bluetooth 5.2"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Black", 0], ["White", 0]]}
+          ],
+          "stock": {"Black": 45, "White": 38},
+          "tags": ["Budget Pick", "Student Pick", "Wireless"],
+          "alternatives": ["VT-EAR-002", "VT-EAR-006"]
+        }
+      ]
+    },
+    {
+      "name": "Speakers",
+      "description": "Portable Bluetooth speakers and smart speakers for every room.",
+      "products": [
+        {
+          "sku": "VT-SPK-001",
+          "name": "JBL Flip 4 Portable Bluetooth Speaker",
+          "brand": "JBL",
+          "vendor": "JBL",
+          "list_price": 299.0,
+          "compare_list_price": 349.0,
+          "cost": 205.0,
+          "weight": 0.515,
+          "short": "Waterproof portable speaker with powerful stereo sound and 12 hours of playtime.",
+          "description": "<p>The JBL Flip 4 is a rugged, waterproof portable speaker that delivers surprisingly powerful stereo sound wherever you go.</p><ul><li>IPX7 waterproof, pool- and beach-ready</li><li>Up to 12 hours of playtime</li><li>JBL Connect+ to link 100+ speakers</li><li>Noise-cancelling speakerphone</li></ul>",
+          "specs": {
+            "Brand": "JBL",
+            "Model Year": "2017",
+            "Power Output": "2 × 8 W",
+            "Battery Life": "Up to 12 h",
+            "Charging": "Micro-USB",
+            "Water Resistance": "IPX7",
+            "Connectivity": "Bluetooth 4.2, JBL Connect+",
+            "Weight": "515 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Beige", 0], ["Black", 0], ["Blue", 0], ["Red", 0]]}
+          ],
+          "stock": {"Beige": 9, "Black": 18, "Blue": 12, "Red": 7},
+          "reorder": {"min": 5, "max": 25},
+          "tags": ["Wireless", "Travel", "Gift Idea"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-SPK-002", "VT-SPK-005"],
+          "featured": true
+        },
+        {
+          "sku": "VT-SPK-002",
+          "name": "JBL Charge 4 Portable Bluetooth Speaker",
+          "brand": "JBL",
+          "vendor": "JBL",
+          "list_price": 459.0,
+          "cost": 330.0,
+          "weight": 0.965,
+          "short": "Bold JBL sound, 20 hours of playtime and a built-in power bank.",
+          "description": "<p>The JBL Charge 4 combines a long-excursion driver and dual passive radiators for deep bass, with a built-in power bank to keep your phone topped up.</p><ul><li>Up to 20 hours of playtime</li><li>Built-in USB power bank</li><li>IPX7 waterproof</li><li>JBL Connect+ for multi-speaker parties</li></ul>",
+          "specs": {
+            "Brand": "JBL",
+            "Model Year": "2018",
+            "Power Output": "30 W",
+            "Battery Life": "Up to 20 h",
+            "Charging": "USB-C in, USB-A power bank out",
+            "Water Resistance": "IPX7",
+            "Connectivity": "Bluetooth 4.2, JBL Connect+",
+            "Weight": "965 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Black", 0], ["Blue", 0], ["Red", 0]]}
+          ],
+          "stock": {"Black": 3, "Blue": 1, "Red": 2},
+          "reorder": {"min": 4, "max": 15},
+          "tags": ["Wireless", "Travel"],
+          "alternatives": ["VT-SPK-001", "VT-SPK-005", "VT-SPK-008"]
+        },
+        {
+          "sku": "VT-SPK-003",
+          "name": "Sonos One (Gen 2) Smart Speaker",
+          "brand": "Sonos",
+          "vendor": "Sonos",
+          "list_price": 899.0,
+          "cost": 690.0,
+          "weight": 1.85,
+          "short": "Rich, room-filling sound with Alexa and Google Assistant built in.",
+          "description": "<p>Sonos One is a compact smart speaker with remarkably rich sound, voice control and seamless multi-room streaming over Wi-Fi.</p><ul><li>Amazon Alexa and Google Assistant built in</li><li>Apple AirPlay 2 support</li><li>Trueplay tuning adapts sound to your room</li><li>Pair two for stereo or add to a home theatre</li></ul>",
+          "specs": {
+            "Brand": "Sonos",
+            "Model Year": "2019",
+            "Smart Assistant": "Amazon Alexa, Google Assistant",
+            "Audio Output": "2 Class-D amplifiers, 1 tweeter, 1 mid-woofer",
+            "Connectivity": "Wi-Fi 802.11 b/g/n, AirPlay 2, Ethernet",
+            "Dimensions": "161.5 × 119.7 × 119.7 mm",
+            "Weight": "1.85 kg"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Black", 0], ["White", 0]]}
+          ],
+          "stock": 0,
+          "reorder": {"min": 2, "max": 8},
+          "tags": ["Smart Home", "Premium"],
+          "alternatives": ["VT-SPK-007", "VT-SPK-004"]
+        },
+        {
+          "sku": "VT-SPK-004",
+          "name": "Amazon Echo Dot (3rd Gen) Smart Speaker with Alexa",
+          "brand": "Amazon",
+          "vendor": "Amazon",
+          "list_price": 149.0,
+          "cost": 85.0,
+          "weight": 0.3,
+          "short": "Compact smart speaker with Alexa: music, news, timers and smart home control.",
+          "description": "<p>Echo Dot is Amazon's most popular smart speaker, with a fabric design and improved speaker for richer, louder sound.</p><ul><li>Voice control with Alexa</li><li>Control compatible smart lights, plugs and cameras</li><li>Stream music from popular services</li><li>Microphone off button for privacy</li></ul>",
+          "specs": {
+            "Brand": "Amazon",
+            "Model Year": "2018",
+            "Smart Assistant": "Amazon Alexa",
+            "Audio Output": "1.6\" speaker, 3.5 mm line out",
+            "Connectivity": "Wi-Fi 802.11 a/b/g/n, Bluetooth",
+            "Dimensions": "99 × 99 × 43 mm",
+            "Weight": "300 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Charcoal", 0], ["Gray", 0]]}
+          ],
+          "stock": {"Charcoal": 82, "Gray": 61},
+          "tags": ["Smart Home", "Budget Pick", "Gift Idea"],
+          "alternatives": ["VT-SPK-007", "VT-SPK-003"]
+        },
+        {
+          "sku": "VT-SPK-005",
+          "name": "Ultimate Ears BOOM 2 Wireless Speaker",
+          "brand": "Ultimate Ears",
+          "vendor": "Ultimate Ears",
+          "list_price": 449.0,
+          "cost": 320.0,
+          "weight": 0.548,
+          "short": "360° sound, waterproof and shockproof, with 15 hours of battery.",
+          "description": "<p>UE BOOM 2 fills any space with loud, immersive 360° sound and is built to survive drops, dust and dunks.</p><ul><li>360° sound with deep bass</li><li>Waterproof (IPX7) and shockproof</li><li>Up to 15 hours of battery</li><li>Tap the top to play, pause or skip</li></ul>",
+          "specs": {
+            "Brand": "Ultimate Ears",
+            "Model Year": "2015",
+            "Audio Output": "360° sound, max 90 dBC",
+            "Battery Life": "Up to 15 h",
+            "Charging": "Micro-USB",
+            "Water Resistance": "IPX7",
+            "Connectivity": "Bluetooth, range up to 30 m",
+            "Weight": "548 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Black", 0], ["Blue", 0], ["Red", 0]]}
+          ],
+          "stock": {"Black": 8, "Blue": 6, "Red": 4},
+          "tags": ["Wireless", "Travel"],
+          "alternatives": ["VT-SPK-001", "VT-SPK-002"]
+        },
+        {
+          "sku": "VT-SPK-006",
+          "name": "Bose SoundLink Mini II Bluetooth Speaker",
+          "brand": "Bose",
+          "vendor": "Bose",
+          "list_price": 649.0,
+          "compare_list_price": 749.0,
+          "cost": 480.0,
+          "weight": 0.67,
+          "short": "Full, natural Bose sound from a palm-sized aluminium speaker.",
+          "description": "<p>SoundLink Mini II packs full, natural sound into a compact aluminium body you can take anywhere.</p><ul><li>Two custom transducers and dual passive radiators</li><li>Up to 10 hours of battery</li><li>Built-in speakerphone</li><li>Charging cradle included</li></ul>",
+          "specs": {
+            "Brand": "Bose",
+            "Model Year": "2015",
+            "Battery Life": "Up to 10 h",
+            "Charging": "Micro-USB and charging cradle",
+            "Connectivity": "Bluetooth, 3.5 mm aux in",
+            "Material": "Anodised aluminium",
+            "Dimensions": "180 × 59 × 51 mm",
+            "Weight": "670 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Silver", 0], ["Black", 0]]}
+          ],
+          "stock": {"Silver": 11, "Black": 14},
+          "reorder": {"min": 4, "max": 16},
+          "tags": ["Wireless", "Gift Idea"],
+          "alternatives": ["VT-SPK-001", "VT-SPK-008"]
+        },
+        {
+          "sku": "VT-SPK-007",
+          "name": "Apple HomePod mini",
+          "brand": "Apple",
+          "vendor": "Apple",
+          "list_price": 399.0,
+          "cost": 315.0,
+          "weight": 0.345,
+          "short": "Room-filling 360° sound, Siri and smart home hub in a compact sphere.",
+          "description": "<p>HomePod mini uses computational audio to deliver rich, 360° sound and acts as a home hub for your smart accessories.</p><ul><li>360° audio with computational tuning</li><li>Siri for music, timers and smart home control</li><li>Intercom and Handoff with iPhone</li><li>Thread border router for Matter devices</li></ul>",
+          "specs": {
+            "Brand": "Apple",
+            "Model Year": "2020",
+            "Processor": "Apple S5 chip",
+            "Smart Assistant": "Siri",
+            "Audio Output": "360° computational audio, full-range driver",
+            "Connectivity": "Wi-Fi 4, Bluetooth 5.0, Thread, U1",
+            "Dimensions": "84.3 × 97.9 mm",
+            "Weight": "345 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["White", 0], ["Orange", 0], ["Space Gray", 0], ["Yellow", 0], ["Blue", 0]]}
+          ],
+          "stock": {"White": 14, "Space Gray": 9, "*": 4},
+          "reorder": {"min": 5, "max": 20},
+          "tags": ["Apple Ecosystem", "Smart Home", "Gift Idea"],
+          "alternatives": ["VT-SPK-004", "VT-SPK-003"]
+        },
+        {
+          "sku": "VT-SPK-008",
+          "name": "Marshall Kilburn II Portable Speaker",
+          "brand": "Marshall",
+          "vendor": "Marshall",
+          "list_price": 999.0,
+          "cost": 760.0,
+          "weight": 2.5,
+          "short": "Iconic Marshall design with 360° sound and 20+ hours of portable playtime.",
+          "description": "<p>Kilburn II brings Marshall's legendary rock-and-roll styling to a rugged portable speaker with loud, multi-directional sound.</p><ul><li>Multi-directional, 360° sound</li><li>More than 20 hours of portable playtime</li><li>Analogue bass and treble knobs</li><li>IPX2 water resistance and a leather strap</li></ul>",
+          "specs": {
+            "Brand": "Marshall",
+            "Model Year": "2018",
+            "Power Output": "36 W (20 W woofer + 2 × 8 W tweeters)",
+            "Battery Life": "20+ h",
+            "Water Resistance": "IPX2",
+            "Connectivity": "Bluetooth 5.0, 3.5 mm aux in",
+            "Weight": "2.5 kg"
+          },
+          "stock": 5,
+          "tags": ["Premium", "Gift Idea", "Travel"],
+          "alternatives": ["VT-SPK-002", "VT-SPK-006"]
+        }
+      ]
+    }
+  ]
+}

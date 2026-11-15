@@ -1,0 +1,539 @@
+{
+  "category": "Electronics",
+  "description": "Laptops, smartphones, tablets and wearables from the brands you trust.",
+  "vendors": {
+    "Apple": {"lead_days": 10},
+    "Dell": {"lead_days": 14},
+    "Lenovo": {"lead_days": 14},
+    "ASUS": {"lead_days": 12},
+    "Framework": {"lead_days": 21},
+    "Microsoft": {"lead_days": 14},
+    "Samsung": {"lead_days": 7},
+    "Google": {"lead_days": 14},
+    "Xiaomi": {"lead_days": 10},
+    "Nothing": {"lead_days": 14},
+    "OnePlus": {"lead_days": 12},
+    "Amazon": {"lead_days": 10},
+    "Garmin": {"lead_days": 14}
+  },
+  "colors": {
+    "Black Titanium": "#3b3b3d", "White Titanium": "#e5e3de", "Blue Titanium": "#3f4a5a",
+    "Titanium Yellow": "#d9cfa6", "Titanium Gray": "#8c8a85", "Titanium Black": "#2b2b2b", "Titanium Violet": "#8f86a0",
+    "Rose": "#e9cfc6", "Hazel": "#8d9387", "Obsidian": "#202124",
+    "Awesome Navy": "#2b3550", "Awesome Iceblue": "#bcd4e6", "Awesome Lilac": "#c8b6dc",
+    "Mint Green": "#9fd6c9", "Onyx Gray": "#4b4f54", "Ice Blue": "#b9d3e8",
+    "Dark Grey": "#4a4d52", "Black Eclipse": "#1e1f22", "Arctic Dawn": "#e6e4ea", "Midnight Ocean": "#1d2b45",
+    "Platinum": "#d9d9d6", "Dune": "#c7b9a3", "Sapphire": "#2f4b7c",
+    "Eclipse Gray": "#4a4c50", "Platinum White": "#ecebe7",
+    "Space Black": "#2b2b2d", "Forest": "#3d5a45",
+    "Whitestone": "#e8e4dc", "Aqua": "#4fc1c6", "Lilac": "#c8a2c8"
+  },
+  "extra_specs": {"RAM": "Performance", "Condition": "General"},
+  "subcategories": [
+    {
+      "name": "Laptops",
+      "description": "Ultrabooks, creator machines and gaming laptops for work, study and play.",
+      "products": [
+        {
+          "sku": "VT-LAP-001",
+          "name": "Apple MacBook Air 13\" (M2)",
+          "brand": "Apple", "vendor": "Apple",
+          "list_price": 3999.0, "cost": 3250.0, "weight": 1.24,
+          "short": "Strikingly thin 13.6\" laptop with the Apple M2 chip and up to 18 hours of battery life.",
+          "description": "<p>The redesigned MacBook Air is impossibly thin and completely silent thanks to its fanless design, powered by the Apple M2 chip.</p><ul><li>13.6\" Liquid Retina display, 500 nits</li><li>8-core CPU and 8-core GPU</li><li>1080p FaceTime HD camera and four-speaker sound system</li><li>MagSafe charging plus two Thunderbolt ports</li></ul>",
+          "specs": {"Brand": "Apple", "Processor": "Apple M2 (8-core CPU, 8-core GPU)", "RAM": "8 GB unified memory", "Screen Size": "13.6\"", "Resolution": "2560 x 1664", "Battery Life": "Up to 18 hours", "Operating System": "macOS"},
+          "variants": [
+            {"attribute": "Color", "values": [["Starlight", 0], ["Midnight", 0], ["Space Gray", 0], ["Silver", 0]]},
+            {"attribute": "Storage", "values": [["256 GB", 0], ["512 GB", 700]]}
+          ],
+          "stock": {"Starlight / 256 GB": 9, "Midnight / 256 GB": 7, "*": 4},
+          "reorder": {"min": 3, "max": 12},
+          "tags": ["Apple Ecosystem", "Student Pick"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-LAP-007", "VT-LAP-006"],
+          "featured": true
+        },
+        {
+          "sku": "VT-LAP-002",
+          "name": "Dell XPS 13 9370",
+          "brand": "Dell", "vendor": "Dell",
+          "list_price": 2899.0, "compare_list_price": 3399.0, "cost": 2350.0, "weight": 1.21,
+          "short": "Compact 13.3\" InfinityEdge ultrabook with 8th-gen Intel Core i7 — clearance price.",
+          "description": "<p>The XPS 13 9370 packs a 13.3\" InfinityEdge display into a body smaller than most 11\" laptops, with a machined aluminium and carbon-fibre chassis.</p><ul><li>Intel Core i7-8550U quad-core processor</li><li>13.3\" Full HD InfinityEdge display</li><li>Three USB-C ports (two Thunderbolt 3)</li><li>Up to 19 hours of battery life</li></ul>",
+          "specs": {"Brand": "Dell", "Model Year": "2018", "Processor": "Intel Core i7-8550U", "Screen Size": "13.3\"", "Resolution": "1920 x 1080", "Ports": "2x Thunderbolt 3, 1x USB-C, microSD", "Operating System": "Windows 11 Home"},
+          "variants": [
+            {"attribute": "Memory", "values": [["8 GB", 0], ["16 GB", 350]]}
+          ],
+          "stock": {"8 GB": 64, "16 GB": 30},
+          "tags": ["Work From Home", "Budget Pick"],
+          "alternatives": ["VT-LAP-006", "VT-LAP-003"]
+        },
+        {
+          "sku": "VT-LAP-003",
+          "name": "Lenovo ThinkPad X1 Carbon Gen 1 (Refurbished)",
+          "brand": "Lenovo", "vendor": "Lenovo",
+          "list_price": 1299.0, "cost": 820.0, "weight": 1.36,
+          "short": "Grade-A refurbished business ultrabook with the legendary ThinkPad keyboard and TrackPoint.",
+          "description": "<p>The original carbon-fibre ThinkPad X1 Carbon, professionally refurbished, tested and backed by a 6-month Vela Tech warranty.</p><ul><li>Intel Core i5-3427U processor</li><li>14\" HD+ anti-glare display</li><li>Spill-resistant backlit keyboard with TrackPoint</li><li>Fresh 256 GB SSD and Windows 10 Pro</li></ul>",
+          "specs": {"Brand": "Lenovo", "Condition": "Refurbished (Grade A)", "Processor": "Intel Core i5-3427U", "RAM": "8 GB", "Screen Size": "14\"", "Resolution": "1600 x 900", "Warranty": "6 months"},
+          "stock": 3,
+          "reorder": {"min": 2, "max": 8},
+          "tags": ["Budget Pick", "Student Pick"],
+          "ribbon": "Limited",
+          "alternatives": ["VT-LAP-002"]
+        },
+        {
+          "sku": "VT-LAP-004",
+          "name": "ASUS ROG Zephyrus G14 (2025)",
+          "brand": "ASUS", "vendor": "ASUS",
+          "list_price": 8499.0, "cost": 6950.0, "weight": 1.5,
+          "short": "14\" OLED gaming laptop with AMD Ryzen AI 9 and NVIDIA GeForce RTX 50-series graphics.",
+          "description": "<p>The Zephyrus G14 squeezes flagship gaming and creator performance into a CNC-milled aluminium 14-inch chassis.</p><ul><li>AMD Ryzen AI 9 HX 370 processor</li><li>14\" 3K ROG Nebula OLED, 120 Hz, 0.2 ms</li><li>NVIDIA GeForce RTX 5060 or RTX 5070 Ti</li><li>Slash Lighting LED strip on the lid</li></ul>",
+          "specs": {"Brand": "ASUS", "Processor": "AMD Ryzen AI 9 HX 370", "Graphics": "NVIDIA GeForce RTX 5060 / 5070 Ti", "RAM": "32 GB LPDDR5X", "Screen Size": "14\"", "Refresh Rate": "120 Hz", "Panel Type": "OLED"},
+          "variants": [
+            {"attribute": "Color", "values": [["Eclipse Gray", 0], ["Platinum White", 0]]},
+            {"attribute": "Edition", "values": [["RTX 5060", 0], ["RTX 5070 Ti", 1300]]}
+          ],
+          "stock": {"Eclipse Gray / RTX 5060": 2, "*": 1},
+          "reorder": {"min": 2, "max": 6},
+          "tags": ["Gaming", "Creator", "Premium"],
+          "ribbon": "New",
+          "alternatives": ["VT-LAP-007"]
+        },
+        {
+          "sku": "VT-LAP-005",
+          "name": "Framework Laptop 13 (AMD Ryzen 7040)",
+          "brand": "Framework", "vendor": "Framework",
+          "list_price": 4199.0, "cost": 3450.0, "weight": 1.3,
+          "short": "The repairable, upgradeable 13.5\" laptop with swappable expansion cards.",
+          "description": "<p>Framework Laptop 13 is built to be opened, repaired and upgraded — every part has a QR code and a guide.</p><ul><li>AMD Ryzen 7040 series processors</li><li>13.5\" 3:2 display, 2256 x 1504</li><li>Four swappable expansion card slots</li><li>Replaceable battery, keyboard, screen and mainboard</li></ul>",
+          "specs": {"Brand": "Framework", "Processor": "AMD Ryzen 5 7640U / Ryzen 7 7840U", "RAM": "16 GB DDR5", "Screen Size": "13.5\"", "Resolution": "2256 x 1504", "Ports": "4 expansion card slots (USB-C, USB-A, HDMI...)", "Material": "Recycled aluminium"},
+          "variants": [
+            {"attribute": "Edition", "values": [["Ryzen 5 7640U", 0], ["Ryzen 7 7840U", 800]]}
+          ],
+          "stock": 0,
+          "reorder": {"min": 2, "max": 8},
+          "tags": ["Work From Home", "Creator"],
+          "alternatives": ["VT-LAP-006", "VT-LAP-001"]
+        },
+        {
+          "sku": "VT-LAP-006",
+          "name": "Microsoft Surface Laptop 7 13.8\"",
+          "brand": "Microsoft", "vendor": "Microsoft",
+          "list_price": 4699.0, "cost": 3800.0, "weight": 1.34,
+          "short": "Copilot+ PC with Snapdragon X Plus, all-day battery and a 13.8\" PixelSense touchscreen.",
+          "description": "<p>Surface Laptop 7 is a Copilot+ PC built around the Snapdragon X Plus chip, delivering fast AI features and a battery that lasts the whole workday.</p><ul><li>Qualcomm Snapdragon X Plus (10-core)</li><li>13.8\" PixelSense Flow touchscreen, up to 120 Hz</li><li>16 GB RAM</li><li>Up to 20 hours of video playback</li></ul>",
+          "specs": {"Brand": "Microsoft", "Processor": "Qualcomm Snapdragon X Plus", "RAM": "16 GB LPDDR5x", "Screen Size": "13.8\"", "Refresh Rate": "120 Hz", "Battery Life": "Up to 20 hours", "Operating System": "Windows 11 Home"},
+          "variants": [
+            {"attribute": "Color", "values": [["Platinum", 0], ["Black", 0], ["Dune", 0], ["Sapphire", 0]]},
+            {"attribute": "Storage", "values": [["256 GB", 0], ["512 GB", 650]]}
+          ],
+          "stock": 5,
+          "tags": ["Work From Home", "Premium"],
+          "alternatives": ["VT-LAP-001", "VT-LAP-002"]
+        },
+        {
+          "sku": "VT-LAP-007",
+          "name": "Apple MacBook Pro 14\" (M3)",
+          "brand": "Apple", "vendor": "Apple",
+          "list_price": 6499.0, "cost": 5350.0, "weight": 1.55,
+          "short": "14.2\" Liquid Retina XDR pro laptop powered by the Apple M3 chip.",
+          "description": "<p>MacBook Pro with M3 brings pro-level performance and the best display ever in a Mac notebook to an even more accessible model.</p><ul><li>Apple M3 chip, 8-core CPU, 10-core GPU</li><li>14.2\" Liquid Retina XDR display, up to 1600 nits HDR</li><li>HDMI, SDXC slot, two Thunderbolt ports, MagSafe 3</li><li>Up to 22 hours of battery life</li></ul>",
+          "specs": {"Brand": "Apple", "Processor": "Apple M3 (8-core CPU, 10-core GPU)", "RAM": "8 GB unified memory", "Screen Size": "14.2\"", "Panel Type": "Liquid Retina XDR (mini-LED)", "Battery Life": "Up to 22 hours", "Operating System": "macOS"},
+          "variants": [
+            {"attribute": "Color", "values": [["Space Gray", 0], ["Silver", 0]]},
+            {"attribute": "Storage", "values": [["512 GB", 0], ["1 TB", 900]]}
+          ],
+          "stock": {"Space Gray / 512 GB": 4, "*": 2},
+          "tags": ["Apple Ecosystem", "Creator", "Premium"],
+          "alternatives": ["VT-LAP-001", "VT-LAP-004"]
+        }
+      ]
+    },
+    {
+      "name": "Smartphones",
+      "description": "The latest iPhone, Galaxy, Pixel and Android flagships and value phones.",
+      "products": [
+        {
+          "sku": "VT-PHN-001",
+          "name": "Apple iPhone 15 Pro",
+          "brand": "Apple", "vendor": "Apple",
+          "list_price": 4799.0, "cost": 4050.0, "weight": 0.187,
+          "short": "Titanium design, A17 Pro chip, Action button and a 48MP Pro camera system.",
+          "description": "<p>iPhone 15 Pro is forged in aerospace-grade titanium and powered by the A17 Pro chip, with a pro camera system and USB-C.</p><ul><li>6.1\" Super Retina XDR with ProMotion and Always-On</li><li>48MP Main, 12MP Ultra Wide and 3x Telephoto</li><li>Customizable Action button</li><li>USB-C with USB 3 speeds</li></ul>",
+          "specs": {"Brand": "Apple", "Processor": "A17 Pro", "Screen Size": "6.1\"", "Refresh Rate": "120 Hz ProMotion", "Camera": "48MP + 12MP + 12MP (3x)", "Material": "Titanium", "Operating System": "iOS"},
+          "variants": [
+            {"attribute": "Color", "values": [["Black Titanium", 0], ["Natural Titanium", 0], ["White Titanium", 0], ["Blue Titanium", 0]]},
+            {"attribute": "Storage", "values": [["128 GB", 0], ["256 GB", 500], ["512 GB", 1300]]}
+          ],
+          "stock": {"Natural Titanium / 256 GB": 3, "Black Titanium / 128 GB": 2, "*": 1},
+          "reorder": {"min": 4, "max": 15},
+          "tags": ["Apple Ecosystem", "Premium", "Creator"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-PHN-003", "VT-PHN-002"],
+          "featured": true
+        },
+        {
+          "sku": "VT-PHN-002",
+          "name": "Apple iPhone 15",
+          "brand": "Apple", "vendor": "Apple",
+          "list_price": 3699.0, "compare_list_price": 3999.0, "cost": 3100.0, "weight": 0.171,
+          "short": "Dynamic Island, 48MP Main camera and USB-C in a colour-infused glass design.",
+          "description": "<p>iPhone 15 brings Dynamic Island and a 48MP Main camera to the standard iPhone, in a colour-infused back glass.</p><ul><li>6.1\" Super Retina XDR display</li><li>A16 Bionic chip</li><li>48MP Main camera with 2x Telephoto option</li><li>USB-C connector</li></ul>",
+          "specs": {"Brand": "Apple", "Processor": "A16 Bionic", "Screen Size": "6.1\"", "Camera": "48MP + 12MP Ultra Wide", "Battery Life": "Up to 20 hours video", "Operating System": "iOS"},
+          "variants": [
+            {"attribute": "Color", "values": [["Pink", 0], ["Black", 0], ["Blue", 0], ["Green", 0], ["Yellow", 0]]},
+            {"attribute": "Storage", "values": [["128 GB", 0], ["256 GB", 500]]}
+          ],
+          "stock": 6,
+          "tags": ["Apple Ecosystem", "Gift Idea"],
+          "alternatives": ["VT-PHN-001", "VT-PHN-004"]
+        },
+        {
+          "sku": "VT-PHN-003",
+          "name": "Samsung Galaxy S24 Ultra",
+          "brand": "Samsung", "vendor": "Samsung",
+          "list_price": 5299.0, "cost": 4400.0, "weight": 0.232,
+          "short": "Titanium flagship with built-in S Pen, 200MP camera and Galaxy AI.",
+          "description": "<p>Galaxy S24 Ultra combines a titanium frame, a flat 6.8\" display and Galaxy AI features like Live Translate and Circle to Search.</p><ul><li>Snapdragon 8 Gen 3 for Galaxy</li><li>200MP main camera with 5x and 3x optical zoom</li><li>Built-in S Pen</li><li>7 years of OS and security updates</li></ul>",
+          "specs": {"Brand": "Samsung", "Processor": "Snapdragon 8 Gen 3 for Galaxy", "Screen Size": "6.8\"", "Refresh Rate": "120 Hz", "Camera": "200MP + 50MP + 12MP + 10MP", "Material": "Titanium frame", "Operating System": "Android"},
+          "variants": [
+            {"attribute": "Color", "values": [["Titanium Yellow", 0], ["Titanium Gray", 0], ["Titanium Black", 0], ["Titanium Violet", 0]]},
+            {"attribute": "Storage", "values": [["256 GB", 0], ["512 GB", 600]]}
+          ],
+          "stock": 4,
+          "reorder": {"min": 2, "max": 10},
+          "tags": ["Premium", "Creator"],
+          "alternatives": ["VT-PHN-001", "VT-PHN-008"],
+          "featured": true
+        },
+        {
+          "sku": "VT-PHN-004",
+          "name": "Google Pixel 8",
+          "brand": "Google", "vendor": "Google",
+          "list_price": 2799.0, "compare_list_price": 3199.0, "cost": 2300.0, "weight": 0.187,
+          "short": "Google's compact AI phone with Tensor G3, Magic Editor and 7 years of updates.",
+          "description": "<p>Pixel 8 is the helpful phone engineered by Google, with Tensor G3 and smart photo tools like Best Take and Magic Editor.</p><ul><li>6.2\" Actua display, 120 Hz</li><li>Google Tensor G3</li><li>50MP main and 12MP ultrawide cameras</li><li>7 years of OS and security updates</li></ul>",
+          "specs": {"Brand": "Google", "Processor": "Google Tensor G3", "Screen Size": "6.2\"", "Refresh Rate": "120 Hz", "Camera": "50MP + 12MP Ultra Wide", "Operating System": "Android"},
+          "variants": [
+            {"attribute": "Color", "values": [["Rose", 0], ["Hazel", 0], ["Obsidian", 0]]},
+            {"attribute": "Storage", "values": [["128 GB", 0], ["256 GB", 300]]}
+          ],
+          "stock": 0,
+          "reorder": {"min": 2, "max": 8},
+          "tags": ["Creator"],
+          "alternatives": ["VT-PHN-007", "VT-PHN-002"]
+        },
+        {
+          "sku": "VT-PHN-005",
+          "name": "Samsung Galaxy A55 5G",
+          "brand": "Samsung", "vendor": "Samsung",
+          "list_price": 1499.0, "cost": 1180.0, "weight": 0.213,
+          "short": "Mid-range Galaxy with metal frame, 120 Hz Super AMOLED and IP67 protection.",
+          "description": "<p>Galaxy A55 5G brings a premium metal frame, a bright 120 Hz display and Samsung Knox security to an affordable price.</p><ul><li>6.6\" Super AMOLED, 120 Hz</li><li>Exynos 1480 processor</li><li>50MP OIS main camera</li><li>IP67 dust and water resistance</li></ul>",
+          "specs": {"Brand": "Samsung", "Processor": "Exynos 1480", "Screen Size": "6.6\"", "Camera": "50MP + 12MP + 5MP", "Water Resistance": "IP67", "Operating System": "Android"},
+          "variants": [
+            {"attribute": "Color", "values": [["Awesome Navy", 0], ["Awesome Iceblue", 0], ["Awesome Lilac", 0]]},
+            {"attribute": "Storage", "values": [["128 GB", 0], ["256 GB", 200]]}
+          ],
+          "stock": {"Awesome Navy / 128 GB": 64, "*": 12},
+          "tags": ["Budget Pick", "Student Pick"],
+          "alternatives": ["VT-PHN-006", "VT-PHN-007"]
+        },
+        {
+          "sku": "VT-PHN-006",
+          "name": "Xiaomi Redmi Note 12",
+          "brand": "Xiaomi", "vendor": "Xiaomi",
+          "list_price": 699.0, "cost": 520.0, "weight": 0.183,
+          "short": "Best-selling budget phone with a 120 Hz AMOLED screen and 5000 mAh battery.",
+          "description": "<p>Redmi Note 12 delivers a smooth 120 Hz AMOLED display and two-day battery life at a price that's hard to beat.</p><ul><li>6.67\" FHD+ AMOLED, 120 Hz</li><li>Snapdragon 685 processor</li><li>50MP triple camera</li><li>5000 mAh battery with 33W fast charging</li></ul>",
+          "specs": {"Brand": "Xiaomi", "Processor": "Qualcomm Snapdragon 685", "Screen Size": "6.67\"", "Refresh Rate": "120 Hz", "Charging": "33W wired", "Operating System": "Android (MIUI)"},
+          "variants": [
+            {"attribute": "Color", "values": [["Mint Green", 0], ["Onyx Gray", 0], ["Ice Blue", 0]]},
+            {"attribute": "Storage", "values": [["128 GB", 0], ["256 GB", 120]]}
+          ],
+          "stock": {"Mint Green / 128 GB": 72, "Onyx Gray / 128 GB": 66, "*": 20},
+          "reorder": {"min": 15, "max": 60},
+          "tags": ["Budget Pick", "Student Pick"],
+          "alternatives": ["VT-PHN-005"]
+        },
+        {
+          "sku": "VT-PHN-007",
+          "name": "Nothing Phone (2)",
+          "brand": "Nothing", "vendor": "Nothing",
+          "list_price": 2399.0, "cost": 1950.0, "weight": 0.201,
+          "short": "Transparent design with the Glyph Interface, Snapdragon 8+ Gen 1 and clean Nothing OS.",
+          "description": "<p>Phone (2) refines Nothing's iconic transparent design with a customizable Glyph Interface and flagship performance.</p><ul><li>6.7\" LTPO OLED, 1-120 Hz</li><li>Snapdragon 8+ Gen 1</li><li>Dual 50MP cameras</li><li>Glyph Interface light notifications</li></ul>",
+          "specs": {"Brand": "Nothing", "Processor": "Snapdragon 8+ Gen 1", "Screen Size": "6.7\"", "Refresh Rate": "120 Hz LTPO", "Camera": "50MP + 50MP Ultra Wide", "Operating System": "Android (Nothing OS)"},
+          "variants": [
+            {"attribute": "Color", "values": [["Dark Grey", 0], ["White", 0]]},
+            {"attribute": "Storage", "values": [["256 GB", 0], ["512 GB", 300]]}
+          ],
+          "stock": 7,
+          "tags": ["Creator"],
+          "alternatives": ["VT-PHN-004", "VT-PHN-008"]
+        },
+        {
+          "sku": "VT-PHN-008",
+          "name": "OnePlus 13",
+          "brand": "OnePlus", "vendor": "OnePlus",
+          "list_price": 3899.0, "cost": 3200.0, "weight": 0.21,
+          "short": "Flagship killer with Snapdragon 8 Elite, Hasselblad cameras and 100W charging.",
+          "description": "<p>OnePlus 13 pairs the Snapdragon 8 Elite with a Hasselblad-tuned triple 50MP camera and one of the fastest charging systems available.</p><ul><li>6.82\" 2K LTPO AMOLED, 120 Hz</li><li>Snapdragon 8 Elite</li><li>Triple 50MP Hasselblad camera</li><li>6000 mAh battery, 100W wired and 50W wireless charging</li></ul>",
+          "specs": {"Brand": "OnePlus", "Processor": "Snapdragon 8 Elite", "Screen Size": "6.82\"", "Camera": "50MP + 50MP + 50MP (Hasselblad)", "Charging": "100W wired, 50W wireless", "Water Resistance": "IP68 / IP69", "Operating System": "Android (OxygenOS)"},
+          "variants": [
+            {"attribute": "Color", "values": [["Black Eclipse", 0], ["Arctic Dawn", 0], ["Midnight Ocean", 0]]},
+            {"attribute": "Storage", "values": [["256 GB", 0], ["512 GB", 450]]}
+          ],
+          "stock": 3,
+          "tags": ["Premium", "Gaming"],
+          "ribbon": "New",
+          "alternatives": ["VT-PHN-003", "VT-PHN-007"]
+        }
+      ]
+    },
+    {
+      "name": "Tablets",
+      "description": "iPads, Galaxy Tabs, 2-in-1s and e-readers for creating, studying and reading.",
+      "products": [
+        {
+          "sku": "VT-TAB-001",
+          "name": "Apple iPad Air (M2)",
+          "brand": "Apple", "vendor": "Apple",
+          "list_price": 2799.0, "cost": 2300.0, "weight": 0.462,
+          "short": "Thin and light iPad Air with the M2 chip, landscape camera and Apple Pencil Pro support.",
+          "description": "<p>iPad Air with M2 is serious performance in a thin and light design, now in two sizes.</p><ul><li>Apple M2 chip with 8-core CPU</li><li>Liquid Retina display, 11\" or 13\"</li><li>Landscape 12MP front camera with Center Stage</li><li>Works with Apple Pencil Pro and Magic Keyboard</li></ul>",
+          "specs": {"Brand": "Apple", "Processor": "Apple M2", "Screen Size": "11\" / 13\"", "Resolution": "2360 x 1640 (11\")", "Connectivity": "Wi-Fi 6E, Bluetooth 5.3", "Operating System": "iPadOS"},
+          "variants": [
+            {"attribute": "Color", "values": [["Blue", 0], ["Space Gray", 0], ["Starlight", 0], ["Purple", 0]]},
+            {"attribute": "Size", "values": [["11\"", 0], ["13\"", 900]]}
+          ],
+          "stock": 6,
+          "tags": ["Apple Ecosystem", "Student Pick", "Creator"],
+          "alternatives": ["VT-TAB-003", "VT-TAB-004"]
+        },
+        {
+          "sku": "VT-TAB-002",
+          "name": "Apple iPad (10th Generation)",
+          "brand": "Apple", "vendor": "Apple",
+          "list_price": 1599.0, "cost": 1290.0, "weight": 0.477,
+          "short": "All-screen 10.9\" iPad in four bold colours with A14 Bionic and USB-C.",
+          "description": "<p>The colourfully reimagined iPad has an all-screen design, a landscape front camera and USB-C — perfect for school, work and play.</p><ul><li>10.9\" Liquid Retina display</li><li>A14 Bionic chip</li><li>12MP landscape front camera</li><li>Touch ID in the top button</li></ul>",
+          "specs": {"Brand": "Apple", "Processor": "A14 Bionic", "Screen Size": "10.9\"", "Resolution": "2360 x 1640", "Ports": "USB-C", "Operating System": "iPadOS"},
+          "variants": [
+            {"attribute": "Color", "values": [["Yellow", 0], ["Blue", 0], ["Pink", 0], ["Silver", 0]]},
+            {"attribute": "Storage", "values": [["64 GB", 0], ["256 GB", 550]]}
+          ],
+          "stock": {"Yellow / 64 GB": 14, "Blue / 64 GB": 12, "*": 8},
+          "reorder": {"min": 4, "max": 16},
+          "tags": ["Apple Ecosystem", "Student Pick", "Gift Idea"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-TAB-001", "VT-TAB-005"],
+          "featured": true
+        },
+        {
+          "sku": "VT-TAB-003",
+          "name": "Apple iPad Pro 11\" (M4)",
+          "brand": "Apple", "vendor": "Apple",
+          "list_price": 4799.0, "cost": 4000.0, "weight": 0.444,
+          "short": "The thinnest Apple product ever, with the M4 chip and an Ultra Retina XDR tandem OLED display.",
+          "description": "<p>iPad Pro with M4 features a breakthrough Ultra Retina XDR display built on tandem OLED technology, in an impossibly thin design.</p><ul><li>Apple M4 chip</li><li>11\" Ultra Retina XDR (tandem OLED), ProMotion</li><li>Thunderbolt / USB 4 port</li><li>Face ID and landscape TrueDepth camera</li></ul>",
+          "specs": {"Brand": "Apple", "Processor": "Apple M4", "Screen Size": "11\"", "Panel Type": "Tandem OLED (Ultra Retina XDR)", "Refresh Rate": "120 Hz ProMotion", "Ports": "Thunderbolt / USB 4", "Operating System": "iPadOS"},
+          "variants": [
+            {"attribute": "Color", "values": [["Silver", 0], ["Space Black", 0]]},
+            {"attribute": "Storage", "values": [["256 GB", 0], ["512 GB", 700], ["1 TB", 2000]]}
+          ],
+          "stock": {"Silver / 256 GB": 2, "Space Black / 256 GB": 1, "*": 1},
+          "reorder": {"min": 2, "max": 6},
+          "tags": ["Apple Ecosystem", "Premium", "Creator"],
+          "alternatives": ["VT-TAB-001", "VT-TAB-006"],
+          "featured": true
+        },
+        {
+          "sku": "VT-TAB-004",
+          "name": "Samsung Galaxy Tab S9",
+          "brand": "Samsung", "vendor": "Samsung",
+          "list_price": 3299.0, "compare_list_price": 3699.0, "cost": 2700.0, "weight": 0.498,
+          "short": "11\" Dynamic AMOLED 2X Android tablet with S Pen in the box and IP68 water resistance.",
+          "description": "<p>Galaxy Tab S9 brings a vivid Dynamic AMOLED 2X screen, the included S Pen and IP68 protection to a premium Android tablet.</p><ul><li>11\" Dynamic AMOLED 2X, 120 Hz</li><li>Snapdragon 8 Gen 2 for Galaxy</li><li>S Pen included</li><li>IP68 water and dust resistance</li></ul>",
+          "specs": {"Brand": "Samsung", "Processor": "Snapdragon 8 Gen 2 for Galaxy", "Screen Size": "11\"", "Panel Type": "Dynamic AMOLED 2X", "Refresh Rate": "120 Hz", "Water Resistance": "IP68", "Operating System": "Android"},
+          "variants": [
+            {"attribute": "Color", "values": [["Graphite", 0], ["Beige", 0]]},
+            {"attribute": "Storage", "values": [["128 GB", 0], ["256 GB", 350]]}
+          ],
+          "stock": 5,
+          "tags": ["Creator", "Premium"],
+          "alternatives": ["VT-TAB-001", "VT-TAB-005"]
+        },
+        {
+          "sku": "VT-TAB-005",
+          "name": "Samsung Galaxy Tab A9+",
+          "brand": "Samsung", "vendor": "Samsung",
+          "list_price": 849.0, "cost": 640.0, "weight": 0.48,
+          "short": "Affordable 11\" family tablet with 90 Hz display and quad speakers.",
+          "description": "<p>Galaxy Tab A9+ is a big-screen tablet for streaming, browsing and homework at an everyday price.</p><ul><li>11\" display, 90 Hz</li><li>Snapdragon 695 processor</li><li>Quad speakers with Dolby Atmos</li><li>7040 mAh battery</li></ul>",
+          "specs": {"Brand": "Samsung", "Processor": "Snapdragon 695", "Screen Size": "11\"", "Refresh Rate": "90 Hz", "Audio Output": "Quad speakers, Dolby Atmos", "Operating System": "Android"},
+          "variants": [
+            {"attribute": "Color", "values": [["Graphite", 0], ["Silver", 0], ["Navy", 0]]},
+            {"attribute": "Storage", "values": [["64 GB", 0], ["128 GB", 120]]}
+          ],
+          "stock": {"Graphite / 64 GB": 70, "*": 15},
+          "tags": ["Budget Pick", "Student Pick", "Gift Idea"],
+          "alternatives": ["VT-TAB-002", "VT-TAB-004"]
+        },
+        {
+          "sku": "VT-TAB-006",
+          "name": "Microsoft Surface Pro 9",
+          "brand": "Microsoft", "vendor": "Microsoft",
+          "list_price": 4299.0, "cost": 3550.0, "weight": 0.879,
+          "short": "Tablet flexibility and laptop performance with 12th-gen Intel Core and a 13\" 120 Hz touchscreen.",
+          "description": "<p>Surface Pro 9 is the 2-in-1 that goes from tablet to laptop to studio with its built-in kickstand and detachable keyboard.</p><ul><li>12th Gen Intel Core i5-1235U</li><li>13\" PixelSense Flow display, 120 Hz</li><li>Two Thunderbolt 4 ports</li><li>Signature Keyboard and Slim Pen 2 compatible</li></ul>",
+          "specs": {"Brand": "Microsoft", "Processor": "Intel Core i5-1235U", "Screen Size": "13\"", "Refresh Rate": "120 Hz", "Ports": "2x Thunderbolt 4", "Form Factor": "2-in-1 with kickstand", "Operating System": "Windows 11 Home"},
+          "variants": [
+            {"attribute": "Color", "values": [["Sapphire", 0], ["Platinum", 0], ["Graphite", 0], ["Forest", 0]]},
+            {"attribute": "Storage", "values": [["256 GB", 0], ["512 GB", 650]]}
+          ],
+          "stock": 0,
+          "reorder": {"min": 2, "max": 6},
+          "tags": ["Work From Home", "Premium"],
+          "alternatives": ["VT-TAB-003", "VT-TAB-001"]
+        },
+        {
+          "sku": "VT-TAB-007",
+          "name": "Amazon Kindle Paperwhite (11th Gen)",
+          "brand": "Amazon", "vendor": "Amazon",
+          "list_price": 549.0, "cost": 380.0, "weight": 0.205,
+          "short": "Glare-free 6.8\" e-reader with adjustable warm light and weeks of battery life.",
+          "description": "<p>Kindle Paperwhite reads like real paper, even in bright sunlight, and is waterproof so you can read at the beach or in the bath.</p><ul><li>6.8\" 300 ppi glare-free display</li><li>Adjustable warm light</li><li>Up to 10 weeks of battery life</li><li>IPX8 waterproof, USB-C charging</li></ul>",
+          "specs": {"Brand": "Amazon", "Screen Size": "6.8\"", "Resolution": "300 ppi", "Battery Life": "Up to 10 weeks", "Water Resistance": "IPX8", "Ports": "USB-C"},
+          "variants": [
+            {"attribute": "Edition", "values": [["With ads", 0], ["Without ads", 65]]}
+          ],
+          "stock": 18,
+          "reorder": {"min": 10, "max": 40},
+          "tags": ["Gift Idea", "Travel"],
+          "alternatives": ["VT-TAB-005"]
+        }
+      ]
+    },
+    {
+      "name": "Smartwatches & Wearables",
+      "description": "Smartwatches, running watches and fitness trackers to keep you moving.",
+      "products": [
+        {
+          "sku": "VT-WEA-001",
+          "name": "Apple Watch Series 8",
+          "brand": "Apple", "vendor": "Apple",
+          "list_price": 1399.0, "cost": 1120.0, "weight": 0.039,
+          "short": "Advanced health smartwatch with temperature sensing, Crash Detection and an Always-On Retina display.",
+          "description": "<p>Apple Watch Series 8 helps you stay healthy, active and connected, with new temperature sensing and Crash Detection.</p><ul><li>Always-On Retina display</li><li>ECG, blood oxygen and temperature sensing</li><li>Crash Detection and Fall Detection</li><li>Up to 18 hours of battery life (36 h in Low Power Mode)</li></ul>",
+          "specs": {"Brand": "Apple", "Processor": "Apple S8 SiP", "Screen Size": "41 mm / 45 mm", "Battery Life": "Up to 18 hours", "Water Resistance": "WR50, IP6X", "Compatibility": "iPhone only"},
+          "variants": [
+            {"attribute": "Color", "values": [["Midnight", 0], ["Starlight", 0], ["Silver", 0], ["Red", 0]]},
+            {"attribute": "Size", "values": [["41 mm", 0], ["45 mm", 100]]}
+          ],
+          "stock": 5,
+          "reorder": {"min": 3, "max": 12},
+          "tags": ["Apple Ecosystem", "Fitness", "Gift Idea"],
+          "alternatives": ["VT-WEA-002", "VT-WEA-003"]
+        },
+        {
+          "sku": "VT-WEA-002",
+          "name": "Apple Watch Ultra 2",
+          "brand": "Apple", "vendor": "Apple",
+          "list_price": 2999.0, "cost": 2480.0, "weight": 0.061,
+          "short": "The most rugged and capable Apple Watch, with a 49 mm titanium case and 3000-nit display.",
+          "description": "<p>Apple Watch Ultra 2 is built for endurance, exploration and adventure, with the brightest Apple display ever and up to 72 hours of battery.</p><ul><li>49 mm aerospace-grade titanium case</li><li>3000-nit Always-On Retina display</li><li>Precision dual-frequency GPS</li><li>Up to 36 hours of battery (72 h in Low Power Mode)</li></ul>",
+          "specs": {"Brand": "Apple", "Processor": "Apple S9 SiP", "Screen Size": "49 mm", "Battery Life": "Up to 36 hours", "Water Resistance": "WR100, EN13319 dive", "Material": "Titanium", "Compatibility": "iPhone only"},
+          "variants": [
+            {"attribute": "Color", "values": [["Natural Titanium", 0], ["Black Titanium", 0]]}
+          ],
+          "stock": 0,
+          "reorder": {"min": 2, "max": 6},
+          "tags": ["Apple Ecosystem", "Premium", "Fitness"],
+          "alternatives": ["VT-WEA-001", "VT-WEA-004"],
+          "featured": true
+        },
+        {
+          "sku": "VT-WEA-003",
+          "name": "Samsung Galaxy Watch6",
+          "brand": "Samsung", "vendor": "Samsung",
+          "list_price": 899.0, "compare_list_price": 1099.0, "cost": 690.0, "weight": 0.033,
+          "short": "Slim Wear OS smartwatch with a bigger Sapphire Crystal display and advanced sleep coaching.",
+          "description": "<p>Galaxy Watch6 gives you a larger, brighter screen in a slimmer bezel, plus personalised sleep coaching and heart-rate zones.</p><ul><li>Super AMOLED with Sapphire Crystal glass</li><li>BioActive sensor: heart rate, ECG, body composition</li><li>Wear OS powered by Samsung</li><li>Up to 40 hours of battery life</li></ul>",
+          "specs": {"Brand": "Samsung", "Processor": "Exynos W930", "Screen Size": "40 mm / 44 mm", "Battery Life": "Up to 40 hours", "Water Resistance": "5ATM, IP68", "Compatibility": "Android"},
+          "variants": [
+            {"attribute": "Color", "values": [["Silver", 0], ["Graphite", 0], ["Gold", 0]]},
+            {"attribute": "Size", "values": [["40 mm", 0], ["44 mm", 80]]}
+          ],
+          "stock": 8,
+          "tags": ["Fitness", "Gift Idea"],
+          "alternatives": ["VT-WEA-007", "VT-WEA-001"]
+        },
+        {
+          "sku": "VT-WEA-004",
+          "name": "Garmin Forerunner 265",
+          "brand": "Garmin", "vendor": "Garmin",
+          "list_price": 1599.0, "cost": 1250.0, "weight": 0.047,
+          "short": "AMOLED GPS running watch with training readiness, HRV status and race-day insights.",
+          "description": "<p>Forerunner 265 is the running smartwatch with a bright AMOLED display and the training tools you need to race your best.</p><ul><li>1.3\" AMOLED touchscreen with buttons</li><li>Multi-band GPS</li><li>Training Readiness, HRV Status and daily workouts</li><li>Up to 13 days of battery in smartwatch mode</li></ul>",
+          "specs": {"Brand": "Garmin", "Screen Size": "1.3\" (46 mm)", "Panel Type": "AMOLED", "Battery Life": "Up to 13 days", "Water Resistance": "5ATM", "Connectivity": "Multi-band GPS, Bluetooth, Wi-Fi", "Compatibility": "iOS and Android"},
+          "variants": [
+            {"attribute": "Color", "values": [["Black", 0], ["Whitestone", 0], ["Aqua", 0]]}
+          ],
+          "stock": 6,
+          "tags": ["Fitness"],
+          "alternatives": ["VT-WEA-002", "VT-WEA-005"]
+        },
+        {
+          "sku": "VT-WEA-005",
+          "name": "Fitbit Inspire 3",
+          "brand": "Fitbit", "vendor": "Google",
+          "list_price": 349.0, "cost": 230.0, "weight": 0.018,
+          "short": "Easy-to-use fitness tracker with colour display, 24/7 heart rate and 10-day battery.",
+          "description": "<p>Inspire 3 is a slim, comfortable tracker that helps you build healthy habits with heart-rate tracking, sleep stages and reminders to move.</p><ul><li>Colour touchscreen display</li><li>24/7 heart rate and SpO2</li><li>Sleep stages and Sleep Score</li><li>Up to 10 days of battery life</li></ul>",
+          "specs": {"Brand": "Fitbit", "Battery Life": "Up to 10 days", "Water Resistance": "Water resistant to 50 m", "Connectivity": "Bluetooth 5.0", "Compatibility": "iOS and Android", "Form Factor": "Band tracker"},
+          "variants": [
+            {"attribute": "Color", "values": [["Black", 0], ["Lilac", 0]]}
+          ],
+          "stock": 25,
+          "reorder": {"min": 10, "max": 40},
+          "tags": ["Fitness", "Budget Pick", "Gift Idea"],
+          "alternatives": ["VT-WEA-006", "VT-WEA-004"]
+        },
+        {
+          "sku": "VT-WEA-006",
+          "name": "Xiaomi Smart Band 8",
+          "brand": "Xiaomi", "vendor": "Xiaomi",
+          "list_price": 179.0, "cost": 95.0, "weight": 0.027,
+          "short": "Best-selling 1.62\" AMOLED fitness band with 150+ sport modes and 16-day battery.",
+          "description": "<p>Xiaomi Smart Band 8 tracks your workouts, sleep and health around the clock with a bright AMOLED screen and a pebble-inspired design.</p><ul><li>1.62\" AMOLED display, 60 Hz</li><li>150+ sport modes</li><li>Heart rate, SpO2 and sleep tracking</li><li>Up to 16 days of battery life</li></ul>",
+          "specs": {"Brand": "Xiaomi", "Screen Size": "1.62\"", "Panel Type": "AMOLED", "Battery Life": "Up to 16 days", "Water Resistance": "5ATM", "Compatibility": "iOS and Android"},
+          "variants": [
+            {"attribute": "Color", "values": [["Black", 0], ["Gold", 0]]}
+          ],
+          "stock": {"Black": 88, "Gold": 45},
+          "tags": ["Fitness", "Budget Pick", "Gift Idea"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-WEA-005"]
+        },
+        {
+          "sku": "VT-WEA-007",
+          "name": "Google Pixel Watch 2",
+          "brand": "Google", "vendor": "Google",
+          "list_price": 1299.0, "cost": 1020.0, "weight": 0.031,
+          "short": "Domed Wear OS watch with Fitbit health tracking, faster chip and all-day battery.",
+          "description": "<p>Pixel Watch 2 combines the best of Google and Fitbit, with a faster processor, more accurate heart rate and Safety Check.</p><ul><li>41 mm domed AMOLED display</li><li>Fitbit heart rate, stress and sleep tracking</li><li>Qualcomm SW5100 processor</li><li>24-hour battery with Always-On Display</li></ul>",
+          "specs": {"Brand": "Google", "Processor": "Qualcomm Snapdragon W5 Gen 1", "Screen Size": "41 mm", "Battery Life": "Up to 24 hours", "Water Resistance": "5ATM, IP68", "Compatibility": "Android"},
+          "variants": [
+            {"attribute": "Color", "values": [["Silver", 0], ["Black", 0], ["Gold", 0]]}
+          ],
+          "stock": 3,
+          "reorder": {"min": 2, "max": 8},
+          "tags": ["Fitness"],
+          "alternatives": ["VT-WEA-003", "VT-WEA-001"]
+        }
+      ]
+    }
+  ]
+}

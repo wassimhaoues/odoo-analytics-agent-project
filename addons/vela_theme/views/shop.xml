@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tracking contract: expose the product SKU (template-level, without variant suffix)
+         on shop tiles and the product page. static/src/js/shop_tracking.js turns it into
+         data-track attributes on the links and buttons inside. -->
+    <template id="products_item_sku" inherit_id="website_sale.products_item" name="Vela: tile SKU">
+        <xpath expr="//article" position="attributes">
+            <attribute name="t-att-data-vela-sku">(product.product_variant_ids[:1].default_code or '').rsplit('-', 1)[0] if product.product_variant_count &gt; 1 else product.product_variant_ids[:1].default_code</attribute>
+        </xpath>
+    </template>
+
+    <template id="product_page_sku" inherit_id="website_sale.product" name="Vela: product page SKU">
+        <xpath expr="//div[@id='product_details']" position="attributes">
+            <attribute name="t-att-data-vela-sku">(product.product_variant_ids[:1].default_code or '').rsplit('-', 1)[0] if product.product_variant_count &gt; 1 else product.product_variant_ids[:1].default_code</attribute>
+        </xpath>
+    </template>
+</odoo>

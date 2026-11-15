@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Homepage sections. Rendered server-side from live catalog data (models/vela_home.py),
+         placed BEFORE #wrap so website-builder saves of #wrap can't freeze them. The owner
+         can still add builder content in #wrap below. -->
+    <template id="homepage" inherit_id="website.homepage" name="Vela: homepage">
+        <xpath expr="//div[@id='wrap']" position="before">
+            <t t-set="vh" t-value="request.env['vela.home'].sudo()._home_values()"/>
+            <t t-set="money" t-value="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+            <div class="s_vela_home o_not_editable">
+
+                <!-- HERO: the Sidi Bou Said doorway -->
+                <section class="s_vela_hero" data-track="hero.section.view" data-track-type="view">
+                    <div class="container s_vela_hero__inner">
+                        <div class="s_vela_hero__copy">
+                            <h1 class="s_vela_hero__title" aria-label="Tech that sails through your day.">
+                                <span class="vela-word" aria-hidden="true"><span>Tech</span></span>
+                                <span class="vela-word" aria-hidden="true"><span>that</span></span>
+                                <span class="vela-word" aria-hidden="true"><span>sails</span></span>
+                                <span class="vela-word" aria-hidden="true"><span>through</span></span>
+                                <span class="vela-word" aria-hidden="true"><span>your&#160;day.</span></span>
+                            </h1>
+                            <p class="s_vela_hero__lede">Laptops, phones, audio and gaming from the brands you trust. Delivered anywhere in Tunisia, and you pay when it arrives.</p>
+                            <div class="s_vela_hero__cta">
+                                <a class="btn btn-primary btn-lg" href="#vela-deals" data-track="hero.cta.shop_deals" data-track-type="click">Shop this week's deals</a>
+                                <a class="btn btn-outline-secondary btn-lg vela-btn-ghost" href="/shop" data-track="hero.cta.browse_all" data-track-type="click">Browse all products</a>
+                            </div>
+                            <dl class="s_vela_hero__meta">
+                                <div><dt class="vela-num" t-out="vh['product_count']"/><dd>products</dd></div>
+                                <div><dt class="vela-num" t-out="vh['brand_count']"/><dd>brands</dd></div>
+                                <div><dt>2&#160;yrs</dt><dd>warranty</dd></div>
+                            </dl>
+                        </div>
+                        <div class="s_vela_hero__stage" t-if="vh['hero']">
+                            <t t-set="hp" t-value="vh['hero']"/>
+                            <div class="s_vela_hero__arch"/>
+                            <a class="s_vela_hero__product" t-att-href="hp.website_url"
+                               data-track="hero.product.open" data-track-type="click"
+                               t-att-data-track-product="hp.product_variant_ids[:1].default_code and hp.product_variant_ids[:1].default_code.rsplit('-', 1)[0]">
+                                <img t-att-src="'/web/image/product.template/%s/image_1024' % hp.id" t-att-alt="hp.name"
+                                     width="1024" height="1024" fetchpriority="high"/>
+                            </a>
+                            <div class="s_vela_hero__tag">
+                                <span class="vela-mono" t-if="hp.qty_available &gt; 0"><t t-out="int(hp.qty_available)"/> in stock</span>
+                                <strong t-out="hp.name"/>
+                                <span class="vela-num" t-out="hp.list_price" t-options="money"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CATEGORY RAIL -->
+                <section id="vela-rail" class="s_vela_rail">
+                    <div class="container">
+                        <div class="vela-section-head">
+                            <h2>Find your gear</h2>
+                            <a class="vela-link" href="/shop" data-track="rail.link.all" data-track-type="click">All products</a>
+                        </div>
+                        <div class="s_vela_rail__track">
+                            <t t-foreach="vh['categories']" t-as="cc">
+                                <t t-set="c" t-value="cc[0]"/>
+                                <t t-set="c_slug" t-value="slug(c).rsplit('-', 1)[0]"/>
+                                <a class="vela-cat" t-att-href="'/shop/category/%s' % slug(c)"
+                                   t-att-data-track="'rail.category.' + c_slug.replace('-', '_')" data-track-type="click"
+                                   t-att-data-track-category="c_slug" t-att-data-track-position="cc_index + 1">
+                                    <span class="vela-cat__img">
+                                        <img t-if="c.cover_image" t-att-src="'/web/image/product.public.category/%s/cover_image' % c.id"
+                                             alt="" width="512" height="512" loading="lazy"/>
+                                    </span>
+                                    <span class="vela-cat__name" t-out="c.name"/>
+                                    <span class="vela-cat__count vela-mono"><t t-out="cc[1]"/> products</span>
+                                </a>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BENTO -->
+                <section class="s_vela_bento">
+                    <div class="container">
+                        <div class="vela-section-head"><h2>Why people buy here</h2></div>
+                        <div class="s_vela_bento__grid">
+                            <div class="vela-tile vela-tile--a" data-vela-depth="6">
+                                <h3>Pay when it reaches your door</h3>
+                                <p>Cash on delivery in all 24 governorates, or pick up in Tunis and pay on site. No card needed.</p>
+                                <div class="vela-tile__big">0&#160;DT upfront</div>
+                            </div>
+                            <div class="vela-tile vela-tile--b" data-vela-depth="3">
+                                <h3>Two-year warranty on everything</h3>
+                                <p>Official brand warranty, handled by us. One number to call, no back-and-forth with the manufacturer.</p>
+                            </div>
+                            <t t-if="vh['spotlight']">
+                                <t t-set="sp" t-value="vh['spotlight']"/>
+                                <a class="vela-tile vela-tile--c" t-att-href="sp.website_url" data-vela-depth="8"
+                                   data-track="bento.spotlight.open" data-track-type="click"
+                                   t-att-data-track-product="sp.product_variant_ids[:1].default_code and sp.product_variant_ids[:1].default_code.rsplit('-', 1)[0]">
+                                    <span class="vela-pill vela-mono"><span class="vela-pill__dot"/>Sold out</span>
+                                    <h3 t-out="sp.name"/>
+                                    <p t-if="vh['waiting']"><span class="vela-num" t-out="vh['waiting']"/> people asked to be notified</p>
+                                    <p t-else="">Our best seller. Get an email the moment it's back.</p>
+                                    <span class="vela-link">Notify me</span>
+                                    <span class="vela-tile__plinth"><img t-att-src="'/web/image/product.template/%s/image_512' % sp.id" alt="" width="512" height="512" loading="lazy"/></span>
+                                </a>
+                            </t>
+                            <div class="vela-tile vela-tile--d" data-vela-depth="4">
+                                <h3>Pickup in Tunis</h3>
+                                <p>Order online, collect the same day.</p>
+                            </div>
+                            <a class="vela-tile vela-tile--e" href="/shop/compare" data-vela-depth="5"
+                               data-track="bento.compare.open" data-track-type="click">
+                                <h3>Compare before you choose</h3>
+                                <table class="vela-spec">
+                                    <thead><tr><th scope="col"><span class="visually-hidden">Product</span></th>
+                                        <t t-foreach="vh['compare_specs']" t-as="spec"><th scope="col" t-out="spec"/></t></tr></thead>
+                                    <tbody>
+                                        <tr t-foreach="vh['compare']" t-as="row">
+                                            <th scope="row" t-out="row[0].name.split(' Wireless')[0].split(' Acoustic')[0]"/>
+                                            <t t-foreach="vh['compare_specs']" t-as="spec"><td class="vela-num" t-out="row[1].get(spec, '—')"/></t>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DEALS -->
+                <section id="vela-deals" class="s_vela_deals" t-if="vh['deals']">
+                    <div class="container">
+                        <div class="vela-section-head">
+                            <h2>This week's deals</h2>
+                            <a class="vela-link" href="/shop" data-track="deals.link.all" data-track-type="click">See everything</a>
+                        </div>
+                        <div class="s_vela_deals__grid">
+                            <t t-foreach="vh['deals']" t-as="d">
+                                <t t-set="p" t-value="d[0]"/>
+                                <t t-set="sku" t-value="p.product_variant_ids[:1].default_code and p.product_variant_ids[:1].default_code.rsplit('-', 1)[0] if p.product_variant_count &gt; 1 else p.product_variant_ids[:1].default_code"/>
+                                <a class="vela-card" t-att-href="p.website_url"
+                                   data-track="deals.product.open" data-track-type="click"
+                                   t-att-data-track-product="sku" t-att-data-track-position="d_index + 1">
+                                    <span class="vela-card__media">
+                                        <span class="vela-badge vela-badge--sale vela-mono">−<t t-out="d[1]"/>%</span>
+                                        <img t-att-src="'/web/image/product.template/%s/image_512' % p.id" t-att-alt="p.name"
+                                             width="512" height="512" loading="lazy"/>
+                                    </span>
+                                    <span class="vela-card__brand vela-mono" t-out="d[2]"/>
+                                    <span class="vela-card__name" t-out="p.name"/>
+                                    <span class="vela-price">
+                                        <span class="vela-price__now vela-num" t-out="p.list_price" t-options="money"/>
+                                        <s class="vela-price__was vela-num" t-out="p.compare_list_price" t-options="money"/>
+                                    </span>
+                                </a>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BRANDS -->
+                <section class="s_vela_brands" aria-label="Brands we carry" t-if="vh['brands']">
+                    <div class="s_vela_brands__track">
+                        <t t-foreach="[0, 1]" t-as="loop_copy">
+                            <t t-foreach="vh['brands']" t-as="b">
+                                <span t-att-aria-hidden="'true' if loop_copy else None" t-out="b"/>
+                            </t>
+                        </t>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+</odoo>

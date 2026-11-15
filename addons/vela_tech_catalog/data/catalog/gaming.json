@@ -1,0 +1,551 @@
+{
+  "category": "Gaming",
+  "description": "Consoles, controllers and seating for every kind of player, from couch co-op to competitive PC gaming.",
+  "vendors": {
+    "Sony Interactive Entertainment": {"lead_days": 14},
+    "Microsoft": {"lead_days": 12},
+    "Nintendo": {"lead_days": 14},
+    "Valve": {"lead_days": 21},
+    "8BitDo": {"lead_days": 10},
+    "Herman Miller": {"lead_days": 30},
+    "Steelcase": {"lead_days": 28},
+    "IKEA": {"lead_days": 7},
+    "AutoFull": {"lead_days": 20}
+  },
+  "colors": {
+    "Turquoise": "#3fc1c9",
+    "Coral": "#f08c84",
+    "Neon Blue/Red": "#00a7e1",
+    "Black/Red": "#b71c1c"
+  },
+  "extra_specs": {"Max Load": "Physical"},
+  "subcategories": [
+    {
+      "name": "Consoles",
+      "description": "Home and handheld consoles from PlayStation, Xbox, Nintendo and Valve.",
+      "products": [
+        {
+          "sku": "VT-CON-001",
+          "name": "Sony PlayStation 5 Console",
+          "brand": "Sony",
+          "vendor": "Sony Interactive Entertainment",
+          "list_price": 1799.0,
+          "cost": 1490.0,
+          "weight": 4.5,
+          "short": "Sony's current-generation console with an ultra-fast SSD, ray tracing and the DualSense controller included.",
+          "description": "<p>The PlayStation 5 loads games almost instantly from its custom SSD and plays them in up to 4K at 120 fps, with ray-traced lighting and 3D Audio.</p><ul><li>Custom 825 GB SSD for near-instant loading</li><li>Up to 4K at 120 fps, 8K output ready</li><li>DualSense controller with haptic feedback and adaptive triggers included</li><li>Backward compatible with most PS4 games</li></ul>",
+          "specs": {
+            "Brand": "Sony",
+            "Processor": "AMD Zen 2, 8 cores @ up to 3.5 GHz",
+            "Graphics": "AMD RDNA 2, 10.28 TFLOPS, ray tracing",
+            "Resolution": "Up to 4K 120 Hz (8K output)",
+            "Ports": "HDMI 2.1, USB-C, USB-A, Ethernet",
+            "Wireless Standard": "Wi-Fi 6, Bluetooth 5.1",
+            "Model Year": "2020"
+          },
+          "variants": [
+            {"attribute": "Edition", "values": [["Digital Edition", 0], ["Standard Edition (Disc)", 300]]}
+          ],
+          "stock": 0,
+          "reorder": {"min": 4, "max": 15},
+          "tags": ["Gaming", "Gift Idea"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-CON-003", "VT-CON-002"],
+          "featured": true
+        },
+        {
+          "sku": "VT-CON-003",
+          "name": "Microsoft Xbox Series X 1TB",
+          "brand": "Microsoft",
+          "vendor": "Microsoft",
+          "list_price": 1899.0,
+          "compare_list_price": 2099.0,
+          "cost": 1590.0,
+          "weight": 4.45,
+          "short": "Microsoft's most powerful Xbox: true 4K gaming, Quick Resume and a 1 TB SSD.",
+          "description": "<p>Xbox Series X delivers 12 teraflops of graphics power for native 4K gaming at up to 120 fps, and switches between several suspended games with Quick Resume.</p><ul><li>12 TFLOPS AMD RDNA 2 GPU</li><li>1 TB custom NVMe SSD (Xbox Velocity Architecture)</li><li>4K Blu-ray drive</li><li>Thousands of games across four Xbox generations with Game Pass</li></ul>",
+          "specs": {
+            "Brand": "Microsoft",
+            "Processor": "AMD Zen 2, 8 cores @ 3.8 GHz",
+            "Graphics": "AMD RDNA 2, 12 TFLOPS",
+            "Resolution": "Native 4K up to 120 fps (8K capable)",
+            "Ports": "HDMI 2.1, 3x USB 3.1, Ethernet",
+            "Wireless Standard": "Wi-Fi 5 (802.11ac)",
+            "Model Year": "2020"
+          },
+          "stock": 6,
+          "reorder": {"min": 3, "max": 12},
+          "tags": ["Gaming", "Premium"],
+          "alternatives": ["VT-CON-001", "VT-CON-004"]
+        },
+        {
+          "sku": "VT-CON-004",
+          "name": "Microsoft Xbox Series S",
+          "brand": "Microsoft",
+          "vendor": "Microsoft",
+          "list_price": 1149.0,
+          "cost": 930.0,
+          "weight": 1.93,
+          "short": "The smallest, most affordable next-gen Xbox: all-digital, 1440p gaming at up to 120 fps.",
+          "description": "<p>Xbox Series S is about 60% smaller than Series X but runs the same next-gen games at up to 1440p and 120 fps, with fast SSD load times.</p><ul><li>All-digital (no disc drive)</li><li>Up to 1440p at 120 fps, 4K media streaming</li><li>Quick Resume across several games</li><li>Ideal Game Pass machine</li></ul>",
+          "specs": {
+            "Brand": "Microsoft",
+            "Processor": "AMD Zen 2, 8 cores @ 3.6 GHz",
+            "Graphics": "AMD RDNA 2, 4 TFLOPS",
+            "Resolution": "Up to 1440p at 120 fps",
+            "Ports": "HDMI 2.1, 3x USB 3.1, Ethernet",
+            "Model Year": "2020"
+          },
+          "variants": [
+            {"attribute": "Storage", "values": [["512 GB", 0], ["1 TB", 180]]}
+          ],
+          "stock": {"512 GB": 3, "1 TB": 9},
+          "reorder": {"min": 4, "max": 14},
+          "tags": ["Gaming", "Budget Pick", "Gift Idea"],
+          "alternatives": ["VT-CON-003", "VT-CON-005"]
+        },
+        {
+          "sku": "VT-CON-005",
+          "name": "Nintendo Switch – OLED Model",
+          "brand": "Nintendo",
+          "vendor": "Nintendo",
+          "list_price": 1199.0,
+          "cost": 960.0,
+          "weight": 0.42,
+          "short": "Switch with a vivid 7-inch OLED screen, wide adjustable stand, 64 GB storage and a dock with LAN port.",
+          "description": "<p>The OLED model brings a larger 7-inch OLED screen with vivid colours and deep contrast to the Nintendo Switch, plus enhanced speakers and a wired LAN port in the dock.</p><ul><li>7-inch OLED screen</li><li>Plays on the TV, handheld or in tabletop mode</li><li>64 GB internal storage, microSD expandable</li><li>Wide adjustable stand and improved audio</li></ul>",
+          "specs": {
+            "Brand": "Nintendo",
+            "Screen Size": "7\"",
+            "Panel Type": "OLED",
+            "Resolution": "1280x720 handheld, up to 1080p docked",
+            "Processor": "NVIDIA Custom Tegra X1",
+            "Battery Life": "4.5 to 9 hours",
+            "Model Year": "2021"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["White", 0], ["Neon Blue/Red", 0]]}
+          ],
+          "stock": {"White": 14, "Neon Blue/Red": 8},
+          "reorder": {"min": 4, "max": 15},
+          "tags": ["Gaming", "Gift Idea", "Travel"],
+          "alternatives": ["VT-CON-006", "VT-CON-002"]
+        },
+        {
+          "sku": "VT-CON-006",
+          "name": "Nintendo Switch Lite",
+          "brand": "Nintendo",
+          "vendor": "Nintendo",
+          "list_price": 649.0,
+          "compare_list_price": 729.0,
+          "cost": 520.0,
+          "weight": 0.275,
+          "short": "Compact, lightweight Switch built for handheld play, with integrated controls.",
+          "description": "<p>Nintendo Switch Lite is a compact, lightweight Switch dedicated to handheld play. It plays every Switch game that supports handheld mode.</p><ul><li>5.5-inch touchscreen</li><li>Integrated controls with a proper D-pad</li><li>3 to 7 hours of battery life</li><li>Light enough for any bag (275 g)</li></ul>",
+          "specs": {
+            "Brand": "Nintendo",
+            "Screen Size": "5.5\"",
+            "Panel Type": "LCD touchscreen",
+            "Resolution": "1280x720",
+            "Processor": "NVIDIA Custom Tegra X1",
+            "Battery Life": "3 to 7 hours",
+            "Model Year": "2019"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Gray", 0], ["Turquoise", 0], ["Coral", 0], ["Yellow", 0]]}
+          ],
+          "stock": {"Gray": 12, "Turquoise": 7, "Coral": 0, "Yellow": 4},
+          "reorder": {"min": 5, "max": 20},
+          "tags": ["Gaming", "Budget Pick", "Gift Idea", "Travel"],
+          "alternatives": ["VT-CON-005"]
+        },
+        {
+          "sku": "VT-CON-007",
+          "name": "Valve Steam Deck LCD 256 GB",
+          "brand": "Valve",
+          "vendor": "Valve",
+          "list_price": 1599.0,
+          "cost": 1300.0,
+          "weight": 0.669,
+          "short": "Handheld gaming PC that plays your Steam library anywhere, running SteamOS.",
+          "description": "<p>Steam Deck is a portable gaming PC: a custom AMD APU, a 7-inch touchscreen, full-size controls and trackpads, running SteamOS with access to your Steam library.</p><ul><li>Custom AMD Zen 2 + RDNA 2 APU</li><li>7-inch 1280x800 touchscreen</li><li>Two trackpads, gyro and back grip buttons</li><li>Dock it to play on a TV or use it as a Linux desktop</li></ul>",
+          "specs": {
+            "Brand": "Valve",
+            "Screen Size": "7\"",
+            "Resolution": "1280x800",
+            "Refresh Rate": "60 Hz",
+            "Processor": "AMD APU, Zen 2 4-core / 8-thread",
+            "Graphics": "8 RDNA 2 CUs, 1.6 TFLOPS",
+            "Operating System": "SteamOS 3",
+            "Battery Life": "2 to 8 hours",
+            "Model Year": "2022"
+          },
+          "stock": 5,
+          "reorder": {"min": 2, "max": 8},
+          "tags": ["Gaming", "Travel"],
+          "alternatives": ["VT-CON-002", "VT-CON-005"]
+        },
+        {
+          "sku": "VT-CON-002",
+          "name": "Nintendo Switch 2",
+          "brand": "Nintendo",
+          "vendor": "Nintendo",
+          "list_price": 1599.0,
+          "cost": 1330.0,
+          "weight": 0.534,
+          "short": "The next Nintendo Switch: a bigger 1080p 120 Hz screen, 4K output when docked and magnetic Joy-Con 2.",
+          "description": "<p>Nintendo Switch 2 has a larger 7.9-inch 1080p screen at up to 120 Hz, outputs up to 4K on the TV and comes with new magnetic Joy-Con 2 controllers that also work as a mouse.</p><ul><li>7.9-inch 1080p screen, HDR, up to 120 Hz</li><li>Up to 4K output in TV mode</li><li>256 GB storage, microSD Express support</li><li>GameChat built in; plays most Switch 1 games</li></ul>",
+          "specs": {
+            "Brand": "Nintendo",
+            "Screen Size": "7.9\"",
+            "Resolution": "1920x1080 handheld, up to 4K docked",
+            "Refresh Rate": "Up to 120 Hz",
+            "Panel Type": "LCD, HDR10",
+            "Processor": "Custom NVIDIA processor",
+            "Battery Life": "2 to 6.5 hours",
+            "Model Year": "2025"
+          },
+          "variants": [
+            {"attribute": "Edition", "values": [["Standard", 0], ["Mario Kart World Bundle", 165]]}
+          ],
+          "stock": {"Standard": 9, "Mario Kart World Bundle": 2},
+          "reorder": {"min": 4, "max": 16},
+          "tags": ["Gaming", "Gift Idea"],
+          "ribbon": "New",
+          "alternatives": ["VT-CON-005", "VT-CON-007"],
+          "featured": true
+        }
+      ]
+    },
+    {
+      "name": "Controllers",
+      "description": "Official and third-party gamepads for PlayStation, Xbox, Nintendo Switch and PC.",
+      "products": [
+        {
+          "sku": "VT-CTL-001",
+          "name": "Sony DualSense Wireless Controller",
+          "brand": "Sony",
+          "vendor": "Sony Interactive Entertainment",
+          "list_price": 249.0,
+          "cost": 175.0,
+          "weight": 0.28,
+          "short": "The PS5 controller with haptic feedback, adaptive triggers, built-in mic and speaker.",
+          "description": "<p>The DualSense controller adds haptic feedback and adaptive triggers that let you feel tension and impacts in supported games.</p><ul><li>Haptic feedback and adaptive triggers</li><li>Built-in microphone, speaker and 3.5 mm headset jack</li><li>Create button for capturing and sharing gameplay</li><li>Rechargeable via USB-C; works with PC, Mac and mobile</li></ul>",
+          "specs": {
+            "Brand": "Sony",
+            "Compatibility": "PS5, PC, Mac, Android, iOS",
+            "Connectivity": "Bluetooth 5.1, USB-C",
+            "Battery Life": "About 6 to 12 hours",
+            "Charging": "USB-C",
+            "Audio Output": "3.5 mm jack, built-in speaker and mic",
+            "Weight": "280 g"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["White", 0], ["Black", 0], ["Red", 20], ["Blue", 20]]}
+          ],
+          "stock": {"White": 72, "Black": 26, "Red": 9, "Blue": 11},
+          "reorder": {"min": 15, "max": 60},
+          "tags": ["Gaming", "Wireless", "Gift Idea"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-CTL-007"]
+        },
+        {
+          "sku": "VT-CTL-002",
+          "name": "Microsoft Xbox Wireless Controller",
+          "brand": "Microsoft",
+          "vendor": "Microsoft",
+          "list_price": 199.0,
+          "cost": 140.0,
+          "weight": 0.28,
+          "short": "Xbox Series X|S controller with textured grips, hybrid D-pad and Share button, which also works on PC and mobile.",
+          "description": "<p>The Xbox Wireless Controller has sculpted surfaces, textured grips and a hybrid D-pad. It connects to Xbox, Windows, Android and iOS.</p><ul><li>Hybrid D-pad and textured grip</li><li>Share button for screenshots and clips</li><li>Xbox Wireless and Bluetooth</li><li>Up to 40 hours on 2 AA batteries</li></ul>",
+          "specs": {
+            "Brand": "Microsoft",
+            "Compatibility": "Xbox Series X|S, Xbox One, Windows, Android, iOS",
+            "Connectivity": "Xbox Wireless, Bluetooth, USB-C",
+            "Battery Life": "Up to 40 hours (2x AA)",
+            "Audio Output": "3.5 mm jack",
+            "Model Year": "2020"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Black", 0], ["White", 0], ["Blue", 15], ["Gold", 40]]}
+          ],
+          "stock": {"Black": 18, "White": 16, "Blue": 10, "Gold": 4},
+          "reorder": {"min": 8, "max": 30},
+          "tags": ["Gaming", "Wireless"],
+          "alternatives": ["VT-CTL-003"]
+        },
+        {
+          "sku": "VT-CTL-003",
+          "name": "Microsoft Xbox Elite Wireless Controller Series 2",
+          "brand": "Microsoft",
+          "vendor": "Microsoft",
+          "list_price": 599.0,
+          "compare_list_price": 699.0,
+          "cost": 470.0,
+          "weight": 0.345,
+          "short": "Pro-grade Xbox controller with adjustable-tension thumbsticks, paddles and a rechargeable 40-hour battery.",
+          "description": "<p>The Elite Series 2 is fully customizable: adjustable-tension thumbsticks, shorter hair-trigger locks, four swappable paddles and up to three custom profiles.</p><ul><li>Adjustable-tension thumbsticks and trigger locks</li><li>Four back paddles and interchangeable components</li><li>Up to 40 hours rechargeable battery, charging case included</li><li>Wrap-around rubberized grip</li></ul>",
+          "specs": {
+            "Brand": "Microsoft",
+            "Compatibility": "Xbox Series X|S, Xbox One, Windows",
+            "Connectivity": "Xbox Wireless, Bluetooth, USB-C",
+            "Battery Life": "Up to 40 hours (rechargeable)",
+            "Charging": "USB-C, charging dock in case",
+            "Material": "Rubberized grip, stainless-steel paddles",
+            "Weight": "345 g"
+          },
+          "stock": 3,
+          "tags": ["Gaming", "Premium", "Wireless"],
+          "alternatives": ["VT-CTL-002", "VT-CTL-007"]
+        },
+        {
+          "sku": "VT-CTL-004",
+          "name": "Nintendo Switch Pro Controller",
+          "brand": "Nintendo",
+          "vendor": "Nintendo",
+          "list_price": 239.0,
+          "cost": 175.0,
+          "weight": 0.246,
+          "short": "Nintendo's traditional-style controller for Switch, with HD rumble, motion controls and 40-hour battery.",
+          "description": "<p>For long sessions on the TV, the Pro Controller gives you full-size grips and sticks, HD rumble, motion controls and built-in amiibo support.</p><ul><li>HD rumble and motion controls</li><li>Built-in amiibo NFC reader</li><li>Up to 40 hours of play per charge</li><li>USB-C charging and wired play</li></ul>",
+          "specs": {
+            "Brand": "Nintendo",
+            "Compatibility": "Nintendo Switch, Switch OLED, Switch 2",
+            "Connectivity": "Bluetooth, USB-C wired",
+            "Battery Life": "Up to 40 hours",
+            "Charging": "USB-C, about 6 hours",
+            "Weight": "246 g"
+          },
+          "stock": 12,
+          "reorder": {"min": 4, "max": 15},
+          "tags": ["Gaming", "Wireless"],
+          "alternatives": ["VT-CTL-006", "VT-CTL-005"]
+        },
+        {
+          "sku": "VT-CTL-005",
+          "name": "Nintendo Joy-Con (L)/(R) Pair",
+          "brand": "Nintendo",
+          "vendor": "Nintendo",
+          "list_price": 279.0,
+          "cost": 205.0,
+          "weight": 0.101,
+          "short": "Extra pair of Joy-Con for Switch: use them together or as two controllers for instant multiplayer.",
+          "description": "<p>Joy-Con can be used together as one controller, split for two-player games or attached to the console for handheld play.</p><ul><li>HD rumble and motion sensors</li><li>IR motion camera in the right Joy-Con</li><li>Wrist straps included</li><li>About 20 hours of battery life</li></ul>",
+          "specs": {
+            "Brand": "Nintendo",
+            "Compatibility": "Nintendo Switch, Switch OLED",
+            "Connectivity": "Bluetooth",
+            "Battery Life": "About 20 hours",
+            "Charging": "Via console or Joy-Con charging grip",
+            "Weight": "49 g (L), 52 g (R)"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Gray", 0], ["Neon Blue/Red", 0]]}
+          ],
+          "stock": 0,
+          "reorder": {"min": 5, "max": 20},
+          "tags": ["Gaming", "Wireless"],
+          "alternatives": ["VT-CTL-004"]
+        },
+        {
+          "sku": "VT-CTL-006",
+          "name": "8BitDo Ultimate C Bluetooth Controller",
+          "brand": "8BitDo",
+          "vendor": "8BitDo",
+          "list_price": 99.0,
+          "cost": 55.0,
+          "weight": 0.22,
+          "short": "Affordable wireless Switch controller with rumble, turbo and motion controls.",
+          "description": "<p>A budget-friendly Bluetooth controller for Nintendo Switch with full-size grips, a responsive D-pad, rumble and six-axis motion controls.</p><ul><li>Bluetooth for Switch, Switch OLED and Switch Lite</li><li>Rumble vibration and 6-axis motion</li><li>Turbo function</li><li>Rechargeable 480 mAh battery, about 25 hours</li></ul>",
+          "specs": {
+            "Brand": "8BitDo",
+            "Compatibility": "Nintendo Switch, Switch OLED, Switch Lite",
+            "Connectivity": "Bluetooth",
+            "Battery Life": "About 25 hours (480 mAh)",
+            "Charging": "USB-C",
+            "Model Year": "2023"
+          },
+          "stock": 85,
+          "tags": ["Gaming", "Budget Pick", "Wireless"],
+          "alternatives": ["VT-CTL-004"]
+        },
+        {
+          "sku": "VT-CTL-007",
+          "name": "Sony DualSense Edge Wireless Controller",
+          "brand": "Sony",
+          "vendor": "Sony Interactive Entertainment",
+          "list_price": 799.0,
+          "cost": 620.0,
+          "weight": 0.325,
+          "short": "PS5 pro controller with swappable stick modules, back buttons and custom profiles.",
+          "description": "<p>The DualSense Edge adds pro features to the DualSense: replaceable stick modules, remappable back buttons, adjustable trigger stops and on-the-fly profile switching.</p><ul><li>Replaceable stick modules</li><li>Two pairs of swappable back buttons</li><li>Adjustable trigger stops and stick sensitivity</li><li>Braided USB-C cable and carrying case included</li></ul>",
+          "specs": {
+            "Brand": "Sony",
+            "Compatibility": "PS5, PC",
+            "Connectivity": "Bluetooth, USB-C",
+            "Battery Life": "About 3 to 7 hours",
+            "Material": "Swappable stick modules and back buttons",
+            "Weight": "325 g",
+            "Model Year": "2023"
+          },
+          "stock": 2,
+          "tags": ["Gaming", "Premium", "Wireless"],
+          "ribbon": "Limited",
+          "alternatives": ["VT-CTL-001", "VT-CTL-003"]
+        }
+      ]
+    },
+    {
+      "name": "Gaming Chairs",
+      "description": "Racing-style and ergonomic chairs for long gaming and work sessions.",
+      "products": [
+        {
+          "sku": "VT-CHR-001",
+          "name": "AutoFull Racing Gaming Chair",
+          "brand": "AutoFull",
+          "vendor": "AutoFull",
+          "list_price": 899.0,
+          "cost": 560.0,
+          "weight": 21.0,
+          "short": "Racing-style gaming chair in PU leather with lumbar and neck pillows, 4D-style armrests and deep recline.",
+          "description": "<p>A classic racing-bucket gaming chair: high back, bolstered sides, removable lumbar and headrest pillows, and a reclining backrest for breaks between matches.</p><ul><li>Breathable PU leather over high-density foam</li><li>Backrest reclines up to 155° with tilt lock</li><li>Adjustable armrests and seat height (class-4 gas lift)</li><li>Lumbar cushion and headrest pillow included</li></ul>",
+          "specs": {
+            "Brand": "AutoFull",
+            "Material": "PU leather, high-density foam",
+            "Form Factor": "Racing-style high back, 155° recline",
+            "Max Load": "150 kg",
+            "Weight": "21 kg"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Black/Red", 0], ["Black", 0]]}
+          ],
+          "stock": {"Black/Red": 4, "Black": 9},
+          "reorder": {"min": 3, "max": 10},
+          "tags": ["Gaming", "Budget Pick"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-CHR-002"]
+        },
+        {
+          "sku": "VT-CHR-002",
+          "name": "IKEA MARKUS Office Chair",
+          "brand": "IKEA",
+          "vendor": "IKEA",
+          "list_price": 549.0,
+          "cost": 330.0,
+          "weight": 21.5,
+          "short": "Best-selling high-back swivel chair with built-in headrest, mesh back and a 10-year guarantee.",
+          "description": "<p>MARKUS is a high-back chair with a built-in headrest and a mesh back that lets air through during long sessions. It's a popular low-cost pick for desk gamers and home offices.</p><ul><li>High back with integrated headrest</li><li>Breathable mesh backrest</li><li>Tilt tension adjustment and tilt lock</li><li>10-year guarantee</li></ul>",
+          "specs": {
+            "Brand": "IKEA",
+            "Material": "Coated fabric seat, polyester mesh back",
+            "Form Factor": "High back with built-in headrest",
+            "Max Load": "110 kg",
+            "Dimensions": "62 x 60 x 129-140 cm",
+            "Warranty": "10 years"
+          },
+          "stock": 64,
+          "reorder": {"min": 10, "max": 40},
+          "tags": ["Work From Home", "Budget Pick", "Student Pick"],
+          "alternatives": ["VT-CHR-001", "VT-CHR-003"]
+        },
+        {
+          "sku": "VT-CHR-003",
+          "name": "Steelcase Leap V2 with Headrest",
+          "brand": "Steelcase",
+          "vendor": "Steelcase",
+          "list_price": 3299.0,
+          "cost": 2550.0,
+          "weight": 30.0,
+          "short": "Ergonomic task chair whose LiveBack technology flexes with your spine, with an adjustable headrest.",
+          "description": "<p>The Leap V2 is one of the most adjustable ergonomic chairs available. Its LiveBack backrest changes shape as you move, and the Natural Glide system keeps you close to the desk as you recline.</p><ul><li>LiveBack flexing backrest and adjustable lower-back firmness</li><li>Natural Glide recline with 5-position lock</li><li>4D adjustable armrests and seat depth</li><li>Adjustable headrest</li></ul>",
+          "specs": {
+            "Brand": "Steelcase",
+            "Material": "Fabric upholstery, LiveBack backrest",
+            "Form Factor": "Ergonomic task chair with headrest",
+            "Max Load": "180 kg",
+            "Warranty": "12 years"
+          },
+          "stock": 2,
+          "tags": ["Work From Home", "Premium"],
+          "alternatives": ["VT-CHR-004", "VT-CHR-005"]
+        },
+        {
+          "sku": "VT-CHR-004",
+          "name": "Steelcase Gesture",
+          "brand": "Steelcase",
+          "vendor": "Steelcase",
+          "list_price": 3999.0,
+          "compare_list_price": 4399.0,
+          "cost": 3100.0,
+          "weight": 32.0,
+          "short": "Ergonomic chair designed around how we use devices, with 360° arms and a 3D LiveBack.",
+          "description": "<p>Gesture was designed after studying postures people take with laptops, tablets and phones. Its arms pivot like a human arm to support you in every position.</p><ul><li>360° arms that move like a human arm</li><li>3D LiveBack follows the spine</li><li>Adaptive bolstering seat</li><li>Core Equalizer recline system</li></ul>",
+          "specs": {
+            "Brand": "Steelcase",
+            "Material": "Fabric, 3D LiveBack backrest",
+            "Form Factor": "Ergonomic task chair, 360° arms",
+            "Max Load": "180 kg",
+            "Warranty": "12 years"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Blue", 0], ["Black", 0]]}
+          ],
+          "stock": {"Blue": 3, "Black": 5},
+          "tags": ["Work From Home", "Premium"],
+          "alternatives": ["VT-CHR-003", "VT-CHR-006"]
+        },
+        {
+          "sku": "VT-CHR-005",
+          "name": "Herman Miller Aeron Chair",
+          "brand": "Herman Miller",
+          "vendor": "Herman Miller",
+          "list_price": 4999.0,
+          "cost": 3900.0,
+          "weight": 19.5,
+          "short": "The iconic mesh ergonomic chair, available in three sizes, with PostureFit SL back support.",
+          "description": "<p>The Aeron's breathable Pellicle mesh distributes weight evenly and keeps you cool. It comes in three sizes so it fits your body, not the other way round.</p><ul><li>8Z Pellicle elastomeric suspension mesh</li><li>PostureFit SL sacral and lumbar support</li><li>Harmonic 2 tilt with forward tilt option</li><li>Available in sizes A, B and C</li></ul>",
+          "specs": {
+            "Brand": "Herman Miller",
+            "Material": "8Z Pellicle mesh, recycled aluminium",
+            "Form Factor": "Ergonomic mesh task chair",
+            "Max Load": "159 kg (size B)",
+            "Warranty": "12 years"
+          },
+          "variants": [
+            {"attribute": "Size", "values": [["Size B", 0], ["Size A", 0], ["Size C", 150]]}
+          ],
+          "stock": 0,
+          "reorder": {"min": 1, "max": 4},
+          "tags": ["Work From Home", "Premium", "Creator"],
+          "alternatives": ["VT-CHR-006", "VT-CHR-003"]
+        },
+        {
+          "sku": "VT-CHR-006",
+          "name": "Herman Miller Embody Chair",
+          "brand": "Herman Miller",
+          "vendor": "Herman Miller",
+          "list_price": 6499.0,
+          "cost": 5100.0,
+          "weight": 22.7,
+          "short": "Pixelated-support ergonomic chair that adapts to every movement, popular with pro gamers.",
+          "description": "<p>Embody's pixelated support system and flexible spine-like back adapt to every micro-movement, which encourages healthy circulation during long sessions at the desk.</p><ul><li>Pixelated support mat with four layers</li><li>Backfit adjustment for your spine's natural curve</li><li>Narrow back for free arm movement</li><li>Rhythm fabric upholstery</li></ul>",
+          "specs": {
+            "Brand": "Herman Miller",
+            "Material": "Rhythm fabric, pixelated support",
+            "Form Factor": "Ergonomic task chair, Backfit",
+            "Max Load": "136 kg",
+            "Warranty": "12 years"
+          },
+          "variants": [
+            {"attribute": "Color", "values": [["Orange", 0], ["Black", 0]]}
+          ],
+          "stock": {"Orange": 1, "Black": 3},
+          "tags": ["Gaming", "Premium", "Work From Home"],
+          "ribbon": "Limited",
+          "alternatives": ["VT-CHR-005", "VT-CHR-004"]
+        }
+      ]
+    }
+  ]
+}

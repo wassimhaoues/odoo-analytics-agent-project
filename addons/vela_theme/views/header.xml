@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tracking contract (.claude/rules/tracking-contract.md). Category links use the
+         category slug (stable, rename-proof), others the menu name. Odoo-core header
+         controls (cart, search, language, sign in, mobile menu) are annotated in
+         static/src/js/tracking_annotations.js. -->
+    <template id="submenu_tracking" inherit_id="website.submenu" name="Vela: menu tracking">
+        <xpath expr="//a[@t-att-href='submenu._clean_url()']" position="before">
+            <t t-set="vela_url" t-value="submenu._clean_url() or ''"/>
+            <t t-set="vela_cat" t-value="vela_url.rstrip('/').split('/')[-1].rsplit('-', 1)[0] if '/shop/category/' in vela_url else False"/>
+        </xpath>
+        <xpath expr="//a[@t-att-href='submenu._clean_url()']" position="attributes">
+            <attribute name="t-att-data-track">'header.nav.' + (vela_cat.replace('-', '_') if vela_cat else '_'.join(submenu.name.lower().replace('&amp;', 'and').split()))</attribute>
+            <attribute name="t-att-data-track-category">vela_cat or None</attribute>
+            <attribute name="data-track-type">click</attribute>
+        </xpath>
+    </template>
+
+    <template id="logo_tracking" inherit_id="website.option_header_brand_logo" name="Vela: logo tracking">
+        <xpath expr="//a[@data-name='Navbar Logo']" position="attributes">
+            <attribute name="data-track">header.logo.home</attribute>
+            <attribute name="data-track-type">click</attribute>
+        </xpath>
+    </template>
+</odoo>

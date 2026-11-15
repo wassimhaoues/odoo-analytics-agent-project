@@ -1,0 +1,503 @@
+{
+  "category": "Smart Home",
+  "description": "Connected lights, cameras and plugs that make any home smarter, safer and more efficient.",
+  "vendors": {
+    "Signify (Philips Hue)": {"lead_days": 12},
+    "LIFX": {"lead_days": 18},
+    "Nanoleaf": {"lead_days": 15},
+    "Google": {"lead_days": 14},
+    "Ring": {"lead_days": 10},
+    "Wyze": {"lead_days": 21},
+    "TP-Link": {"lead_days": 7},
+    "Blink": {"lead_days": 10},
+    "Belkin": {"lead_days": 14},
+    "Verisure": {"lead_days": 10},
+    "AVM": {"lead_days": 9},
+    "EDP Comercial": {"lead_days": 12}
+  },
+  "extra_specs": {
+    "Brightness": "Performance",
+    "Color Temperature": "Performance",
+    "Socket": "Physical",
+    "Power Consumption": "Battery & Power",
+    "Power Source": "Battery & Power",
+    "Hub Required": "General",
+    "Video Storage": "Camera",
+    "Two-Way Audio": "Audio",
+    "Max Load": "Battery & Power",
+    "Energy Monitoring": "Battery & Power",
+    "Plug Type": "Physical"
+  },
+  "subcategories": [
+    {
+      "name": "Smart Lights",
+      "description": "App- and voice-controlled bulbs, light strips and light panels with millions of colours.",
+      "products": [
+        {
+          "sku": "VT-LGT-001",
+          "name": "Philips Hue White A60 E27 Smart Bulb",
+          "brand": "Philips Hue",
+          "vendor": "Signify (Philips Hue)",
+          "list_price": 59.0,
+          "cost": 36.0,
+          "weight": 0.09,
+          "short": "Dimmable 806 lm warm-white smart bulb with Bluetooth and Zigbee, works with or without a Hue Bridge.",
+          "description": "<p>The easiest way to start a smart home. Screw it in, pair it over Bluetooth, and control it from your phone or your voice. Add a Hue Bridge later to unlock automations and remote control.</p><ul><li>806 lumen soft warm white (2700 K), fully dimmable</li><li>Bluetooth control out of the box, Zigbee for the Hue Bridge</li><li>Works with Alexa, Google Assistant and Apple Home (with Bridge)</li><li>Up to 25,000 hours of rated life</li></ul>",
+          "specs": {
+            "Brand": "Philips Hue",
+            "Brightness": "806 lm",
+            "Color Temperature": "2700 K (warm white)",
+            "Socket": "E27",
+            "Power Consumption": "9 W",
+            "Wireless Standard": "Zigbee + Bluetooth",
+            "Smart Assistant": "Alexa, Google Assistant, Apple Home (via Bridge)"
+          },
+          "variants": [
+            {"attribute": "Pack", "values": [["1-Pack", 0], ["2-Pack", 49], ["4-Pack", 139]]}
+          ],
+          "stock": {"1-Pack": 92, "2-Pack": 44, "4-Pack": 18},
+          "reorder": {"min": 20, "max": 80},
+          "tags": ["Smart Home", "Budget Pick", "Gift Idea"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-LGT-004"],
+          "featured": true
+        },
+        {
+          "sku": "VT-LGT-002",
+          "name": "Philips Hue White and Color Ambiance Lightstrip Plus",
+          "brand": "Philips Hue",
+          "vendor": "Signify (Philips Hue)",
+          "list_price": 299.0,
+          "compare_list_price": 349.0,
+          "cost": 218.0,
+          "weight": 0.35,
+          "short": "Flexible 2 m colour LED strip with 16 million colours, extendable up to 10 m.",
+          "description": "<p>Bend it, cut it and stick it behind a TV, under cabinets or along a desk for vivid colour accent lighting that syncs with your music, movies and games.</p><ul><li>16 million colours plus tunable white (2000–6500 K)</li><li>1600 lm on the 2 m base strip</li><li>Cuttable and extendable up to 10 m</li><li>Bluetooth and Zigbee; sync with Hue Entertainment</li></ul>",
+          "specs": {
+            "Brand": "Philips Hue",
+            "Brightness": "1600 lm (2 m)",
+            "Color Temperature": "2000–6500 K + 16 million colours",
+            "Power Consumption": "20 W",
+            "Wireless Standard": "Zigbee + Bluetooth",
+            "Smart Assistant": "Alexa, Google Assistant, Apple Home (via Bridge)"
+          },
+          "variants": [
+            {"attribute": "Length", "values": [["2 m", 0], ["3 m (2 m + 1 m extension)", 95]]}
+          ],
+          "stock": {"2 m": 3, "3 m (2 m + 1 m extension)": 2},
+          "reorder": {"min": 4, "max": 15},
+          "tags": ["Smart Home", "Gaming", "Creator"],
+          "alternatives": ["VT-LGT-006"]
+        },
+        {
+          "sku": "VT-LGT-003",
+          "name": "Philips Hue Bridge (2nd Gen)",
+          "brand": "Philips Hue",
+          "vendor": "Signify (Philips Hue)",
+          "list_price": 199.0,
+          "cost": 148.0,
+          "weight": 0.28,
+          "short": "The heart of a Hue system: control up to 50 lights from anywhere, with automations and routines.",
+          "description": "<p>Connect the Hue Bridge to your router to unlock the full Hue system: control lights away from home, schedule routines, and connect motion sensors, switches and entertainment sync.</p><ul><li>Controls up to 50 lights and 12 accessories</li><li>Remote access and automations in the Hue app</li><li>Works with Alexa, Google Assistant, Apple HomeKit and SmartThings</li><li>Zigbee 3.0 network, wired Ethernet connection</li></ul>",
+          "specs": {
+            "Brand": "Philips Hue",
+            "Wireless Standard": "Zigbee 3.0",
+            "Ports": "1× RJ45 Ethernet, DC power",
+            "Compatibility": "Up to 50 Hue lights and 12 accessories",
+            "Smart Assistant": "Alexa, Google Assistant, Apple HomeKit, SmartThings",
+            "Dimensions": "90 × 90 × 26 mm"
+          },
+          "stock": 14,
+          "reorder": {"min": 5, "max": 20},
+          "tags": ["Smart Home"]
+        },
+        {
+          "sku": "VT-LGT-004",
+          "name": "LIFX White 800 Wi-Fi Smart Bulb (E27)",
+          "brand": "LIFX",
+          "vendor": "LIFX",
+          "list_price": 89.0,
+          "cost": 61.0,
+          "weight": 0.21,
+          "short": "Hub-free Wi-Fi smart bulb with tunable white light from warm to daylight.",
+          "description": "<p>No hub, no bridge: the LIFX White 800 connects straight to your home Wi-Fi. Set the mood from warm candle-light to cool daylight and schedule it to wake you up gently.</p><ul><li>Tunable white 2700–6500 K</li><li>Connects directly over 2.4 GHz Wi-Fi, no hub required</li><li>Schedules, scenes and voice control</li><li>Works with Alexa and Google Assistant</li></ul>",
+          "specs": {
+            "Brand": "LIFX",
+            "Brightness": "800 lm",
+            "Color Temperature": "2700–6500 K",
+            "Socket": "E27",
+            "Power Consumption": "11 W",
+            "Wireless Standard": "Wi-Fi 2.4 GHz",
+            "Hub Required": "No"
+          },
+          "stock": 0,
+          "reorder": {"min": 6, "max": 24},
+          "tags": ["Smart Home", "Wireless"],
+          "alternatives": ["VT-LGT-001"]
+        },
+        {
+          "sku": "VT-LGT-005",
+          "name": "Nanoleaf Shapes Triangles Smarter Kit",
+          "brand": "Nanoleaf",
+          "vendor": "Nanoleaf",
+          "list_price": 649.0,
+          "cost": 492.0,
+          "weight": 1.3,
+          "short": "Modular touch-reactive light panels that turn any wall into colourful, music-synced art.",
+          "description": "<p>Design your own glowing wall art. Snap the triangular panels together in any pattern, then pick scenes that react to touch and dance to music in real time.</p><ul><li>16 million colours with tunable white 1200–6500 K</li><li>Built-in Rhythm music sync and touch control</li><li>Matter over Thread, plus Wi-Fi</li><li>Works with Alexa, Google Assistant, Apple Home and SmartThings</li></ul>",
+          "specs": {
+            "Brand": "Nanoleaf",
+            "Color Temperature": "1200–6500 K + 16 million colours",
+            "Power Consumption": "2 W per panel",
+            "Wireless Standard": "Wi-Fi 2.4 GHz, Thread (Matter)",
+            "Smart Assistant": "Alexa, Google Assistant, Apple Home, SmartThings",
+            "Material": "Polycarbonate"
+          },
+          "variants": [
+            {"attribute": "Pack", "values": [["9 Panels", 0], ["15 Panels", 329]]}
+          ],
+          "stock": {"9 Panels": 8, "15 Panels": 5},
+          "reorder": {"min": 3, "max": 12},
+          "tags": ["Smart Home", "Gaming", "Creator", "Premium"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-LGT-006", "VT-LGT-007"],
+          "featured": true
+        },
+        {
+          "sku": "VT-LGT-006",
+          "name": "Nanoleaf Lines Smarter Kit (9 Lines)",
+          "brand": "Nanoleaf",
+          "vendor": "Nanoleaf",
+          "list_price": 679.0,
+          "cost": 515.0,
+          "weight": 1.1,
+          "short": "Backlit smart light bars with dual-colour zones for a striking gaming or streaming setup.",
+          "description": "<p>Nanoleaf Lines are backlit light bars you arrange in geometric patterns. Each line has two independent colour zones, so you get rich gradients and animations that sync with your screen and music.</p><ul><li>Two colour zones per line, 16 million colours</li><li>Screen Mirror and Rhythm music sync</li><li>Wi-Fi and Thread border router built in</li><li>Works with Alexa, Google Assistant and Apple Home</li></ul>",
+          "specs": {
+            "Brand": "Nanoleaf",
+            "Color Temperature": "1200–6500 K + 16 million colours",
+            "Wireless Standard": "Wi-Fi 2.4 GHz, Thread",
+            "Smart Assistant": "Alexa, Google Assistant, Apple Home",
+            "Material": "Polycarbonate"
+          },
+          "stock": 2,
+          "reorder": {"min": 3, "max": 10},
+          "tags": ["Smart Home", "Gaming", "Creator"],
+          "ribbon": "New",
+          "alternatives": ["VT-LGT-005", "VT-LGT-002"]
+        },
+        {
+          "sku": "VT-LGT-007",
+          "name": "Nanoleaf Elements Wood Look Hexagons Smarter Kit (7 Panels)",
+          "brand": "Nanoleaf",
+          "vendor": "Nanoleaf",
+          "list_price": 899.0,
+          "compare_list_price": 999.0,
+          "cost": 690.0,
+          "weight": 1.6,
+          "short": "Wood-grain hexagon panels that look like décor by day and glow warm white by night.",
+          "description": "<p>Elements bring the warmth of natural wood to smart lighting. During the day they look like a wooden wall installation; switch them on for soft, animated warm-white light.</p><ul><li>Real wood-look veneer finish</li><li>Warm-to-cool white 1500–4000 K with motion effects</li><li>Touch-reactive panels</li><li>Works with Alexa, Google Assistant and Apple Home</li></ul>",
+          "specs": {
+            "Brand": "Nanoleaf",
+            "Color Temperature": "1500–4000 K (white only)",
+            "Wireless Standard": "Wi-Fi 2.4 GHz, Thread",
+            "Smart Assistant": "Alexa, Google Assistant, Apple Home",
+            "Material": "Wood-look veneer"
+          },
+          "stock": 4,
+          "tags": ["Smart Home", "Premium", "Gift Idea"],
+          "ribbon": "Limited",
+          "alternatives": ["VT-LGT-005"]
+        }
+      ]
+    },
+    {
+      "name": "Security Cameras",
+      "description": "Video doorbells and indoor cameras with HD video, night vision and instant phone alerts.",
+      "products": [
+        {
+          "sku": "VT-CAM-001",
+          "name": "Google Nest Doorbell (Wired, 1st Gen)",
+          "brand": "Google Nest",
+          "vendor": "Google",
+          "list_price": 699.0,
+          "compare_list_price": 799.0,
+          "cost": 528.0,
+          "weight": 0.25,
+          "short": "Wired HD video doorbell with head-to-toe view, 24/7 streaming and familiar face alerts.",
+          "description": "<p>See who's at the door from anywhere. The wired Nest Doorbell streams HDR video around the clock and recognises familiar faces (with Nest Aware), so you know who is there before you answer.</p><ul><li>1600 × 1200 HDR video with 4:3 head-to-toe view</li><li>24/7 continuous streaming on existing doorbell wiring</li><li>Night vision and two-way talk</li><li>Works with Google Assistant and Google Home displays</li></ul>",
+          "specs": {
+            "Brand": "Google Nest",
+            "Video Resolution": "1600 × 1200 HDR",
+            "Field of View": "160° diagonal",
+            "Night Vision": "Infrared",
+            "Wireless Standard": "Wi-Fi 802.11n 2.4/5 GHz",
+            "Power Source": "Wired (16–24 V AC doorbell wiring)",
+            "Video Storage": "Cloud (Nest Aware subscription)",
+            "Smart Assistant": "Google Assistant"
+          },
+          "stock": 7,
+          "reorder": {"min": 3, "max": 10},
+          "tags": ["Smart Home", "Premium"],
+          "alternatives": ["VT-CAM-002", "VT-CAM-003"]
+        },
+        {
+          "sku": "VT-CAM-002",
+          "name": "Ring Video Doorbell 3 Plus",
+          "brand": "Ring",
+          "vendor": "Ring",
+          "list_price": 649.0,
+          "cost": 492.0,
+          "weight": 0.3,
+          "short": "Battery video doorbell with 4-second Pre-Roll, dual-band Wi-Fi and customisable motion zones.",
+          "description": "<p>Install it in minutes on battery or hardwire it to your doorbell. 4-second Pre-Roll video shows what happened right before motion was detected, so you never miss the start of an event.</p><ul><li>1080p HD video with 4-second black-and-white Pre-Roll</li><li>Removable Quick Release battery or wired power</li><li>Dual-band 2.4/5 GHz Wi-Fi</li><li>Works with Amazon Alexa</li></ul>",
+          "specs": {
+            "Brand": "Ring",
+            "Video Resolution": "1080p HD",
+            "Field of View": "160° horizontal, 90° vertical",
+            "Night Vision": "Infrared",
+            "Wireless Standard": "Wi-Fi 2.4/5 GHz",
+            "Power Source": "Quick Release battery or doorbell wiring",
+            "Video Storage": "Cloud (Ring Protect subscription)",
+            "Smart Assistant": "Amazon Alexa"
+          },
+          "stock": 0,
+          "reorder": {"min": 4, "max": 12},
+          "tags": ["Smart Home", "Wireless"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-CAM-003", "VT-CAM-001"],
+          "featured": true
+        },
+        {
+          "sku": "VT-CAM-003",
+          "name": "Ring Video Doorbell Pro",
+          "brand": "Ring",
+          "vendor": "Ring",
+          "list_price": 729.0,
+          "cost": 556.0,
+          "weight": 0.2,
+          "short": "Slim hardwired video doorbell with 1080p HD video and interchangeable faceplates.",
+          "description": "<p>A sleek, compact doorbell for homes with existing doorbell wiring. Get 1080p video, advanced motion zones and two-way talk, and match your door with four interchangeable faceplates.</p><ul><li>1080p HD video with live view on demand</li><li>Hardwired: no batteries to charge</li><li>Custom motion zones and privacy masking</li><li>Works with Amazon Alexa</li></ul>",
+          "specs": {
+            "Brand": "Ring",
+            "Video Resolution": "1080p HD",
+            "Field of View": "160° horizontal, 90° vertical",
+            "Night Vision": "Infrared",
+            "Wireless Standard": "Wi-Fi 2.4/5 GHz",
+            "Power Source": "Wired (16–24 V AC doorbell wiring)",
+            "Smart Assistant": "Amazon Alexa"
+          },
+          "stock": 3,
+          "reorder": {"min": 2, "max": 8},
+          "tags": ["Smart Home"],
+          "alternatives": ["VT-CAM-002", "VT-CAM-001"]
+        },
+        {
+          "sku": "VT-CAM-004",
+          "name": "Wyze Cam v2 1080p Indoor Camera",
+          "brand": "Wyze",
+          "vendor": "Wyze",
+          "list_price": 99.0,
+          "compare_list_price": 129.0,
+          "cost": 62.0,
+          "weight": 0.12,
+          "short": "Compact 1080p indoor camera with night vision, motion alerts and local microSD recording.",
+          "description": "<p>An affordable way to keep an eye on your home, pets or baby. The cube-shaped Wyze Cam v2 records 1080p video, sends motion and sound alerts, and can record continuously to a microSD card.</p><ul><li>1080p Full HD with 8× digital zoom</li><li>Infrared night vision</li><li>Free 12-second cloud clips plus microSD recording</li><li>Works with Alexa and Google Assistant</li></ul>",
+          "specs": {
+            "Brand": "Wyze",
+            "Video Resolution": "1080p Full HD",
+            "Field of View": "110° diagonal",
+            "Night Vision": "Infrared",
+            "Wireless Standard": "Wi-Fi 2.4 GHz",
+            "Video Storage": "microSD (up to 32 GB) + free cloud clips",
+            "Two-Way Audio": "Yes"
+          },
+          "variants": [
+            {"attribute": "Pack", "values": [["1-Pack", 0], ["2-Pack", 89]]}
+          ],
+          "stock": {"1-Pack": 38, "2-Pack": 12},
+          "reorder": {"min": 10, "max": 40},
+          "tags": ["Smart Home", "Budget Pick"],
+          "alternatives": ["VT-CAM-005", "VT-CAM-006"]
+        },
+        {
+          "sku": "VT-CAM-005",
+          "name": "TP-Link Tapo C100 Home Security Wi-Fi Camera",
+          "brand": "TP-Link",
+          "vendor": "TP-Link",
+          "list_price": 89.0,
+          "cost": 51.0,
+          "weight": 0.16,
+          "short": "1080p indoor Wi-Fi camera with night vision, motion detection and microSD storage.",
+          "description": "<p>Keep watch over your home for less. The Tapo C100 streams 1080p video to your phone, alerts you on motion and records locally to a microSD card. No subscription needed.</p><ul><li>1080p Full HD live view</li><li>Night vision up to 9 m</li><li>Motion detection and notifications</li><li>Local microSD recording, two-way audio</li></ul>",
+          "specs": {
+            "Brand": "TP-Link",
+            "Video Resolution": "1080p Full HD",
+            "Night Vision": "Infrared, up to 9 m",
+            "Wireless Standard": "Wi-Fi 2.4 GHz",
+            "Video Storage": "microSD (up to 256 GB)",
+            "Two-Way Audio": "Yes",
+            "Smart Assistant": "Alexa, Google Assistant"
+          },
+          "variants": [
+            {"attribute": "Pack", "values": [["1-Pack", 0], ["2-Pack", 79]]}
+          ],
+          "stock": {"1-Pack": 96, "2-Pack": 34},
+          "reorder": {"min": 15, "max": 60},
+          "tags": ["Smart Home", "Budget Pick", "Gift Idea"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-CAM-004", "VT-CAM-006"]
+        },
+        {
+          "sku": "VT-CAM-006",
+          "name": "Blink Mini Indoor Smart Security Camera",
+          "brand": "Blink",
+          "vendor": "Blink",
+          "list_price": 119.0,
+          "cost": 77.0,
+          "weight": 0.05,
+          "short": "Tiny plug-in 1080p camera with motion detection, night vision and Alexa integration.",
+          "description": "<p>A compact plug-in camera that fits anywhere indoors. Blink Mini records 1080p HD video, sends motion alerts to your phone, and lets you talk through it with two-way audio.</p><ul><li>1080p HD video with infrared night vision</li><li>Motion detection with custom zones</li><li>Two-way audio</li><li>Works with Amazon Alexa</li></ul>",
+          "specs": {
+            "Brand": "Blink",
+            "Video Resolution": "1080p HD",
+            "Field of View": "110° diagonal",
+            "Night Vision": "Infrared",
+            "Wireless Standard": "Wi-Fi 2.4 GHz",
+            "Power Source": "USB plug-in",
+            "Smart Assistant": "Amazon Alexa"
+          },
+          "variants": [
+            {"attribute": "Pack", "values": [["1-Pack", 0], ["2-Pack", 99]]}
+          ],
+          "stock": {"1-Pack": 21, "2-Pack": 9},
+          "tags": ["Smart Home", "Budget Pick"],
+          "alternatives": ["VT-CAM-004", "VT-CAM-005"]
+        }
+      ]
+    },
+    {
+      "name": "Smart Plugs",
+      "description": "Turn any appliance smart: schedule it, switch it from your phone and track energy use.",
+      "products": [
+        {
+          "sku": "VT-PLG-001",
+          "name": "TP-Link Kasa HS110 Smart Wi-Fi Plug with Energy Monitoring",
+          "brand": "TP-Link",
+          "vendor": "TP-Link",
+          "list_price": 79.0,
+          "cost": 45.0,
+          "weight": 0.13,
+          "short": "Wi-Fi smart plug with real-time energy monitoring, schedules and voice control. No hub needed.",
+          "description": "<p>Plug it in, connect it to Wi-Fi and control any lamp or appliance from the Kasa app. The HS110 also measures power use, so you can see what each device really costs you.</p><ul><li>Real-time and historical energy monitoring</li><li>Schedules, timers and Away Mode</li><li>No hub required: connects over 2.4 GHz Wi-Fi</li><li>Works with Alexa and Google Assistant</li></ul>",
+          "specs": {
+            "Brand": "TP-Link",
+            "Max Load": "16 A / 3680 W",
+            "Energy Monitoring": "Yes",
+            "Wireless Standard": "Wi-Fi 2.4 GHz",
+            "Hub Required": "No",
+            "Smart Assistant": "Alexa, Google Assistant",
+            "Plug Type": "EU (Schuko, Type F)"
+          },
+          "variants": [
+            {"attribute": "Pack", "values": [["1-Pack", 0], ["2-Pack", 69], ["4-Pack", 199]]}
+          ],
+          "stock": {"1-Pack": 88, "2-Pack": 46, "4-Pack": 15},
+          "reorder": {"min": 20, "max": 80},
+          "tags": ["Smart Home", "Budget Pick", "Gift Idea"],
+          "ribbon": "Best Seller",
+          "alternatives": ["VT-PLG-004", "VT-PLG-002"],
+          "featured": true
+        },
+        {
+          "sku": "VT-PLG-002",
+          "name": "Wemo Mini Smart Plug (F7C063)",
+          "brand": "Wemo",
+          "vendor": "Belkin",
+          "list_price": 75.0,
+          "cost": 46.0,
+          "weight": 0.1,
+          "short": "Compact Wi-Fi smart plug that leaves the second outlet free; works with HomeKit, Alexa and Google.",
+          "description": "<p>Wemo Mini's slim design lets you stack two plugs in the same wall outlet. Control lamps, fans and coffee makers from anywhere, set schedules, or let Away Mode randomise your lights while you travel.</p><ul><li>Space-saving design, doesn't block the second outlet</li><li>Schedules, timers and Away Mode</li><li>Connects over 2.4 GHz Wi-Fi, no hub required</li><li>Works with Apple HomeKit, Alexa and Google Assistant</li></ul>",
+          "specs": {
+            "Brand": "Wemo",
+            "Max Load": "15 A / 1800 W",
+            "Energy Monitoring": "No",
+            "Wireless Standard": "Wi-Fi 2.4 GHz",
+            "Hub Required": "No",
+            "Smart Assistant": "Apple HomeKit, Alexa, Google Assistant",
+            "Plug Type": "US (Type B)"
+          },
+          "stock": 0,
+          "reorder": {"min": 6, "max": 24},
+          "tags": ["Smart Home", "Apple Ecosystem"],
+          "alternatives": ["VT-PLG-001"]
+        },
+        {
+          "sku": "VT-PLG-003",
+          "name": "Verisure SmartPlug",
+          "brand": "Verisure",
+          "vendor": "Verisure",
+          "list_price": 149.0,
+          "cost": 98.0,
+          "weight": 0.12,
+          "short": "Smart plug for the Verisure alarm system: switch appliances remotely and automate them with your alarm.",
+          "description": "<p>Add smart control to a Verisure home alarm. Switch lamps and appliances from the Verisure app, schedule them, or have lights turn on automatically when the alarm is disarmed.</p><ul><li>Remote on/off from the Verisure app</li><li>Schedules and alarm-linked automations</li><li>Simulate presence while you are away</li><li>Requires a Verisure alarm hub</li></ul>",
+          "specs": {
+            "Brand": "Verisure",
+            "Hub Required": "Yes (Verisure alarm hub)",
+            "Compatibility": "Verisure home alarm systems",
+            "Plug Type": "EU (Schuko, Type F)"
+          },
+          "stock": 2,
+          "tags": ["Smart Home"],
+          "alternatives": ["VT-PLG-004"]
+        },
+        {
+          "sku": "VT-PLG-004",
+          "name": "AVM FRITZ!DECT 200 Smart Plug",
+          "brand": "AVM",
+          "vendor": "AVM",
+          "list_price": 169.0,
+          "compare_list_price": 199.0,
+          "cost": 118.0,
+          "weight": 0.15,
+          "short": "Intelligent DECT smart socket that switches and measures energy, controlled through your FRITZ!Box.",
+          "description": "<p>The FRITZ!DECT 200 pairs with a FRITZ!Box router over DECT to switch connected devices on a schedule, by app or by phone, and to log their energy consumption and the room temperature.</p><ul><li>Switch and measure: energy statistics in the FRITZ!Box</li><li>Schedules, random and astronomical timers</li><li>Built-in temperature sensor</li><li>Splash-proof housing; requires a FRITZ!Box with DECT base</li></ul>",
+          "specs": {
+            "Brand": "AVM",
+            "Max Load": "10 A / 2300 W",
+            "Energy Monitoring": "Yes",
+            "Wireless Standard": "DECT ULE",
+            "Hub Required": "Yes (FRITZ!Box with DECT base)",
+            "Plug Type": "EU (Schuko, Type F)"
+          },
+          "stock": 11,
+          "reorder": {"min": 4, "max": 16},
+          "tags": ["Smart Home", "Work From Home"],
+          "alternatives": ["VT-PLG-001", "VT-PLG-003"]
+        },
+        {
+          "sku": "VT-PLG-005",
+          "name": "EDP re:dy Plug",
+          "brand": "EDP",
+          "vendor": "EDP Comercial",
+          "list_price": 99.0,
+          "cost": 62.0,
+          "weight": 0.12,
+          "short": "Energy-management smart plug for the EDP re:dy system: monitor and control appliances from your phone.",
+          "description": "<p>Part of the EDP re:dy home energy system. Plug an appliance into the re:dy Plug to see its consumption and switch it on or off remotely or on a schedule, so you can cut standby waste.</p><ul><li>Per-appliance energy consumption monitoring</li><li>Remote on/off and scheduling from the re:dy app</li><li>Helps cut standby power waste</li><li>Requires the re:dy Box</li></ul>",
+          "specs": {
+            "Brand": "EDP",
+            "Energy Monitoring": "Yes",
+            "Hub Required": "Yes (re:dy Box)",
+            "Plug Type": "EU (Schuko, Type F)"
+          },
+          "stock": 9,
+          "tags": ["Smart Home"],
+          "alternatives": ["VT-PLG-001"]
+        }
+      ]
+    }
+  ]
+}

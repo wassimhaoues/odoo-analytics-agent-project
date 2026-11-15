@@ -1,0 +1,324 @@
+// Homepage sections (views/home.xml). Tokens only. Final, readable state without JS;
+// motion (static/src/js/home_motion.js) only animates from/to it.
+
+.s_vela_home {
+    h2 { font-size: var(--fs-3xl); margin: 0; }
+    section { padding-block: var(--space-12); }
+}
+
+.vela-section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+.vela-link {
+    font-weight: 600;
+    color: var(--accent-primary);
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    &:hover { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 4px; }
+}
+.vela-btn-ghost {
+    background: var(--surface-raised) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-strong) !important;
+    &:hover { border-color: var(--text-primary) !important; }
+}
+
+// ---------------------------------------------------------------- hero
+.s_vela_hero {
+    position: relative;
+    padding-block: var(--space-6) var(--space-8) !important;
+    overflow: hidden;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+        align-items: center;
+        gap: var(--space-6);
+        min-height: clamp(560px, calc(100vh - 96px), 840px);
+    }
+    &__title {
+        font-size: var(--fs-5xl);
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+        margin: 0 0 var(--space-3);
+        .vela-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .06em; }
+        .vela-word > span { display: inline-block; }
+    }
+    &__lede { max-width: 44ch; font-size: var(--fs-lg); color: var(--text-muted); margin: 0 0 var(--space-4); }
+    &__cta { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    &__meta {
+        display: flex;
+        gap: var(--space-5);
+        margin: var(--space-6) 0 0;
+        dt { font: 700 var(--fs-xl)/1.2 var(--font-body); }
+        dd { margin: 0; color: var(--text-muted); font-size: var(--fs-sm); }
+    }
+
+    &__stage {
+        position: relative;
+        height: 100%;
+        min-height: 520px;
+        display: grid;
+        place-items: center;
+    }
+    &__arch {
+        position: absolute;
+        width: unquote("min(440px, 80%)");
+        aspect-ratio: 4 / 5.4;
+        border-radius: var(--r-arch);
+        background: var(--vela-blue);
+        box-shadow: var(--shadow-3);
+        will-change: transform;
+        &::after {                               // the door's inner moulding
+            content: "";
+            position: absolute;
+            inset: var(--space-2);
+            border-radius: inherit;
+            border: 1px solid rgba(255, 255, 255, .28);
+        }
+    }
+    &__product {
+        position: relative;
+        z-index: 1;
+        width: unquote("min(360px, 66%)");
+        aspect-ratio: 1;
+        border-radius: 50%;
+        overflow: hidden;
+        background: var(--plinth);
+        display: grid;
+        place-items: center;
+        box-shadow: 0 40px 80px rgba(8, 30, 70, .35);
+        will-change: transform;
+        img { width: 72%; height: auto; mix-blend-mode: multiply; }
+    }
+    &__tag {
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        bottom: 12%;
+        display: grid;
+        gap: 2px;
+        padding: var(--space-1) var(--space-2);
+        border-radius: var(--r-md);
+        background: var(--glass);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-2);
+        strong { font-size: var(--fs-sm); }
+        .vela-num { font-weight: 700; }
+    }
+}
+
+// ---------------------------------------------------------------- rail
+.s_vela_rail__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 240px;
+    gap: var(--space-3);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--space-2);
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+    // fade the right edge as a scroll hint
+    mask-image: linear-gradient(to right, #000 calc(100% - var(--space-8)), transparent);
+}
+.vela-cat {
+    scroll-snap-align: start;
+    --vela-cat-well: var(--surface-secondary);   // arch reads against the white card in light
+    display: grid;
+    gap: 2px;
+    padding: var(--space-2);
+    border-radius: var(--r-lg);
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-1);
+    color: var(--text-primary);
+    transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+    &:hover { transform: translateY(-4px); box-shadow: var(--shadow-2); color: var(--text-primary); }
+    &:active { transform: translateY(-1px); }
+
+    &__img {
+        aspect-ratio: 4 / 4.4;
+        border-radius: var(--r-arch);
+        background: var(--vela-cat-well);
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        margin-bottom: var(--space-1);
+        img { width: 84%; height: auto; mix-blend-mode: multiply; transition: transform 600ms var(--ease-out); }
+    }
+    &:hover &__img img { transform: scale(1.05); }
+    &__name { font-weight: 700; font-size: var(--fs-lg); font-variation-settings: "wdth" 112; letter-spacing: -0.02em; }
+    &__count { color: var(--text-muted); }
+}
+
+// ---------------------------------------------------------------- bento
+.s_vela_bento__grid {
+    display: grid;
+    gap: var(--space-2);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-rows: 176px;
+}
+.vela-tile {
+    position: relative;
+    overflow: hidden;
+    padding: var(--space-3);
+    border-radius: var(--r-lg);
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-1);
+    color: var(--text-primary);
+    h3 { font-size: var(--fs-xl); line-height: 1.15; letter-spacing: -0.02em; font-variation-settings: "wdth" 112; margin: 0 0 var(--space-1); }
+    p { margin: 0; color: var(--text-muted); max-width: 36ch; }
+
+    &--a { grid-column: span 3; grid-row: span 2; background: var(--vela-blue); border-color: transparent; color: var(--on-blue);
+        p { color: rgba(255, 255, 255, .86); } }
+    &__big {
+        position: absolute;
+        left: var(--space-3);
+        bottom: var(--space-3);
+        font: 800 var(--fs-4xl)/1 var(--font-display);
+        font-variation-settings: "wdth" 125;
+        letter-spacing: -0.04em;
+    }
+    &--b { grid-column: span 3; }
+    &--c { grid-column: span 2; grid-row: span 2;
+        h3 { margin-top: var(--space-2); max-width: 12ch; }
+        p { max-width: 52%; }
+        .vela-link { position: relative; z-index: 1; }
+    }
+    // circular plinth that stays clear of the text column (photo may have its own bg)
+    &__plinth {
+        position: absolute;
+        right: calc(-1 * var(--space-2));
+        bottom: calc(-1 * var(--space-2));
+        width: 52%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        overflow: hidden;
+        background: var(--plinth);
+        box-shadow: var(--shadow-2);
+        img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms var(--ease-out); }
+    }
+    &--c:hover &__plinth img { transform: scale(1.06); }
+    &--d { grid-column: span 1; }
+    &--e { grid-column: span 3; }
+    &:is(a) { transition: box-shadow var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+        &:hover { box-shadow: var(--shadow-2); color: var(--text-primary); } }
+}
+.vela-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 4px 12px;
+    border-radius: var(--r-pill);
+    background: var(--surface-secondary);
+    &__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sale); }
+}
+.vela-spec {
+    width: 100%;
+    margin-top: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    th, td { padding: var(--space-1) 0; border-bottom: 1px solid var(--border-subtle); font-weight: 400; }
+    thead th { color: var(--text-muted); }
+    td { text-align: right; }
+}
+
+// ---------------------------------------------------------------- deals
+.s_vela_deals__grid {
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.vela-card {
+    display: grid;
+    gap: 4px;
+    color: var(--text-primary);
+    &:hover { color: var(--text-primary); }
+    &__media {
+        position: relative;
+        aspect-ratio: 1;
+        border-radius: var(--r-lg);
+        background: var(--plinth);
+        border: 1px solid var(--border-subtle);
+        overflow: hidden;
+        margin-bottom: var(--space-1);
+        transition: box-shadow var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+        img { width: 100%; height: 100%; object-fit: contain; padding: var(--space-2); mix-blend-mode: multiply;
+              transition: transform 600ms var(--ease-out); }
+    }
+    &:hover &__media { box-shadow: var(--shadow-2); transform: translateY(-4px); }
+    &:hover &__media img { transform: scale(1.04); }
+    &:active &__media { transform: translateY(-1px); }
+    &__brand { color: var(--text-muted); }
+    &__name { font-weight: 600; line-height: 1.3; }
+}
+.vela-badge {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+    z-index: 1;
+    padding: 4px 10px;
+    border-radius: var(--r-pill);
+    &--sale { background: var(--sale); color: var(--on-blue); }
+}
+.vela-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: var(--space-1);
+    row-gap: 0;
+    &__now { font-size: var(--fs-lg); font-weight: 700; color: var(--sale); }
+    &__was { color: var(--text-muted); font-size: var(--fs-sm); }
+}
+
+// ---------------------------------------------------------------- brands
+.s_vela_brands {
+    padding-block: var(--space-4) !important;
+    border-block: 1px solid var(--border-subtle);
+    overflow: hidden;
+    &__track {
+        display: flex;
+        gap: var(--space-8);
+        width: max-content;
+        animation: vela-marquee 60s linear infinite;
+        font: 700 var(--fs-2xl)/1 var(--font-display);
+        font-variation-settings: "wdth" 125;
+        letter-spacing: -0.03em;
+        color: var(--text-muted);
+    }
+    &:hover &__track { animation-play-state: paused; }
+}
+@keyframes vela-marquee { to { transform: translateX(-50%); } }
+
+// ---------------------------------------------------------------- responsive
+@media (max-width: 991.98px) {
+    .s_vela_home section { padding-block: var(--space-8); }
+    .s_vela_hero__inner { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+    .s_vela_hero__stage { min-height: 420px; }
+    .s_vela_hero__arch { width: unquote("min(320px, 78%)"); }
+    .s_vela_hero__product { width: unquote("min(260px, 62%)"); }
+    .s_vela_bento__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(176px, auto); }
+    .vela-tile--a, .vela-tile--b, .vela-tile--c, .vela-tile--e { grid-column: span 2; }
+    .vela-tile--d { grid-column: span 2; }
+    .vela-tile__big { position: static; margin-top: var(--space-4); }
+    .s_vela_deals__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+}
+@media (max-width: 575.98px) {
+    .vela-section-head { flex-direction: column; align-items: flex-start; gap: var(--space-1); }
+    .s_vela_home h2 { font-size: var(--fs-2xl); }
+}
+// the next sections slide over the pinned hero (pinSpacing: false in home_motion.js)
+.s_vela_rail, .s_vela_bento, .s_vela_deals, .s_vela_brands { position: relative; z-index: 2; background: var(--surface-primary); }
+@media (prefers-reduced-motion: reduce) {
+    .s_vela_brands__track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
+    .s_vela_brands__track [aria-hidden="true"] { display: none; }
+}

@@ -1,0 +1,32 @@
+{
+  "_doc": "Rule-based cross-selling. For every product in a source subcategory, link the best in-stock products (featured first, then cheapest) of each target subcategory. accessories = cart 'suggested accessories'; optional = popup proposed when adding to cart.",
+  "per_target": 2,
+  "accessories": {
+    "Laptops": ["Laptop Bags", "Keyboards & Mice", "Storage (SSD, USB)"],
+    "Smartphones": ["Phone Cases", "Cables & Chargers", "Earbuds"],
+    "Tablets": ["Cables & Chargers", "Earbuds"],
+    "Smartwatches & Wearables": ["Cables & Chargers", "Earbuds"],
+    "Headphones": ["Cables & Chargers"],
+    "Earbuds": ["Cables & Chargers", "Phone Cases"],
+    "Speakers": ["Smart Plugs", "Cables & Chargers"],
+    "Keyboards & Mice": ["Monitors", "Cables & Chargers"],
+    "Monitors": ["Keyboards & Mice", "Cables & Chargers"],
+    "Storage (SSD, USB)": ["Cables & Chargers"],
+    "Cables & Chargers": ["Storage (SSD, USB)"],
+    "Consoles": ["Controllers", "Headphones", "Storage (SSD, USB)"],
+    "Controllers": ["Cables & Chargers"],
+    "Gaming Chairs": ["Controllers", "Headphones"],
+    "Smart Lights": ["Smart Plugs", "Speakers"],
+    "Security Cameras": ["Smart Plugs", "Storage (SSD, USB)"],
+    "Smart Plugs": ["Smart Lights"],
+    "Laptop Bags": ["Keyboards & Mice", "Cables & Chargers"],
+    "Phone Cases": ["Cables & Chargers"]
+  },
+  "optional": {
+    "Laptops": ["Laptop Bags"],
+    "Smartphones": ["Phone Cases"],
+    "Consoles": ["Controllers"],
+    "Monitors": ["Cables & Chargers"],
+    "Security Cameras": ["Storage (SSD, USB)"]
+  }
+}

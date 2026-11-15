@@ -1,0 +1,87 @@
+footer#bottom {
+    background: var(--surface-primary) !important;
+    border-top: 1px solid var(--border-subtle);
+
+    #footer { border: 0 !important; }
+
+    .s_vela_footer {
+        h2.vela-footer__title {
+            font-size: var(--fs-sm);
+            font-family: var(--font-body);
+            font-variation-settings: "wdth" 100;
+            letter-spacing: 0;
+            font-weight: 700;
+            margin-bottom: var(--space-1);
+        }
+        ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
+        ul a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;                      // touch target on phones
+            color: var(--text-muted);
+            font-size: var(--fs-sm);
+            transition: color var(--dur-fast) var(--ease-out);
+            &:hover { color: var(--text-primary); }
+            &:active { color: var(--accent-hover); }
+            @media (min-width: 992px) { min-height: 32px; }
+        }
+        .vela-footer__shop {
+            grid-template-columns: 1fr 1fr;        // 2 columns on phones
+            @media (min-width: 992px) { grid-template-columns: 1fr; }
+        }
+    }
+
+    .vela-footer__brand img { height: 32px; width: auto; }
+    .vela-footer__lede { margin: var(--space-2) 0 var(--space-2); color: var(--text-muted); max-width: 40ch; }
+    .vela-footer__promises {
+        margin-bottom: var(--space-3) !important;
+        li {
+            position: relative;
+            padding-left: var(--space-3);
+            font-size: var(--fs-sm);
+            line-height: 2;
+            &::before {        // tiny arch, the Sidi Bou Said doorway motif
+                content: "";
+                position: absolute;
+                left: 0;
+                top: .6em;
+                width: 8px;
+                height: 12px;           // 4px optical step allowed (design-system §1)
+                border-radius: 4px 4px 2px 2px;
+                background: var(--accent-primary);
+            }
+        }
+    }
+    .vela-footer__label { display: block; font-size: var(--fs-sm); font-weight: 600; margin-bottom: var(--space-1); }
+
+    .vela-footer__news {
+        .input-group { gap: var(--space-1); flex-wrap: nowrap; max-width: 440px; }
+        .form-control {
+            min-height: 48px;
+            border-radius: var(--r-pill) !important;
+            border: 1px solid var(--border-strong);
+            background: var(--surface-raised);
+            padding-inline: var(--space-2);
+        }
+        .btn { min-height: 48px; border-radius: var(--r-pill) !important; padding-inline: var(--space-3);
+            display: inline-flex; align-items: center; }
+        .btn[aria-busy="true"], .btn.disabled { opacity: .6; pointer-events: none; }
+    }
+
+    // legal links: muted, small, folded into the copyright row
+    .o_cookie_policy_link_container {
+        padding-bottom: var(--space-2);
+        a { color: var(--text-muted) !important; font-size: var(--fs-xs) !important; }
+        .text-muted.mx-2 { display: none; }        // the dot separator
+        p { display: flex; gap: var(--space-3); }
+    }
+
+    .o_footer_copyright {
+        background: var(--surface-primary) !important;
+        border-top: 1px solid var(--border-subtle);
+        color: var(--text-muted);
+        :is(.small, small) { font-size: var(--fs-xs) !important; }
+        .js_language_selector { display: none !important; }   // the header has the language picker
+        .o_brand_promotion { display: none; }
+    }
+}

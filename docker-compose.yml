@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:17
+    image: postgres:17@sha256:846a7ddaa67a4b354ae1d21087b683901aa6113a4ed626d3787cfbf6c85e3e07  # pinned: same build for every developer
     restart: unless-stopped
     environment:
       POSTGRES_DB: postgres
@@ -11,7 +11,7 @@ services:
     # no ports: DB only reachable by Odoo (host 5432 is used by another project)
 
   odoo:
-    image: odoo:20.0
+    image: odoo:20.0@sha256:8bcae4c1f895683ee851e19dd3e7d999e81e770defe9015bc9dad8bbf10f2b0d  # pinned build 20.0-20261112; bump deliberately (ADR 0004)
     restart: unless-stopped
     depends_on:
       - db

@@ -1,0 +1,134 @@
+// Night harbour: dark overrides for Odoo-native UI. Odoo compiles most colours to fixed
+// values (not CSS vars), so we re-point the common surfaces at our tokens here.
+// Our own components already switch through tokens.scss.
+$dark: ':root[data-vela-theme="dark"]';
+
+#{$dark} {
+    color-scheme: dark;
+    --bs-body-color: var(--text-primary);
+
+    body, #wrapwrap, main, #wrap,
+    .o_cc, .o_cc1, .o_cc2, .bg-body, .bg-white, .bg-light, .text-bg-light, .bg-100, .bg-200,
+    .o_footer, .o_footer_copyright, .navbar-light, .o_wsale_products_header, .o_mobile_summary,
+    .o_wsale_offcanvas, #products_grid_before {
+        background-color: var(--surface-primary) !important;
+        color: var(--text-primary);
+    }
+    .o_cc2, .bg-200, .bg-primary-subtle { background-color: var(--surface-secondary) !important; }
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, strong, b, label, dt, th,
+    .text-dark, .text-black, .text-body, .text-900, .text-reset, .text-800 { color: var(--text-primary) !important; }
+    .text-muted, .text-body-secondary, .text-body-tertiary, .text-600, .text-500, .text-400, .text-secondary, small.text-muted { color: var(--text-muted) !important; }
+    .opacity-50, .opacity-75 { opacity: 1 !important; color: var(--text-muted) !important; }
+
+    a:not(.btn):not(.nav-link):not(.dropdown-item):not(.vela-card):not(.vela-cat):not(.vela-tile) { color: var(--accent-primary); }
+    .vela-empty__cats a, .s_vela_footer ul a, .o_wsale_filmstrip_link { color: var(--text-primary) !important; }
+    .s_vela_footer ul a { color: var(--text-muted) !important; }
+    a:not(.btn):hover { color: var(--accent-hover); }
+
+    // surfaces: cards, overlays, menus
+    .card, .modal-content, .offcanvas, .dropdown-menu, .popover, .toast, .list-group-item,
+    .accordion-item, .o_total_card, .o_cart_product, .oe_product_cart, .vela-tile:not(.vela-tile--a),
+    .vela-cat, .vela-card__media, .table, .o_wsale_filmstrip_item {
+        background-color: var(--surface-raised) !important;
+        color: var(--text-primary);
+        border-color: var(--border-subtle) !important;
+    }
+    .accordion-button, .accordion-button:not(.collapsed) { background: transparent !important; color: var(--text-primary) !important; }
+    .accordion-button::after { filter: invert(1) brightness(1.4); }
+    .table > :not(caption) > * > * { background-color: transparent !important; color: var(--text-primary); border-color: var(--border-subtle) !important; }
+    hr, .border, .border-top, .border-bottom, .border-start, .border-end { border-color: var(--border-subtle) !important; }
+
+    // buttons that Bootstrap paints light
+    .btn-light, .btn-secondary, .btn-outline-secondary, .text-bg-light {
+        background-color: var(--surface-secondary) !important;
+        color: var(--text-primary) !important;
+        border-color: var(--border-subtle) !important;
+    }
+    .btn-outline-primary { color: var(--accent-primary) !important; border-color: var(--accent-primary) !important; background: transparent !important; }
+    .btn-close { filter: invert(1) grayscale(1) brightness(1.6); }
+    .carousel-control-prev i, .carousel-control-next i { color: var(--text-primary) !important; }
+
+    // form fields
+    .form-control, .form-select, .input-group-text {
+        background-color: var(--surface-raised) !important;
+        color: var(--text-primary) !important;
+        border-color: var(--border-strong) !important;
+    }
+    .form-select { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23F1F3EF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important; }
+
+    // Odoo's inner card bodies paint their own light background + hard-coded #212529 text
+    .card-body, .card-footer, .card-header, .o_cart_total, .o_cart_total td, .o_cart_total th,
+    .o_cart_total span, .o_total_card .text-muted { background-color: transparent !important; color: var(--text-primary) !important; }
+    .o_total_card .text-muted, .o_cart_total small { color: var(--text-muted) !important; }
+
+    // Images that carry their OWN plinth background: multiply would blend that plinth with
+    // the dark page behind it and darken the photo. Images inside a plinth wrapper are fine.
+    .o_cart_product_image img, #suggested_products img, .vela-tile--c img,
+    .o_cart_products_table img, .o_wsale_product_images .carousel-indicators img {
+        mix-blend-mode: normal !important;
+        background-color: var(--plinth) !important;
+    }
+
+    // product photos keep their lit plinth; text on it must stay dark
+    .oe_product_image, .o_wsale_product_images .carousel-outer, .s_vela_hero__product,
+    .vela-card__media, .vela-cat__img, .o_cart_product_image img { background-color: var(--plinth) !important; }
+
+    // Odoo palette background utilities (o-color-3 plaster / o-color-4 whitewash are light)
+    .bg-o-color-3, .o_wsale_collect_switch { background-color: var(--surface-secondary) !important; color: var(--text-primary) !important; }
+    .bg-o-color-4, .o_wsale_collect_option { background-color: var(--surface-raised) !important; color: var(--text-primary) !important; }
+    .text-success { color: var(--state-success) !important; }
+
+    // shop filters: flat list, not raised bars
+    #products_grid_before .accordion-item, #o_wsale_offcanvas .accordion-item { background: transparent !important; }
+
+    // product tags: readable pills
+    .o_product_tags a > * { background-color: var(--surface-secondary) !important; color: var(--text-primary) !important; }
+
+    // cookie bar: keep the primary action filled
+    #website_cookies_bar #cookies-consent-all { background: var(--accent-primary) !important; color: var(--accent-contrast) !important; border-color: transparent !important; }
+
+    // [blocker fix] Odoo's `:where(.card) .card-body .text-muted` (0,5,0 !important) beats
+    // class-only selectors; the #wrapwrap id lifts ours to 1,3,0.
+    #wrapwrap .card-body .text-muted, #wrapwrap .card-body small { color: var(--text-muted) !important; }
+    // [blocker fix] .btn-link (Remove / Save for later) was dark blue on navy
+    .btn-link { color: var(--accent-primary) !important; &:hover { color: var(--accent-hover) !important; } }
+
+    // Odoo leftovers on /shop and the product page
+    .o_wsale_ribbon_filter { color: var(--text-primary) !important; border-color: var(--border-strong) !important; background: transparent !important; }
+    .page-link { background: var(--surface-raised) !important; color: var(--text-primary) !important; border-color: var(--border-subtle) !important; }
+    .page-item.active .page-link { background: var(--accent-primary) !important; color: var(--accent-contrast) !important; border-color: transparent !important; }
+    .navbar-toggler-icon { filter: invert(1) brightness(1.6); }
+    .form-check-input:not(:checked) { background-color: var(--surface-raised) !important; border-color: var(--border-strong) !important; }
+    // badges: dark text on the light accents (white failed 3:1)
+    .my_cart_quantity, .vela-badge--sale, .o_cart_item_count { color: var(--accent-contrast) !important; }
+
+    // logos: swap to the light-on-dark variant
+    header#top .navbar-brand.logo img, .vela-footer__brand img {
+        content: url("/vela_theme/static/src/img/logo-dark.svg");
+    }
+
+    // badge with ink background must not vanish on dark surfaces
+    .vela-tile--a, .s_vela_hero__arch { background: var(--vela-blue-deep); }
+    .vela-cat { --vela-cat-well: var(--plinth); }
+}
+
+// theme toggle button (lives in the header)
+.vela-theme-toggle {
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: var(--r-pill);
+    background: transparent;
+    color: var(--text-primary);
+    display: inline-grid;
+    place-items: center;
+    transition: background-color var(--dur-fast) var(--ease-out), transform var(--dur-instant);
+    &:hover { background: var(--surface-secondary); }
+    &:active { transform: scale(.94); }
+    &:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 3px; }
+}
+.vela-theme-toggle-item { list-style: none; display: flex; align-items: center; }
+
+// cross-fade timing for the View Transition
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: var(--dur-slow); }
