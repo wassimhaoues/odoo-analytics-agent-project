@@ -26,7 +26,8 @@ addons/              our Odoo addons, mounted at /mnt/extra-addons
   vela_theme/          look & feel: palette, self-hosted fonts, tokens, header/footer, logo, motion
   vela_tech_catalog/   demo catalog loader: JSON in data/catalog → products, variants, stock…
 pipeline/            Kafka / Spark / Hadoop (step 3)
-scripts/             setup.sh (bootstrap) · update.sh (after pull) · drift.sh (DB vs git)
+.github/workflows/   ci.yml: lint · secret scan · store built from scratch + browser checks
+scripts/             setup.sh (bootstrap) · update.sh (after pull) · drift.sh (DB vs git) · ci/
                      backup.sh · restore.sh · screenshot.sh · catalog/ (image + validation tools)
 docs/                adr/, specs/
 .claude/             this config

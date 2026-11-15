@@ -5,7 +5,7 @@ Remote: `github.com/wassimhaoues/odoo-analytics-agent-project` (private). Defaul
 ## Two developers
 
 - `main` is always installable: `./scripts/setup.sh` on a fresh machine must work from it.
-- Every change goes through a branch + PR; the other developer reviews (no direct pushes to
+- Every change goes through a branch + PR; **CI must be green** (`.github/workflows/ci.yml`); the other developer reviews (no direct pushes to
   `main`. GitHub Free can't enforce it on private repos, so it's a team agreement).
 - After merging or pulling: `./scripts/update.sh`, then `./scripts/drift.sh`.
 - The PR body says what the teammate must run after pulling (usually `update.sh`; for an

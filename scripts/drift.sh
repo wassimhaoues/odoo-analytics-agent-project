@@ -13,7 +13,7 @@
 # Exit 1 when drift is found.
 # =============================================================================
 set -uo pipefail
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")/.." || exit 1
 
 DB="${1:-CommercePulse}"
 OTHER="${2:-}"

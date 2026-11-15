@@ -1,5 +1,7 @@
 # Odoo Analytics Agent Project — Vela Tech
 
+[![CI](https://github.com/wassimhaoues/odoo-analytics-agent-project/actions/workflows/ci.yml/badge.svg)](https://github.com/wassimhaoues/odoo-analytics-agent-project/actions/workflows/ci.yml)
+
 Study project (2 developers): an Odoo 20 eCommerce store for tech products ("Vela Tech"),
 a custom analytics addon that tracks visitor behaviour, a big-data pipeline (Kafka, Spark,
 Hadoop), and an AI agent addon (voice + text) that reads the analytics, talks to the shop
@@ -63,6 +65,19 @@ scripts/             setup · update · drift · backup · restore · screenshot
 docs/                adr/ (decisions), specs/ (requirements)
 .claude/             shared Claude Code config: rules, skills, agents, hooks
 ```
+
+## CI (GitHub Actions)
+
+Every pull request and push to `main` runs `.github/workflows/ci.yml`:
+
+| Job | Checks |
+|---|---|
+| Lint & static checks | ruff, XML/JSON/Python syntax, addon manifests, `vela_setup` depends on every addon, shellcheck, guard-hook tests, catalog validation, image credits up to date, workflow lint, compose validity |
+| Secret scan | gitleaks over the full git history |
+| Build store from scratch | `setup.sh` on a clean runner → `update.sh` (idempotent) → `drift.sh` → smoke test → `page_check.mjs --strict` on 6 pages × 3 widths × light/dark. Screenshots and Odoo log uploaded as artifacts |
+
+Merge only when CI is green. Run the same checks locally with the commands in
+`.claude/rules/testing.md`.
 
 ## Useful commands
 

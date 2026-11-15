@@ -93,7 +93,7 @@ class VelaSetup(models.AbstractModel):
 
     def _apply_website(self):
         langs = self.env["res.lang"].search([("code", "in", LANGUAGES)])
-        default = langs.filtered(lambda l: l.code == LANGUAGES[0])
+        default = langs.filtered(lambda lang: lang.code == LANGUAGES[0])
         with file_open(LOGO, "rb") as f:
             logo = base64.b64encode(f.read()).decode()
         for website in self.env["website"].search([]):

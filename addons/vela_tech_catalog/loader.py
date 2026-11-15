@@ -274,7 +274,7 @@ class Loader:
                     self.sku_info[p["sku"]] = (p, sub["name"])
                     self.templates[p["sku"]] = self.create_product(p, sub["name"], seq)
         # category cover images = first product with an image
-        for name, pcat in self.public_categ.items():
+        for pcat in self.public_categ.values():
             if not pcat.cover_image:
                 tmpl = self.env["product.template"].search(
                     [("public_categ_ids", "child_of", pcat.id), ("image_1920", "!=", False)],

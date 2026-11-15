@@ -19,9 +19,9 @@ class VelaHome(models.AbstractModel):
             [("default_code", "=like", f"{sku}%")], limit=1).product_tmpl_id
 
     def _specs(self, tmpl, names):
-        lines = tmpl.attribute_line_ids.filtered(lambda l: l.attribute_id.name in names)
+        lines = tmpl.attribute_line_ids.filtered(lambda line: line.attribute_id.name in names)
         # short form for tiles: "Up to 30 h (ANC on)" -> "Up to 30 h"
-        return {l.attribute_id.name: (l.value_ids[:1].name or "").split("(")[0].strip() for l in lines}
+        return {line.attribute_id.name: (line.value_ids[:1].name or "").split("(")[0].strip() for line in lines}
 
     @api.model
     def _home_values(self):

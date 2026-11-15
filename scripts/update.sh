@@ -10,7 +10,7 @@
 # Fails loudly (exit 1, full error shown) if Odoo can't load the upgraded code.
 # =============================================================================
 set -uo pipefail
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")/.." || exit 1
 
 DB="${1:-CommercePulse}"
 mods="$(find addons -maxdepth 2 -name __manifest__.py -printf '%h\n' | xargs -n1 basename | sort | paste -sd, -)"

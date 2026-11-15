@@ -5,6 +5,7 @@
 //
 //   node scripts/page_check.mjs <out-dir> [path ...]        default paths: / /shop
 //   node scripts/page_check.mjs /tmp/check / --reduced-motion --dark
+//   node scripts/page_check.mjs out / /shop --strict      # CI: exit 1 on any issue
 //
 // Per path and width (375 mobile, 768 mobile, 1440 desktop) it writes
 // <slug>-<width>.png (full page) and prints a JSON line:
@@ -75,6 +76,7 @@ const probeFor = (deviceWidth) => `(() => {
   return { scrollWidth: sw, overflowX: sw > ${deviceWidth}, offenders, untracked, autoTracked };
 })()`;
 
+const failures = [];
 for (const p of paths) {
     for (const width of [375, 768, 1440]) {
         errors.length = 0;
@@ -90,10 +92,24 @@ for (const p of paths) {
         const shot = await send("Page.captureScreenshot", { format: "png" });
         const slug = p.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "") || "home";
         fs.writeFileSync(path.join(OUT, `${slug}-${width}.png`), Buffer.from(shot.result.data, "base64"));
-        console.log(JSON.stringify({ path: p, width, ...probe, jsErrors: [...new Set(errors)], ms: Date.now() - t0 }));
+        const result = { path: p, width, ...probe, jsErrors: [...new Set(errors)], ms: Date.now() - t0 };
+        console.log(JSON.stringify(result));
+        const problems = [
+            result.overflowX && `horizontal overflow (${result.scrollWidth}px)`,
+            result.jsErrors.length && `JS errors: ${result.jsErrors.join(" | ")}`,
+            result.untracked.length && `untracked: ${result.untracked.join(", ")}`,
+            result.autoTracked?.length && `auto-tracked (name them): ${result.autoTracked.join(", ")}`,
+        ].filter(Boolean);
+        if (problems.length) failures.push(`${p} @${width}: ${problems.join("; ")}`);
     }
 }
 ws.close();
 chrome.kill();
 await new Promise((r) => chrome.once("exit", r));
 fs.rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+if (failures.length) {
+    console.error(`\n${failures.length} page check failure(s):\n- ` + failures.join("\n- "));
+    if (flags.has("--strict")) process.exit(1);
+} else {
+    console.error("page_check: all clean");
+}
