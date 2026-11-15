@@ -31,7 +31,15 @@ const PORT = 9300 + Math.floor(Math.random() * 500);
 // Chrome profile lives in the OS temp dir (not in the uploaded artifacts) and cleanup is
 // best-effort: Chrome helper processes can still be writing to it right after kill().
 const profile = fs.mkdtempSync(path.join(os.tmpdir(), "vela-page-check-"));
-const chrome = spawn("google-chrome", ["--headless=new", "--disable-gpu", "--hide-scrollbars",
+// Absolute browser path (no PATH lookup): $CHROME_BIN or the standard install locations.
+const CHROME = [process.env.CHROME_BIN, "/usr/bin/google-chrome", "/usr/bin/google-chrome-stable",
+    "/opt/google/chrome/chrome", "/usr/bin/chromium", "/usr/bin/chromium-browser"]
+    .find((c) => c && path.isAbsolute(c) && fs.existsSync(c));
+if (!CHROME) {
+    console.error("No Chrome/Chromium found: set CHROME_BIN to its absolute path.");
+    process.exit(2);
+}
+const chrome = spawn(CHROME, ["--headless=new", "--disable-gpu", "--hide-scrollbars",
     `--remote-debugging-port=${PORT}`, `--user-data-dir=${profile}`, "about:blank"], { stdio: "ignore" });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

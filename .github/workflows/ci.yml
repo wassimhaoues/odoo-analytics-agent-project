@@ -33,7 +33,7 @@ jobs:
 
       - name: Ruff (Python lint)
         run: |
-          pip install --quiet "ruff==${RUFF_VERSION}"
+          pip install --quiet --only-binary :all: "ruff==${RUFF_VERSION}"   # wheels only: no setup.py runs
           ruff check --output-format=github addons scripts .claude/hooks
 
       - name: Static checks (XML, JSON, Python syntax, manifests, vela_setup depends)

@@ -17,7 +17,17 @@ CREDITS = ADDON / "data" / "image_credits"
 SKIP = {"_meta.json", "crosssell.json"}
 
 meta = json.loads((DATA / "_meta.json").read_text())
-files = [Path(a) for a in sys.argv[1:]] or sorted(p for p in DATA.glob("*.json") if p.name not in SKIP)
+def catalog_file(arg):
+    """Resolve a CLI argument to a category JSON inside DATA. Anything else is rejected
+    (no reading files outside the catalog via ../ or absolute paths)."""
+    candidate = (DATA / Path(arg).name).resolve()
+    if candidate.parent != DATA.resolve() or candidate.suffix != ".json" or candidate.name in SKIP \
+            or not candidate.is_file():
+        sys.exit(f"not a catalog category file: {arg}")
+    return candidate
+
+
+files = [catalog_file(a) for a in sys.argv[1:]] or sorted(p for p in DATA.glob("*.json") if p.name not in SKIP)
 errors, warnings = [], []
 all_skus = {}
 
