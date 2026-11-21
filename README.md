@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/wassimhaoues/odoo-analytics-agent-project/actions/workflows/ci.yml/badge.svg)](https://github.com/wassimhaoues/odoo-analytics-agent-project/actions/workflows/ci.yml)
 
-Study project (2 developers): an Odoo 20 eCommerce store for tech products ("Vela Tech"),
+Study project (2 developers, specs in [docs/specs](docs/specs/README.md)): an Odoo 20 eCommerce store for tech products ("Vela Tech"),
 a custom analytics addon that tracks visitor behaviour, a big-data pipeline (Kafka, Spark,
 Hadoop), and an AI agent addon (voice + text) that reads the analytics, talks to the shop
 owner and performs actions.
@@ -26,7 +26,8 @@ cd odoo-analytics-agent-project
 
 In ~5 minutes you get the same Odoo build (pinned image), the same apps, settings, website,
 products, variants, stock and images as everyone else. The site runs at
-http://localhost:8069/shop, and the back office login is `admin` / `admin` (change it).
+http://localhost:8069/shop (cash on delivery or pay at pickup, no online payment;
+prices include 19% VAT), and the back office login is `admin` / `admin` (change it).
 `setup.sh` prints the database-manager master password once. Save it.
 
 ## Daily workflow (two developers)

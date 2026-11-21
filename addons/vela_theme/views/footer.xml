@@ -50,11 +50,15 @@
                                 <li><a href="/contactus" data-track="footer.help.contact" data-track-type="click">Contact us</a></li>
                                 <li><a href="/my/orders" data-track="footer.help.orders" data-track-type="click">Track your order</a></li>
                                 <li><a href="/my" data-track="footer.help.account" data-track-type="click">Your account</a></li>
+                                <li><a href="/terms" data-track="footer.legal.terms" data-track-type="click">Terms of sale</a></li>
+                                <li><a href="/privacy" data-track="footer.legal.privacy" data-track-type="click">Privacy policy</a></li>
+                                <li><a href="/cookie-policy" data-track="footer.legal.cookies" data-track-type="click">Cookie policy</a></li>
                             </ul>
                         </div>
                         <div class="col-6 col-lg-2">
                             <h2 class="vela-footer__title">Vela Tech</h2>
                             <ul>
+                                <li><a href="/about-us" data-track="footer.about.about_us" data-track-type="click">About us</a></li>
                                 <li><a href="/blog" data-track="footer.about.blog" data-track-type="click">Blog</a></li>
                                 <li><a href="/shop/compare" data-track="footer.about.compare" data-track-type="click">Compare products</a></li>
                                 <li><a href="/shop/wishlist" data-track="footer.about.wishlist" data-track-type="click">Wishlist</a></li>

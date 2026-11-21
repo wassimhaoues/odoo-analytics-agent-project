@@ -9,3 +9,5 @@
 | [0005](0005-theme-as-regular-addon.md) | Theme is a regular addon `vela_theme`, not a `theme_*` module | accepted |
 | [0006](0006-motion-libraries.md) | Motion: vendored GSAP 3.12.5 + ScrollTrigger and Lenis 1.1.13 as Odoo Interactions | accepted |
 | [0007](0007-tracking-areas-v1.md) | Tracking areas consent, recommend, carousel, empty, configurator, auto-fallback | accepted |
+| [0008](0008-specs-use-repo-names.md) | Specs adopt repo names (`vela_analytics`, `vela_ai_agent`, `vela.*` models, topic `vela.events.v1`); one event envelope | accepted |
+| [0009](0009-cash-on-delivery-only.md) | Cash on delivery only, 19% VAT on every product, cookie bar + content pages, tracking area `page` | accepted |

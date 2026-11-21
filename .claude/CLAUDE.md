@@ -14,7 +14,8 @@ data platform. **Two developers** each run an identical store built from git
 | 3 | Big-data pipeline: Kafka → Spark → HDFS | `pipeline/` | planned |
 | 4 | AI agent addon (voice + text) that reads analytics and acts | `addons/vela_ai_agent` | planned |
 
-Specs from the owner go in `docs/specs/`. Decisions go in `docs/adr/` (skill: `adr`).
+Specs from the owner are in `docs/specs/` (academic specs, text + PDF; names per ADR 0008:
+`vela_analytics`, `vela_ai_agent`, topic `vela.events.v1`). Decisions go in `docs/adr/` (skill: `adr`).
 
 ## Repository map
 
@@ -44,6 +45,10 @@ Always check the real v20 source before assuming an API — v20 differs from v17
 - Postgres has no host port. Use `docker compose exec -T db psql -U odoo -d <db>`.
 - Installed apps: website, website_sale(+stock, loyalty, mass_mailing), stock, purchase,
   sale_management, crm, website_crm, website_livechat, website_blog, website_links, survey, payment_demo.
+- Payments: no online payment (ADR 0009). Cash on delivery (home delivery) and pay at pickup only;
+  Demo and every other provider are switched off by `vela_setup`. 19% VAT on every product, prices tax included.
+- Content pages: `/about-us`, `/privacy`, `/cookie-policy`, `/contactus` (vela_theme `views/pages.xml`),
+  `/terms` (vela_setup `data/terms_*.html`), blog posts (vela_setup `data/blog_posts.xml`). Cookie bar on.
 
 ## Rules — load what you touch
 

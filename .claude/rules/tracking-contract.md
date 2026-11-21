@@ -26,7 +26,8 @@ Every element a visitor can click, or a section whose visibility matters, carrie
 Areas: `header`, `megamenu`, `hero`, `rail`, `bento`, `deals`, `shop`, `filters`, `product`,
 `recommend` (alternative/accessory product snippets), `carousel`, `cart`, `checkout`, `search`,
 `footer`, `promo`, `chat`, `consent` (cookie bar), `empty` / `<area>.empty.*` (empty states),
-`account` (login, signup, password reset), `auto` (fallback only, see below). Added by ADR 0007.
+`account` (login, signup, password reset), `page` (content pages: about, privacy, cookies, blog;
+`page.<page>.<action>`), `auto` (fallback only, see below). Added by ADR 0007, `page` by ADR 0009.
 
 ## Where ids are set
 
@@ -43,12 +44,21 @@ Areas: `header`, `megamenu`, `hero`, `rail`, `bento`, `deals`, `shop`, `filters`
 ## Event envelope `vela.events.v1`
 
 ```json
-{ "v": 1, "event": "click", "track": "hero.cta.shop_now", "ts": "2026-11-15T10:00:00.000Z",
+{ "v": 1, "event_id": "<uuid, stable across retries>", "event": "click",
+  "track": "hero.cta.shop_now", "ts": "2026-11-15T10:00:00.000Z",
   "visitor": "<website.visitor access_token>", "session": "<uuid per tab session>",
-  "page": "/shop/category/laptops", "ref": "<document.referrer>",
+  "website_id": 1, "page": "/shop/category/laptops", "ref": "<document.referrer>",
   "product": "VT-LAP-001", "category": "laptops", "position": 3,
+  "device": "desktop", "source": "instagram", "is_synthetic": false,
   "viewport": "1440x900", "utm": {"source": "", "medium": "", "campaign": ""} }
 ```
+
+This is also the spec's canonical Kafka event (docs/specs/02-big-data.md §3, ADR 0008).
+Required: `v`, `event_id`, `event`, `ts`, `session`, `website_id`, `is_synthetic`.
+`event` is one of `page_view`, `product_view`, `search`, `add_to_cart`, `checkout_started`,
+`checkout_error`, `order_confirmed` (server only, never from the browser), or `click` for any
+other tracked control (its `track` id says which). Optional bounded fields: `quantity`,
+`search_results_count`, `region` (country level), `error_code`.
 
 ## Rules
 

@@ -109,6 +109,12 @@ const RULES = [
     ["#contact_us_wrapper a, #contact_us_wrapper button", "product.contact", "click"],
     ["#o_wsale_product_cta_section owl-component a, #o_wsale_product_cta_section owl-component button", "product.pickup.store_info", "click"],
     [".s_dynamic_snippet_products .o_add_compare, .s_dynamic_snippet_products [data-action='o_comparelist']", "recommend.product.compare", "click"],
+    // blog (website_blog core templates): post list, post page, share buttons
+    [".o_wblog_posts_loop a[href^='/blog/']", "page.blog.open_post", "click"],
+    [".o_wblog_share_links", "page.blog.share", "click"],
+    [".o_wblog_toc_link", "page.blog.toc", "click"],   // table of contents, built by JS
+    [".o_wblog_post_content a", "page.blog.link", "click"],
+    ["#wrap .title a[href^='/blog/'], #wrap a[href^='/blog/']", "page.blog.open", "click"],
     // cookie consent (bar is injected after load)
     ["#cookies-consent-essential", "consent.essential_only", "click"],
     ["#cookies-consent-all", "consent.accept_all", "click"],

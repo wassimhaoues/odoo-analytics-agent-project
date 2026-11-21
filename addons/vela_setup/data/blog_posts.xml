@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Demo blog content (footer links to /blog). -->
+    <record id="blog_post_cod" model="blog.post">
+        <field name="blog_id" ref="website_blog.blog_blog_1"/>
+        <field name="name">Cash on delivery: how it works at Vela Tech</field>
+        <field name="subtitle">No card, no online payment. You pay when the parcel is in your hands.</field>
+        <field name="author_id" ref="base.partner_admin"/>
+        <field name="is_published" eval="True"/>
+        <field name="published_date" eval="(DateTime.today() - relativedelta(days=12)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="content" type="html">
+            <section class="vela-legal">
+                <p>Most of our customers prefer to pay in cash, and we think that's fair: you shouldn't pay for something you haven't seen. Here is how an order works.</p>
+                <h2>1. Order online</h2>
+                <p>Add products to your cart and choose home delivery. At the payment step, choose cash on delivery. Your order is confirmed right away.</p>
+                <h2>2. We prepare and ship</h2>
+                <p>We pack your order the same or next working day. The courier calls you before coming, usually within 2 to 5 working days.</p>
+                <h2>3. Check, then pay</h2>
+                <p>Open the parcel in front of the courier. If something is wrong, refuse it and pay nothing. If all is good, pay the amount shown on your order, in cash.</p>
+                <h2>Prefer to collect?</h2>
+                <p>Choose pickup in store at checkout and pay at our Tunis counter when you collect.</p>
+            </section>
+        </field>
+    </record>
+
+    <record id="blog_post_laptop" model="blog.post">
+        <field name="blog_id" ref="website_blog.blog_blog_1"/>
+        <field name="name">Choosing a laptop for university</field>
+        <field name="subtitle">Four questions to ask before you spend a semester's budget.</field>
+        <field name="author_id" ref="base.partner_admin"/>
+        <field name="is_published" eval="True"/>
+        <field name="published_date" eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="content" type="html">
+            <section class="vela-legal">
+                <p>A student laptop has to last five years, survive a backpack and run whatever your courses throw at it. Start with these questions.</p>
+                <h2>What will you run?</h2>
+                <p>Office work and browsing need little. Programming, data science or design need 16 GB of memory; 3D or video work needs a dedicated graphics card.</p>
+                <h2>How much will you carry it?</h2>
+                <p>Under 1.5 kg and a battery that lasts a full day of lectures matter more than raw power for most students.</p>
+                <h2>How much storage?</h2>
+                <p>512 GB SSD is the comfortable minimum. You can add an external SSD later, but you can rarely upgrade the internal one.</p>
+                <h2>Which system?</h2>
+                <p>Check what your school uses. Some engineering software only runs on Windows; macOS is common in design.</p>
+            </section>
+        </field>
+    </record>
+
+    <record id="blog_post_earbuds" model="blog.post">
+        <field name="blog_id" ref="website_blog.blog_blog_1"/>
+        <field name="name">Earbuds or headphones?</field>
+        <field name="subtitle">A quick guide to choosing what goes in, or over, your ears.</field>
+        <field name="author_id" ref="base.partner_admin"/>
+        <field name="is_published" eval="True"/>
+        <field name="published_date" eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="content" type="html">
+            <section class="vela-legal">
+                <p>Both play music. The right one depends on where you listen.</p>
+                <h2>Earbuds: for moving</h2>
+                <p>Small, light and pocketable: best for the metro, the gym and calls on the go. Look for a snug fit and water resistance if you sweat.</p>
+                <h2>Headphones: for focus</h2>
+                <p>Bigger drivers and better noise cancelling make them the choice for long study sessions, flights and open offices. Comfort over hours matters more than looks.</p>
+                <h2>Noise cancelling, worth it?</h2>
+                <p>If you listen in noisy places, yes: you will keep the volume lower, which your ears will thank you for.</p>
+            </section>
+        </field>
+    </record>
+</odoo>

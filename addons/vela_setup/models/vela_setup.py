@@ -1,4 +1,5 @@
 import base64
+import json
 import logging
 
 from odoo import api, models
@@ -12,14 +13,29 @@ COMPANY = {
     # Neutral placeholders: real personal contact data never goes in git.
     "email": "hello@vela-tech.example",
     "website": "http://localhost:8069",
+    "street": "Avenue Habib Bourguiba",
+    "zip": "1000",
     "city": "Tunis",
+    "phone": "+216 70 000 000",
 }
+WAREHOUSE_NAME = "Vela Tech"
+# Tunisian VAT, applied to every product we sell. Prices in the catalog already include it.
+SALE_TAX_PERCENT = 19.0
 TIMEZONE = "Africa/Tunis"
 # Catalog prices are Tunisian retail prices, VAT (19%) already included.
 PRICE_INCLUDE = "tax_included"
 WEBSITE_NAME = "Vela Tech"
 LANGUAGES = ["en_US", "fr_FR"]          # first = website default
-DEMO_PAYMENT = {"active": True, "is_live": False, "is_published": True}  # test mode
+# No online payment (ADR 0009): customers pay cash when the order arrives, or at pickup.
+PAY_ON_DELIVERY = ["cash_on_delivery", "on_site"]        # payment.provider custom_mode; all others off
+PAYMENT_TEXT = {
+    "cash_on_delivery": ("Cash on delivery", "Paiement à la livraison",
+                         "Pay in cash when your order arrives. No card needed.",
+                         "Payez en espèces à la réception de votre commande. Aucune carte nécessaire."),
+    "on_site": ("Pay at pickup", "Paiement au retrait",
+                "Pay in our Tunis store when you collect your order.",
+                "Payez dans notre magasin de Tunis au retrait de votre commande."),
+}
 LOGO = "vela_theme/static/src/img/logo.svg"
 # Main menu, in order. Categories are matched by name in product.public.category.
 MENU = ["Electronics", "Audio", "Computer Accessories", "Gaming", "Smart Home", "Bags & Cases"]
@@ -49,7 +65,13 @@ SHOP = {
     # Customer accounts: anyone can sign up (b2c); at checkout an account is optional (guest OK)
     "auth_signup_uninvited": "b2c",
     "account_on_checkout": "optional",
+    # catalog prices are shown VAT included, as Tunisian law requires for consumers
+    "show_line_subtotals_tax_selection": "tax_included",
+    # consent before optional (analytics) cookies: spec FR-01 / T2
+    "cookies_bar": True,
 }
+COOKIE_POLICY_PAGE = "vela_theme.page_cookie_policy_record"
+TERMS = ("vela_setup/data/terms_en.html", "vela_setup/data/terms_fr.html")
 # Shop filters: only what buyers actually filter by (progressive disclosure).
 # Every other spec attribute stays on the product page spec table.
 FILTER_ATTRIBUTES = ["Brand", "Color", "Storage", "Memory", "Size", "Capacity", "Switch Type",
@@ -64,6 +86,18 @@ RIBBONS = {
 }
 
 
+# French labels (website language 2) for records whose names come from code or the catalog.
+FR = {
+    "website.menu": {"Electronics": "Électronique", "Audio": "Audio", "Accessories": "Accessoires",
+                     "Gaming": "Gaming", "Smart Home": "Maison connectée", "Bags & Cases": "Sacs & étuis"},
+    "product.ribbon": {"Sale": "Promo", "Best Seller": "Meilleure vente", "New": "Nouveau",
+                       "Limited": "Édition limitée", "Out of Stock": "Rupture de stock"},
+    "delivery.carrier": {"Standard delivery": "Livraison standard", "Pick up in store": "Retrait en magasin"},
+    "blog.blog": {"Our blog": "Notre blog"},
+}
+FR_FILE = "vela_setup/data/fr_names.json"   # categories, attributes: too many for this file
+
+
 class VelaSetup(models.AbstractModel):
     _name = "vela.setup"
     _description = "Vela Tech reproducible store settings"
@@ -74,7 +108,10 @@ class VelaSetup(models.AbstractModel):
         self._apply_languages()
         self._apply_company()
         self._apply_website()
+        self._apply_taxes()
         self._apply_payments()
+        self._apply_terms()
+        self._apply_french()
         _logger.info("vela_setup: store settings applied")
         return True
 
@@ -88,10 +125,15 @@ class VelaSetup(models.AbstractModel):
         company = self.env.ref("base.main_company")
         vals = {"name": COMPANY["name"], "account_price_include": PRICE_INCLUDE}
         # contact fields only fill blanks, so a developer's local real data is kept
-        for field in ("email", "website", "city"):
+        for field in ("email", "website", "street", "zip", "city", "phone"):
             if not company[field]:
                 vals[field] = COMPANY[field]
+        if not company.country_id:
+            vals["country_id"] = self.env.ref("base.tn").id
         company.write(vals)
+        warehouse = self.env["stock.warehouse"].search([("company_id", "=", company.id)], limit=1)
+        if warehouse and warehouse.name != WAREHOUSE_NAME:
+            warehouse.name = WAREHOUSE_NAME
         self.env.ref("base.user_admin").tz = TIMEZONE
 
     def _apply_website(self):
@@ -112,6 +154,9 @@ class VelaSetup(models.AbstractModel):
                 utils.disable_view(xmlid)
             for xmlid in VIEWS_ON:
                 utils.enable_view(xmlid)
+            policy = self.env.ref(COOKIE_POLICY_PAGE)
+            # the policy page must be set before cookies_bar, or Odoo creates its own copy
+            website.write({"cookie_policy_id": policy.id})
             website.write(SHOP)
         self._apply_shop_catalog()
 
@@ -145,7 +190,77 @@ class VelaSetup(models.AbstractModel):
             else:
                 self.env["website.menu"].create(vals)
 
+    def _sale_tax(self):
+        company = self.env.company
+        return self.env["account.tax"].search([
+            ("company_id", "=", company.id), ("type_tax_use", "=", "sale"),
+            ("amount_type", "=", "percent"), ("amount", "=", SALE_TAX_PERCENT),
+        ], limit=1)
+
+    def _apply_taxes(self):
+        registry = self.env.registry
+        if not self.env.company.chart_template and hasattr(registry, "_auto_install_template"):
+            # Fresh DB: account would load the Tunisian chart (and its taxes) only after the
+            # whole install, i.e. after this method. Load it now so products get the VAT.
+            registry._auto_install_template(self.env)
+            del registry._auto_install_template
+        tax = self._sale_tax()
+        if not tax:
+            _logger.warning("vela_setup: no %s%% sale tax found (is l10n_tn installed?)", SALE_TAX_PERCENT)
+            return
+        company = self.env.company
+        if company.account_sale_tax_id != tax:
+            company.account_sale_tax_id = tax
+        # every physical product we sell carries the VAT (gift cards, donations: no)
+        products = self.env["product.template"].with_context(active_test=False).search(
+            [("type", "=", "consu"), ("sale_ok", "=", True)])
+        products.filtered(lambda p: p.taxes_id != tax).write({"taxes_id": [(6, 0, tax.ids)]})
+
     def _apply_payments(self):
-        demo = self.env["payment.provider"].with_context(active_test=False).search(
-            [("code", "=", "demo")])
-        demo.write(DEMO_PAYMENT)
+        Provider = self.env["payment.provider"].with_context(active_test=False)
+        allowed = Provider.search([("code", "=", "custom"), ("custom_mode", "in", PAY_ON_DELIVERY)])
+        (Provider.search([("active", "=", True)]) - allowed).write({"is_published": False, "active": False})
+        for mode in PAY_ON_DELIVERY:
+            provider = Provider.search([("code", "=", "custom"), ("custom_mode", "=", mode)], limit=1)
+            if not provider:
+                _logger.warning("vela_setup: no %s payment provider", mode)
+                continue
+            name_en, name_fr, msg_en, msg_fr = PAYMENT_TEXT[mode]
+            provider.write({"name": name_en, "state": "enabled"} if "state" in provider._fields
+                           else {"name": name_en, "active": True})
+            provider.write({"is_published": True, "pending_msg": f"<p>{msg_en}</p>"})
+            provider.update_field_translations("name", {"fr_FR": name_fr})
+            self._translate_html(provider, "pending_msg", f"<p>{msg_fr}</p>")
+            provider.payment_method_ids.write({"active": True})
+        # home delivery is paid in cash to the courier
+        carriers = self.env["delivery.carrier"].search([("delivery_type", "in", ("fixed", "base_on_rule"))])
+        carriers.filtered(lambda c: not c.allow_cash_on_delivery).write({"allow_cash_on_delivery": True})
+
+    def _apply_terms(self):
+        """Terms of sale: /terms page and invoices (account's html terms)."""
+        self.env["ir.config_parameter"].sudo().set_bool("account.use_invoice_terms", True)
+        with file_open(TERMS[0]) as f_en, file_open(TERMS[1]) as f_fr:
+            html_en, html_fr = f_en.read(), f_fr.read()
+        company = self.env.company
+        company.write({"terms_type": "html", "invoice_terms_html": html_en})
+        self._translate_html(company, "invoice_terms_html", html_fr)
+
+    def _translate_html(self, record, fname, html_fr):
+        """HTML fields are translated term by term (each text block). Both versions share
+        the same structure, so terms pair up in order."""
+        field = record._fields[fname]
+        en, fr = [], []
+        field.translate(en.append, record.with_context(lang="en_US")[fname])
+        field.translate(fr.append, html_fr)
+        if len(en) != len(fr):
+            _logger.warning("vela_setup: %s.%s FR has %s blocks, EN %s: not translated",
+                            record._name, fname, len(fr), len(en))
+            return
+        record.update_field_translations(fname, {"fr_FR": dict(zip(en, fr, strict=True))})
+
+    def _apply_french(self):
+        with file_open(FR_FILE) as f:
+            names = {**FR, **json.load(f)}
+        for model, mapping in names.items():
+            for rec in self.env[model].with_context(lang="en_US").search([("name", "in", list(mapping))]):
+                rec.update_field_translations("name", {"fr_FR": mapping[rec.name]})
