@@ -21,6 +21,10 @@ services:
       HOST: db
       USER: ${POSTGRES_USER:?set in .env}
       PASSWORD: ${POSTGRES_PASSWORD:?set in .env}
+      # vela_analytics → Kafka bridge (ADR 0010). Default local: no network, Odoo works alone.
+      VELA_DELIVERY_MODE: ${VELA_DELIVERY_MODE:-local}
+      VELA_BRIDGE_URL: ${VELA_BRIDGE_URL:-}
+      VELA_BRIDGE_TOKEN: ${VELA_BRIDGE_TOKEN:-}
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo

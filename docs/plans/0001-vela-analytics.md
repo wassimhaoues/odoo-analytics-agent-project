@@ -1,6 +1,6 @@
 # Plan 0001: `vela_analytics`, the event tracker
 
-- Status: approved (decisions agreed 2026-11-21). Phase A done (ADR 0010); B and C to do
+- Status: approved (decisions agreed 2026-11-21). Phases A and B done (ADR 0010); C to do
 - Spec: [docs/specs/01-odoo-addons.md](../specs/01-odoo-addons.md) (FR-01…03, FR-07, T1–T4, T6),
   [03-combined-architecture.md](../specs/03-combined-architecture.md) (IN-01…04),
   event format [02-big-data.md §3](../specs/02-big-data.md)
@@ -166,14 +166,19 @@ is logged and swallowed: it can never break a cart, a payment or a confirmation 
 - **Cron every minute**: takes up to 500 `pending`/`failed` rows with `next_retry_at <= now`
   (`FOR UPDATE SKIP LOCKED`, so two workers never send the same row), posts one batch.
 - **Backoff**: `next_retry_at = now + min(2^attempts, 60)` minutes; after 20 attempts →
-  `dead` (visible, manual Retry button). Network errors and 5xx retry the whole batch; 4xx is
-  logged as a contract error.
-- **Delivery mode** (setting): `local` (rows marked sent with note "local", no network: the
-  standalone Odoo course mode) or `bridge`.
-- **Config**: `VELA_BRIDGE_URL`, `VELA_BRIDGE_TOKEN` in `.env` → container → read into
-  `ir.config_parameter` by `vela_setup`; placeholders in `.env.example`.
+  `dead` (visible, manual Retry button). Network errors, 5xx and 4xx all retry the whole batch
+  with backoff (4xx is logged as an error: config/contract problem). Up to 20 batches per run,
+  committed one by one.
+- **Delivery mode** `VELA_DELIVERY_MODE`: `local` (default; rows marked sent with channel
+  "Local only", no network: the standalone Odoo course mode) or `bridge`.
+- **Config** (as built): `VELA_DELIVERY_MODE`, `VELA_BRIDGE_URL`, `VELA_BRIDGE_TOKEN` in `.env`
+  → docker-compose → read from the environment at send time. Not stored in the database, so
+  the token stays out of backups and each developer can point at their own bridge.
+  `setup.sh` generates a random token; placeholders in `.env.example`.
+- **Fake bridge**: `addons/vela_analytics/tests/fake_bridge.py` implements the contract (tests,
+  manual checks, reference for the real bridge).
 
-**HTTP contract with the bridge (to confirm with Wassim)**
+**HTTP contract with the bridge** (also in `tracking-contract.md`; to confirm with Wassim)
 
 ```
 POST {VELA_BRIDGE_URL}/v1/events

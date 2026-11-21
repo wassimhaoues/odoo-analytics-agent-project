@@ -10,7 +10,7 @@ owner and performs actions.
 ## Roadmap
 
 1. **Store**: catalog (`vela_tech_catalog`) ✅ · custom theme (`vela_theme`): ✅ all phases (header, footer, homepage + motion, shop, product page, cart, checkout, empty states, dark mode)
-2. **Analytics addon** (`vela_analytics`, plan `docs/plans/0001`): phase A capture ✅ (consented page/product views, clicks, search, cart, checkout errors, trusted orders, outbox; menu *CommercePulse ▸ Tracking*) · B delivery to Kafka · C metrics & alerts
+2. **Analytics addon** (`vela_analytics`, plan `docs/plans/0001`): phase A capture ✅ (consented page/product views, clicks, search, cart, checkout errors, trusted orders, outbox; menu *CommercePulse ▸ Tracking*) · B delivery ✅ (outbox → HTTP bridge, retries; `VELA_DELIVERY_MODE` in `.env`) · C metrics & alerts
 3. **Big data pipeline** (`pipeline/`): Kafka → Spark → HDFS
 4. **AI agent addon** (`vela_ai_agent`): voice/text agent with analytics tools and actions
 
