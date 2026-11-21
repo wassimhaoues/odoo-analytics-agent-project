@@ -8,8 +8,9 @@ from odoo.tools.misc import file_open
 _logger = logging.getLogger(__name__)
 
 # Shared store settings. Change them HERE, not in the Odoo UI.
+STORE_NAME = "Vela Tech"
 COMPANY = {
-    "name": "Vela Tech",
+    "name": STORE_NAME,
     # Neutral placeholders: real personal contact data never goes in git.
     "email": "hello@vela-tech.example",
     "website": "http://localhost:8069",
@@ -18,13 +19,13 @@ COMPANY = {
     "city": "Tunis",
     "phone": "+216 70 000 000",
 }
-WAREHOUSE_NAME = "Vela Tech"
+WAREHOUSE_NAME = STORE_NAME
 # Tunisian VAT, applied to every product we sell. Prices in the catalog already include it.
 SALE_TAX_PERCENT = 19.0
 TIMEZONE = "Africa/Tunis"
 # Catalog prices are Tunisian retail prices, VAT (19%) already included.
 PRICE_INCLUDE = "tax_included"
-WEBSITE_NAME = "Vela Tech"
+WEBSITE_NAME = STORE_NAME
 LANGUAGES = ["en_US", "fr_FR"]          # first = website default
 # No online payment (ADR 0009): customers pay cash when the order arrives, or at pickup.
 PAY_ON_DELIVERY = ["cash_on_delivery", "on_site"]        # payment.provider custom_mode; all others off
@@ -217,11 +218,11 @@ class VelaSetup(models.AbstractModel):
         products.filtered(lambda p: p.taxes_id != tax).write({"taxes_id": [(6, 0, tax.ids)]})
 
     def _apply_payments(self):
-        Provider = self.env["payment.provider"].with_context(active_test=False)
-        allowed = Provider.search([("code", "=", "custom"), ("custom_mode", "in", PAY_ON_DELIVERY)])
-        (Provider.search([("active", "=", True)]) - allowed).write({"is_published": False, "active": False})
+        providers = self.env["payment.provider"].with_context(active_test=False)
+        allowed = providers.search([("code", "=", "custom"), ("custom_mode", "in", PAY_ON_DELIVERY)])
+        (providers.search([("active", "=", True)]) - allowed).write({"is_published": False, "active": False})
         for mode in PAY_ON_DELIVERY:
-            provider = Provider.search([("code", "=", "custom"), ("custom_mode", "=", mode)], limit=1)
+            provider = providers.search([("code", "=", "custom"), ("custom_mode", "=", mode)], limit=1)
             if not provider:
                 _logger.warning("vela_setup: no %s payment provider", mode)
                 continue
@@ -252,11 +253,13 @@ class VelaSetup(models.AbstractModel):
         en, fr = [], []
         field.translate(en.append, record.with_context(lang="en_US")[fname])
         field.translate(fr.append, html_fr)
-        if len(en) != len(fr):
-            _logger.warning("vela_setup: %s.%s FR has %s blocks, EN %s: not translated",
-                            record._name, fname, len(fr), len(en))
+        try:
+            pairs = dict(zip(en, fr, strict=True))
+        except ValueError:
+            _logger.warning("vela_setup: %s.%s FR and EN have different blocks: not translated",
+                            record._name, fname)
             return
-        record.update_field_translations(fname, {"fr_FR": dict(zip(en, fr, strict=True))})
+        record.update_field_translations(fname, {"fr_FR": pairs})
 
     def _apply_french(self):
         with file_open(FR_FILE) as f:
