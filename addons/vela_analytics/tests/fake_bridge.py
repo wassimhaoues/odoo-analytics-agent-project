@@ -67,12 +67,14 @@ class FakeBridge:
                     return self._answer(bridge.fail_status, {"error": "simulated"})
                 if bridge.token and self.headers.get("Authorization") != f"Bearer {bridge.token}":
                     return self._answer(401, {"error": "bad token"})
+                bad_body = {"error": "body must be {events: [1..500]}"}
                 try:
                     length = int(self.headers.get("Content-Length") or 0)
                     events = json.loads(self.rfile.read(length))["events"]
-                    assert isinstance(events, list) and 0 < len(events) <= MAX_EVENTS
-                except (ValueError, KeyError, TypeError, AssertionError):
-                    return self._answer(400, {"error": "body must be {events: [1..500]}"})
+                except (ValueError, KeyError, TypeError):
+                    return self._answer(400, bad_body)
+                if not isinstance(events, list) or not 0 < len(events) <= MAX_EVENTS:
+                    return self._answer(400, bad_body)
                 return self._answer(200, {"results": bridge.accept(events)})
 
         return Handler
