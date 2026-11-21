@@ -1,6 +1,6 @@
 # Plan 0001: `vela_analytics`, the event tracker
 
-- Status: approved (decisions agreed 2026-11-21), implementation not started
+- Status: approved (decisions agreed 2026-11-21). Phase A done (ADR 0010); B and C to do
 - Spec: [docs/specs/01-odoo-addons.md](../specs/01-odoo-addons.md) (FR-01…03, FR-07, T1–T4, T6),
   [03-combined-architecture.md](../specs/03-combined-architecture.md) (IN-01…04),
   event format [02-big-data.md §3](../specs/02-big-data.md)

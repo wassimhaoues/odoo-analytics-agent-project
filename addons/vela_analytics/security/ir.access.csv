@@ -1,0 +1,5 @@
+id,name,model_id,group_id/id,operation,domain
+access_event_user,vela.analytics.event user,vela.analytics.event,group_analytics_user,r,
+access_event_manager,vela.analytics.event manager,vela.analytics.event,group_analytics_manager,rd,
+access_outbox_user,vela.analytics.outbox user,vela.analytics.outbox,group_analytics_user,r,
+access_outbox_manager,vela.analytics.outbox manager,vela.analytics.outbox,group_analytics_manager,rud,
