@@ -14,7 +14,7 @@ addons/vela_<name>/
   models/  __init__.py, one file per model (or per inherited model)
   controllers/         http routes
   views/               <model>_views.xml, menus.xml
-  security/            ir.model.access.csv (+ <name>_security.xml for groups/rules)
+  security/            ir.access.csv (+ <name>_security.xml for groups)
   data/                noupdate XML or JSON + loader
   static/src/          js/, scss/, xml/ (OWL templates); static/description/icon.png
   tests/               test_*.py, tagged
@@ -25,7 +25,11 @@ Manifest `data` order: security → data → views → menus.
 ## Models
 
 - `_name = "vela.<thing>"`, `_description` always set. Inherit with `_inherit`, never copy.
-- Every new model needs an `ir.model.access.csv` line, or it is invisible and logs warnings.
+- Every new model needs an `ir.access.csv` line, or it is invisible and logs warnings.
+  **v20 replaced `ir.model.access` (and record rules) with `ir.access`**: header
+  `id,name,model_id,group_id/id,operation,domain`; `model_id` is the model name
+  (`vela.analytics.event`), `operation` a subset of `crud` in that order (`r`, `rd`, `rud`, `crud`),
+  `domain` optional (it replaces record rules).
 - Prefer stored computed fields with correct `@api.depends`. Never `search()` inside a loop:
   batch with `read_group` / `_read_group`, `mapped`, `filtered`.
 - `sudo()` only at a trust boundary, with a comment saying why (see security.md).
@@ -41,6 +45,8 @@ Manifest `data` order: security → data → views → menus.
 - Variant price extras live on `product.template.attribute.value.price_extra`.
 - Spec attributes: `create_variant="no_variant"` + `product.attribute.category` drive the
   product page specs and the comparison page.
+- Current website: `self.env.website` (no `get_current_website()` in v20).
+- Groups: `res.groups.privilege` + `res.groups` with `privilege_id` (see `vela_analytics/security`).
 - Ribbons: `product.ribbon` with `assign` = manual | sale | new | out_of_stock.
 - Product page text field is `description_ecommerce` (HTML).
 - Stock: create `stock.quant` with `inventory_mode=True` context, then `action_apply_inventory()`.

@@ -6,7 +6,7 @@
 #   .py   → py_compile (syntax)
 #   .xml  → well-formed XML
 #   .json → valid JSON
-#   .csv  under security/ → header check for ir.model.access.csv
+#   .csv  under security/ → header check for ir.access.csv (Odoo 20)
 #   .sh   → bash -n
 # =============================================================================
 set -uo pipefail
@@ -26,8 +26,10 @@ case "$file" in
   *.json) err="$(python3 -c 'import sys,json; json.load(open(sys.argv[1]))' "$file" 2>&1)" ;;
   *.sh)   err="$(bash -n "$file" 2>&1)" ;;
   */security/ir.model.access.csv)
-          head -1 "$file" | grep -q '^id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink' \
-            || err="ir.model.access.csv header must be: id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink" ;;
+          err="Odoo 20 has no ir.model.access: use security/ir.access.csv (rules/odoo-addon.md)" ;;
+  */security/ir.access.csv)
+          head -1 "$file" | grep -q '^id,name,model_id,group_id/id,operation,domain' \
+            || err="ir.access.csv header must be: id,name,model_id,group_id/id,operation,domain" ;;
 esac
 
 if [ -n "$err" ]; then

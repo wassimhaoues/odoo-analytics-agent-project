@@ -18,7 +18,7 @@ Check, in order:
 1. **Correctness**: wrong field/model names for v20 (verify in the image with
    `docker compose exec -T odoo grep -rn …`), missing `@api.depends`, wrong `_inherit`,
    xpath targets that don't exist in v20 templates, manifest data order.
-2. **Security**: missing `ir.model.access.csv` lines, `sudo()` without validated input,
+2. **Security**: missing `ir.access.csv (v20)` lines, `sudo()` without validated input,
    `auth="public"` routes without size/type checks, SQL string formatting, `eval`,
    unescaped HTML, secrets in code.
 3. **Data safety**: upgrades that drop/rename stored fields without migration, hooks that
