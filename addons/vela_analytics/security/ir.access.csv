@@ -3,3 +3,8 @@ access_event_user,vela.analytics.event user,vela.analytics.event,group_analytics
 access_event_manager,vela.analytics.event manager,vela.analytics.event,group_analytics_manager,rd,
 access_outbox_user,vela.analytics.outbox user,vela.analytics.outbox,group_analytics_user,r,
 access_outbox_manager,vela.analytics.outbox manager,vela.analytics.outbox,group_analytics_manager,rud,
+access_metric_user,vela.analytics.metric user,vela.analytics.metric,group_analytics_user,r,
+access_metric_manager,vela.analytics.metric manager,vela.analytics.metric,group_analytics_manager,rd,
+access_alert_user,vela.analytics.alert user,vela.analytics.alert,group_analytics_user,ru,
+access_alert_manager,vela.analytics.alert manager,vela.analytics.alert,group_analytics_manager,rud,
+access_demo_wizard_manager,vela.analytics.demo.wizard manager,vela.analytics.demo.wizard,group_analytics_manager,crud,

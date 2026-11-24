@@ -1,1 +1,9 @@
-from . import analytics_event, analytics_outbox, payment_transaction, sale_order
+from . import (
+    analytics_demo,
+    analytics_event,
+    analytics_metric,
+    analytics_outbox,
+    payment_transaction,
+    res_config_settings,
+    sale_order,
+)

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_demo_wizard_form" model="ir.ui.view">
+        <field name="name">vela.analytics.demo.wizard.form</field>
+        <field name="model">vela.analytics.demo.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <div class="alert alert-warning" role="status">
+                    Demo events are flagged <b>synthetic</b>: they only show in the
+                    <b>Demo</b> filter and never mix with real reporting.
+                </div>
+                <group>
+                    <field name="scenario"/>
+                    <field name="product_id" invisible="scenario != 'demand_spike'"
+                           options="{'no_create': True}"/>
+                    <field name="minutes"/>
+                    <field name="volume"/>
+                    <field name="to_pipeline"/>
+                </group>
+                <footer>
+                    <button name="action_generate" type="object" string="Generate"
+                            class="btn-primary" data-hotkey="q"/>
+                    <button name="action_clear" type="object" string="Delete all demo data"
+                            class="btn-secondary"
+                            confirm="Delete every synthetic event, demo metric and demo alert?"/>
+                    <button string="Cancel" special="cancel" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_demo_wizard" model="ir.actions.act_window">
+        <field name="name">Generate demo traffic</field>
+        <field name="res_model">vela.analytics.demo.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

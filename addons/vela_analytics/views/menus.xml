@@ -3,9 +3,19 @@
     <menuitem id="menu_root" name="CommercePulse" sequence="45"
               web_icon="vela_analytics,static/description/icon.png"
               groups="group_analytics_user">
+        <menuitem id="menu_insights" name="Insights" sequence="5">
+            <menuitem id="menu_alerts" name="Alerts" action="action_alerts" sequence="10"/>
+            <menuitem id="menu_metrics" name="Metrics" action="action_metrics" sequence="20"/>
+        </menuitem>
         <menuitem id="menu_tracking" name="Tracking" sequence="10">
             <menuitem id="menu_events" name="Event Monitor" action="action_events" sequence="10"/>
             <menuitem id="menu_outbox" name="Outbox" action="action_outbox" sequence="20"/>
+        </menuitem>
+        <menuitem id="menu_config" name="Configuration" sequence="90"
+                  groups="group_analytics_manager">
+            <menuitem id="menu_demo" name="Generate demo traffic" action="action_demo_wizard"
+                      sequence="10"/>
+            <menuitem id="menu_settings" name="Settings" action="action_settings" sequence="20"/>
         </menuitem>
     </menuitem>
 </odoo>
