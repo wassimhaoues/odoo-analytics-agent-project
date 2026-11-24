@@ -27,7 +27,8 @@ if [ ! -f .env ]; then
     exit 1
   fi
   say "Creating .env (random DB password)"
-  sed "s/^POSTGRES_PASSWORD=.*/POSTGRES_PASSWORD=$(openssl rand -hex 16)/" .env.example > .env
+  sed -e "s/^POSTGRES_PASSWORD=.*/POSTGRES_PASSWORD=$(openssl rand -hex 16)/" \
+      -e "s/^VELA_BRIDGE_TOKEN=.*/VELA_BRIDGE_TOKEN=$(openssl rand -hex 24)/" .env.example > .env
 fi
 if [ ! -f config/odoo.conf ]; then
   say "Creating config/odoo.conf (random master password)"

@@ -77,3 +77,29 @@ multi-variant products); `variant` carries the exact variant code. `page` has no
 - Consent: no beacon before the cookie banner's "accept"; events raised earlier wait in
   memory and are dropped on refusal. Implementation: `vela_analytics/static/src/js/tracker.js`.
 - Built-in Odoo tracking (`website.track`, visitor page views) stays on. We add to it.
+
+## Odoo → Kafka bridge (HTTP, ADR 0010)
+
+`vela_analytics` delivers its outbox every minute to a bridge service in `pipeline/` that
+produces to Kafka `vela.events.v1`. Reference implementation: `addons/vela_analytics/tests/fake_bridge.py`.
+
+```
+POST {VELA_BRIDGE_URL}/v1/events
+Authorization: Bearer {VELA_BRIDGE_TOKEN}
+Content-Type: application/json
+{"events": [ <vela.events.v1 envelope>, … ]}        1..500 events
+
+200 {"results": [{"event_id": "…", "status": "accepted" | "duplicate" | "rejected", "error": "…"}]}
+401 bad token · 400 bad body → Odoo logs an error and retries with backoff
+5xx / timeout / unreachable → Odoo retries with backoff (2, 4, 8 … 60 min; dead after 20)
+```
+
+- One result per event. `accepted` and `duplicate` → Odoo marks the row sent; `rejected` →
+  dead (visible in *CommercePulse ▸ Tracking ▸ Outbox*, Retry button). A missing result → retry.
+- Delivery is **at least once**: the same `event_id` can arrive twice. The bridge answers
+  `duplicate` when it knows the id; Spark deduplicates on `event_id` anyway.
+- Kafka record key = `session`, or `event_id` when there is no session (order without consent);
+  `event_id` also as a header. The bridge must not add, drop or rename envelope fields.
+- Envelope extras the bridge must accept: `origin`, `variant`, `field` (browser form field on
+  `checkout_error`), `fields` (list, server `address_invalid`), `utm`, `viewport`.
+

@@ -10,7 +10,7 @@ data platform. **Two developers** each run an identical store built from git
 | # | Step | Lives in | Status |
 |---|---|---|---|
 | 1 | Store: catalog + custom theme | `addons/vela_tech_catalog`, `addons/vela_theme` | catalog ✅ · theme: phase A ✅ (tokens, fonts, header, footer, logo) · B ✅ (homepage + motion) · C ✅ (shop, cards, filters, product page) · D ✅ (cart, checkout, empty states, cookie bar, dark mode) |
-| 2 | Analytics addon: who clicked/viewed what | `addons/vela_analytics` | plan `docs/plans/0001` · A ✅ (capture, consent, server events, outbox rows) · B (bridge delivery) · C (metrics, alerts, demo) |
+| 2 | Analytics addon: who clicked/viewed what | `addons/vela_analytics` | plan `docs/plans/0001` · A ✅ (capture, consent, server events, outbox rows) · B ✅ (outbox cron → HTTP bridge, backoff, fake bridge) · C (metrics, alerts, demo) |
 | 3 | Big-data pipeline: Kafka → Spark → HDFS | `pipeline/` | planned |
 | 4 | AI agent addon (voice + text) that reads analytics and acts | `addons/vela_ai_agent` | planned |
 

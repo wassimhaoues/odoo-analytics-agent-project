@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
+    <record id="ir_cron_outbox_deliver" model="ir.cron">
+        <field name="name">Vela Analytics: deliver outbox to the Kafka bridge</field>
+        <field name="model_id" ref="model_vela_analytics_outbox"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_deliver()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">minutes</field>
+    </record>
     <record id="ir_cron_event_retention" model="ir.cron">
         <field name="name">Vela Analytics: delete raw events older than 90 days</field>
         <field name="model_id" ref="model_vela_analytics_event"/>

@@ -21,5 +21,8 @@ All commands run from the repo root.
   another project on this machine). Other local containers (redis, mongo, seaweedfs) belong
   to other projects. Don't touch them.
 - Volumes `odoo-db-data`, `odoo-web-data` hold all real data. Never `docker compose down -v`.
+- `vela_analytics` → Kafka: `VELA_DELIVERY_MODE` (`local` default | `bridge`), `VELA_BRIDGE_URL`,
+  `VELA_BRIDGE_TOKEN` in `.env`, passed to the Odoo container by docker-compose. After changing
+  them: `docker compose up -d odoo` (recreates the container; restart alone keeps old env).
 - Step 3 services (Kafka, Spark, HDFS) go in `pipeline/docker-compose.yml` with their own
   `.env` keys, joined to the Odoo network. Mind RAM: start only what a task needs.
