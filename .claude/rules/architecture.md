@@ -36,6 +36,15 @@ Visitor ──► Odoo website (vela_theme, website_sale)
   arguments), never free SQL or `eval`. Every action is logged and reversible where possible.
 - **Event schema is versioned** (`vela.events.v1`). Breaking change → new version, not an edit.
 
+## Spec names (docs/specs, ADR 0008)
+
+| Addon | Models | Spec requirements |
+|---|---|---|
+| `vela_analytics` | `vela.analytics.event`, `.outbox`, `.metric`, `.alert` | FR-01…03, FR-07, T1–T3, T6 |
+| `vela_ai_agent` | `vela.ai.analysis`, `vela.ai.proposal` (+ `vela.ai.action.log`) | FR-04…07, T4–T5 |
+
+The spec's MVP excludes live speech: text chat first, voice only after the MVP.
+
 ## Dependencies between addons
 
 `vela_theme` → website · `vela_analytics` → website_sale · `vela_ai_agent` → vela_analytics.

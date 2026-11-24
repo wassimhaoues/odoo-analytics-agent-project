@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Content pages: About, Privacy, Cookie policy. Text stays in normal elements so the
+         website builder can still edit it. -->
+
+    <!-- Shared page header. Params: vela_eyebrow, vela_title, vela_lede -->
+    <template id="page_head" name="Vela: page header">
+        <section class="s_vela_page_head" data-name="Page header">
+            <div class="container">
+                <p class="vela-mono vela-page-head__eyebrow" t-out="vela_eyebrow"/>
+                <h1 class="vela-page-head__title" t-out="vela_title"/>
+                <p class="vela-page-head__lede" t-out="vela_lede"/>
+            </div>
+        </section>
+    </template>
+
+    <!-- About us -->
+    <template id="page_about" name="About Vela Tech">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'about-us'"/>
+            <div id="wrap" class="vela-page">
+                <t t-call="vela_theme.page_head"
+                   vela_eyebrow.f="About us"
+                   vela_title.f="Tech that sails through your day."
+                   vela_lede.f="Vela Tech is a Tunis store for laptops, phones, audio and gaming gear: honest prices, real stock, and you only pay when the parcel is in your hands."/>
+                <section class="s_vela_about pb64" data-name="About">
+                    <div class="container">
+                        <div class="vela-about__grid">
+                            <article class="vela-about__card vela-about__card--wide">
+                                <h2>Why "Vela"</h2>
+                                <p>A <em>vela</em> is a sail. Like the boats in the harbour of Sidi Bou Said, we want buying tech to feel light: clear specs, no jargon, no surprise fees.</p>
+                            </article>
+                            <article class="vela-about__card">
+                                <p class="vela-mono vela-about__num">24</p>
+                                <h2>Governorates delivered</h2>
+                                <p>Home delivery anywhere in Tunisia, usually in 2 to 5 working days.</p>
+                            </article>
+                            <article class="vela-about__card">
+                                <p class="vela-mono vela-about__num">0 DT</p>
+                                <h2>Paid online</h2>
+                                <p>No card needed: pay cash to the courier, or at our Tunis store when you collect.</p>
+                            </article>
+                            <article class="vela-about__card">
+                                <p class="vela-mono vela-about__num">2 yrs</p>
+                                <h2>Warranty</h2>
+                                <p>Every product is covered for two years against manufacturing defects.</p>
+                            </article>
+                            <article class="vela-about__card">
+                                <p class="vela-mono vela-about__num">10 days</p>
+                                <h2>To change your mind</h2>
+                                <p>Return a product within 10 working days of delivery, in its original packaging.</p>
+                            </article>
+                        </div>
+                        <div class="vela-about__note">
+                            <p>Vela Tech is a university study project (ITBS): an Odoo store that feeds a data platform and an AI analyst. Products, prices and stock are demo data, and no order is ever shipped.</p>
+                            <a class="btn btn-primary btn-lg" href="/shop" data-track="page.about.shop" data-track-type="click">Browse the store</a>
+                        </div>
+                    </div>
+                </section>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+    <record id="page_about_record" model="website.page">
+        <field name="url">/about-us</field>
+        <field name="view_id" ref="page_about"/>
+        <field name="is_published" eval="True"/>
+        <field name="website_indexed" eval="True"/>
+        <field name="website_meta_description">Who we are, how delivery and cash payment work, warranty and returns.</field>
+    </record>
+
+    <!-- Privacy policy: replaces Odoo's empty placeholder page (/privacy) -->
+    <template id="privacy_policy" inherit_id="website.privacy_policy" name="Vela: privacy policy">
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <div id="wrap" class="vela-page">
+                <t t-call="vela_theme.page_head"
+                   vela_eyebrow.f="Legal"
+                   vela_title.f="Privacy policy"
+                   vela_lede.f="What we collect, why, how long we keep it, and how to reach us. Last update: 21 November 2026."/>
+                <section class="pb64" data-name="Privacy">
+                    <div class="container">
+                        <div class="vela-legal">
+                            <h2>Who is responsible</h2>
+                            <p>Vela Tech, Tunis, Tunisia, is responsible for the personal data processed on this website. Vela Tech is a study project: please don't enter real personal data.</p>
+                            <h2>What we collect</h2>
+                            <ul>
+                                <li><strong>Your account and orders:</strong> name, email, phone, delivery address, ordered products.</li>
+                                <li><strong>Messages</strong> you send through the contact form or live chat.</li>
+                                <li><strong>Browsing analytics, only if you accept optional cookies:</strong> pages and products viewed, searches, cart and checkout steps, under a random session id. No names, emails or typed text.</li>
+                            </ul>
+                            <p>We never ask for card details: you pay in cash on delivery or at pickup.</p>
+                            <h2>Why</h2>
+                            <ul>
+                                <li>To deliver your orders and contact you about them (contract).</li>
+                                <li>To keep invoices, as accounting law requires (legal obligation).</li>
+                                <li>To understand which products and pages work, and fix checkout problems (your consent, for analytics).</li>
+                            </ul>
+                            <h2>How long we keep it</h2>
+                            <ul>
+                                <li>Orders and invoices: as long as Tunisian accounting law requires.</li>
+                                <li>Raw analytics events: 90 days, then only anonymous totals remain.</li>
+                                <li>Your account: until you ask us to delete it.</li>
+                            </ul>
+                            <h2>Who sees it</h2>
+                            <p>Only our team, and the courier for your delivery address and phone. We don't sell or rent your data.</p>
+                            <h2>Your rights</h2>
+                            <p>Under Organic Law No. 2004-63 of 27 July 2004 on personal data protection, you can access, correct or object to the processing of your data, and withdraw your analytics consent at any time from the cookie banner. Write to us through the <a href="/contactus" data-track="page.privacy.contact" data-track-type="click">contact page</a>. You can also complain to the INPDP (Instance Nationale de Protection des Données Personnelles).</p>
+                            <h2>Cookies</h2>
+                            <p>See our <a href="/cookie-policy" data-track="page.privacy.cookies" data-track-type="click">cookie policy</a>.</p>
+                        </div>
+                    </div>
+                </section>
+                <div class="oe_structure"/>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Cookie policy: linked from the cookie bar (website.cookie_policy_id, set by vela_setup) -->
+    <template id="page_cookie_policy" name="Vela: cookie policy">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'cookie-policy'"/>
+            <div id="wrap" class="vela-page">
+                <t t-call="vela_theme.page_head"
+                   vela_eyebrow.f="Legal"
+                   vela_title.f="Cookie policy"
+                   vela_lede.f="Essential cookies make the store work. Analytics only runs if you say yes."/>
+                <section class="pb64" data-name="Cookies">
+                    <div class="container">
+                        <div class="vela-legal">
+                            <h2>Essential cookies (always on)</h2>
+                            <p>They keep your session, cart, language and your cookie choice. Without them, the store can't work, so they don't need consent.</p>
+                            <h2>Optional analytics (only with your consent)</h2>
+                            <p>If you click "Accept all" in the banner, we record pages and products you view, searches, cart and checkout steps under a random session id. It helps us see which products interest you and spot checkout errors. If you choose "Only essentials", nothing of this is recorded.</p>
+                            <h2>Change your choice</h2>
+                            <p>Clear this site's cookies in your browser: the banner comes back and you can choose again.</p>
+                            <h2>How long</h2>
+                            <p>Your cookie choice is kept for 6 months. Raw analytics events are deleted after 90 days.</p>
+                            <p>More in our <a href="/privacy" data-track="page.cookies.privacy" data-track-type="click">privacy policy</a>.</p>
+                        </div>
+                    </div>
+                </section>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+    <record id="page_cookie_policy_record" model="website.page">
+        <field name="url">/cookie-policy</field>
+        <field name="view_id" ref="page_cookie_policy"/>
+        <field name="is_published" eval="True"/>
+        <field name="website_indexed" eval="False"/>
+    </record>
+    <!-- Contact us: keep Odoo's form (website_crm hooks into it), replace the placeholder
+         content (stock photo, "50,000+ companies", generic FAQ, San Francisco map). -->
+    <template id="contactus" inherit_id="website.contactus" name="Vela: contact page">
+        <xpath expr="//section[hasclass('s_form_aside')]//p[hasclass('lead')]" position="replace">
+            <p class="lead">Questions about a product, an order or a delivery? Write to us: we answer within 1 to 2 working days.</p>
+        </xpath>
+        <xpath expr="//input[@name='phone']" position="attributes">
+            <attribute name="placeholder">+216 20 000 000</attribute>
+        </xpath>
+        <xpath expr="//input[@name='company']" position="attributes">
+            <attribute name="placeholder">Optional</attribute>
+        </xpath>
+        <xpath expr="//img[@src='/web/image/website.s_form_aside_default_image']" position="replace">
+            <t t-set="vela_co" t-value="website.company_id.sudo()"/>
+            <aside class="vela-reach" aria-label="Other ways to reach us">
+                <p class="vela-mono vela-page-head__eyebrow">Reach us</p>
+                <dl class="vela-reach__list">
+                    <div>
+                        <dt>Store &amp; pickup</dt>
+                        <dd><t t-out="vela_co.street"/>, <t t-out="vela_co.zip"/> <t t-out="vela_co.city"/>, Tunisia</dd>
+                    </div>
+                    <div>
+                        <dt>Opening hours</dt>
+                        <dd>Monday to Saturday, 9:00 to 19:00</dd>
+                    </div>
+                    <div t-if="vela_co.phone">
+                        <dt>Phone</dt>
+                        <dd><a t-att-href="'tel:%s' % vela_co.phone.replace(' ', '')" t-out="vela_co.phone" data-track="page.contact.phone" data-track-type="click"/></dd>
+                    </div>
+                    <div t-if="vela_co.email">
+                        <dt>Email</dt>
+                        <dd><a t-att-href="'mailto:%s' % vela_co.email" t-out="vela_co.email" data-track="page.contact.email" data-track-type="click"/></dd>
+                    </div>
+                </dl>
+                <p class="vela-reach__note">Delivery anywhere in Tunisia in 2 to 5 working days. You pay in cash when it arrives.</p>
+            </aside>
+        </xpath>
+        <xpath expr="//a[hasclass('s_website_form_send')]" position="attributes">
+            <attribute name="data-track">page.contact.submit</attribute>
+            <attribute name="data-track-type">submit</attribute>
+        </xpath>
+        <xpath expr="//section[hasclass('s_title')]" position="replace"/>
+        <xpath expr="//section[hasclass('s_accordion_image')]" position="replace"/>
+        <xpath expr="//section[hasclass('s_faq_list')]" position="replace">
+            <section class="s_vela_faq pt64 pb96" data-name="FAQ">
+                <div class="container">
+                    <div class="vela-section-head">
+                        <h2>Before you write</h2>
+                    </div>
+                    <div class="vela-faq">
+                        <details>
+                            <summary data-track="page.contact.faq_delivery" data-track-type="click">How long does delivery take?</summary>
+                            <p>2 to 5 working days anywhere in Tunisia. The courier calls you before coming.</p>
+                        </details>
+                        <details>
+                            <summary data-track="page.contact.faq_payment" data-track-type="click">How do I pay?</summary>
+                            <p>In cash, to the courier when your order arrives, or at our Tunis store when you collect it. We never ask for card details.</p>
+                        </details>
+                        <details>
+                            <summary data-track="page.contact.faq_returns" data-track-type="click">Can I return a product?</summary>
+                            <p>Yes, within 10 working days of delivery, in its original packaging. See our <a href="/terms" data-track="page.contact.terms" data-track-type="click">terms of sale</a>.</p>
+                        </details>
+                        <details>
+                            <summary data-track="page.contact.faq_warranty" data-track-type="click">What does the warranty cover?</summary>
+                            <p>Every product has a two-year warranty against manufacturing defects. Send us your order number and a short description of the problem.</p>
+                        </details>
+                        <details>
+                            <summary data-track="page.contact.faq_order" data-track-type="click">Where is my order?</summary>
+                            <p>Sign in and open <a href="/my/orders" data-track="page.contact.orders" data-track-type="click">your orders</a> to see its status.</p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+        </xpath>
+    </template>
+</odoo>

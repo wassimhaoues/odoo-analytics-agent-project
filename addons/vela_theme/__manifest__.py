@@ -19,6 +19,7 @@ gets the identical site from git.
         "views/shop.xml",
         "views/empty.xml",
         "views/dark_mode.xml",
+        "views/pages.xml",
     ],
     "assets": {
         "web._assets_primary_variables": [
@@ -33,6 +34,7 @@ gets the identical site from git.
             "vela_theme/static/src/scss/home.scss",
             "vela_theme/static/src/scss/shop.scss",
             "vela_theme/static/src/scss/checkout.scss",
+            "vela_theme/static/src/scss/pages.scss",
             "vela_theme/static/src/scss/dark.scss",
             # vendored motion libs (ADR 0006), loaded before our interactions
             "vela_theme/static/lib/gsap-3.12.5/gsap.min.js",

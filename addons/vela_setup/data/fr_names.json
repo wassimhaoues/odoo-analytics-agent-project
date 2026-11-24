@@ -1,0 +1,44 @@
+{
+  "product.public.category": {
+    "Electronics": "Électronique", "Audio": "Audio", "Computer Accessories": "Accessoires informatiques",
+    "Gaming": "Gaming", "Smart Home": "Maison connectée", "Bags & Cases": "Sacs & étuis",
+    "Laptops": "Ordinateurs portables", "Smartphones": "Smartphones", "Tablets": "Tablettes",
+    "Monitors": "Écrans", "Smartwatches & Wearables": "Montres connectées & objets portés",
+    "Headphones": "Casques", "Earbuds": "Écouteurs", "Speakers": "Enceintes",
+    "Keyboards & Mice": "Claviers & souris", "Storage (SSD, USB)": "Stockage (SSD, USB)",
+    "Cables & Chargers": "Câbles & chargeurs", "Consoles": "Consoles", "Controllers": "Manettes",
+    "Gaming Chairs": "Chaises gaming", "Smart Lights": "Éclairage connecté", "Smart Plugs": "Prises connectées",
+    "Security Cameras": "Caméras de sécurité", "Laptop Bags": "Sacs pour ordinateur", "Phone Cases": "Coques de téléphone"
+  },
+  "product.attribute": {
+    "Color": "Couleur", "Storage": "Stockage", "Memory": "Mémoire", "Size": "Taille", "Switch Type": "Type de switch",
+    "Length": "Longueur", "Capacity": "Capacité", "Connector": "Connecteur", "Edition": "Édition", "Pack": "Pack",
+    "Brand": "Marque", "Connectivity Option": "Option de connectivité", "Material": "Matière", "Pattern": "Motif",
+    "Model Year": "Année du modèle", "Operating System": "Système d'exploitation", "Compatibility": "Compatibilité",
+    "Warranty": "Garantie", "Screen Size": "Taille d'écran", "Resolution": "Résolution",
+    "Refresh Rate": "Taux de rafraîchissement", "Panel Type": "Type de dalle", "Processor": "Processeur",
+    "Graphics": "Carte graphique", "Read Speed": "Vitesse de lecture", "Polling Rate": "Taux de rapport",
+    "Battery Life": "Autonomie", "Charging": "Charge", "Power Output": "Puissance de sortie",
+    "Connectivity": "Connectivité", "Ports": "Ports", "Wireless Standard": "Norme sans fil",
+    "Smart Assistant": "Assistant vocal", "Driver Size": "Taille du haut-parleur",
+    "Noise Cancelling": "Réduction de bruit", "Audio Output": "Sortie audio", "Camera": "Appareil photo",
+    "Video Resolution": "Résolution vidéo", "Field of View": "Champ de vision", "Night Vision": "Vision nocturne",
+    "Dimensions": "Dimensions", "Weight": "Poids", "Water Resistance": "Résistance à l'eau",
+    "Form Factor": "Format", "Sensor": "Capteur", "Keyboard Layout": "Disposition du clavier",
+    "Interface": "Interface", "Color Gamut": "Gamut de couleurs", "Battery Capacity": "Capacité de la batterie",
+    "Certification": "Certification", "RAM": "RAM", "Condition": "État", "Max Load": "Charge maximale",
+    "Brightness": "Luminosité", "Color Temperature": "Température de couleur", "Socket": "Culot",
+    "Power Consumption": "Consommation", "Power Source": "Alimentation", "Hub Required": "Hub requis",
+    "Video Storage": "Stockage vidéo", "Two-Way Audio": "Audio bidirectionnel",
+    "Energy Monitoring": "Suivi de consommation", "Plug Type": "Type de prise"
+  },
+  "product.attribute.category": {
+    "General": "Général", "Display": "Écran", "Performance": "Performances", "Battery & Power": "Batterie & alimentation",
+    "Connectivity": "Connectivité", "Audio": "Audio", "Camera": "Appareil photo", "Physical": "Caractéristiques physiques"
+  },
+  "product.tag": {
+    "Apple Ecosystem": "Écosystème Apple", "Gaming": "Gaming", "Wireless": "Sans fil", "Work From Home": "Télétravail",
+    "Gift Idea": "Idée cadeau", "Student Pick": "Choix étudiant", "Premium": "Premium", "Budget Pick": "Petit budget",
+    "Smart Home": "Maison connectée", "Creator": "Créateurs", "Travel": "Voyage", "Fitness": "Sport & bien-être"
+  }
+}

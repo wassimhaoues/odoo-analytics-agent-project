@@ -41,6 +41,7 @@ UI, add it here too, or your teammate won't have it.
         "vela_tech_catalog",
     ],
     "data": [
+        "data/blog_posts.xml",
         "data/setup.xml",
     ],
     "installable": True,
