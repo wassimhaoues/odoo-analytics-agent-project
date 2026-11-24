@@ -10,7 +10,7 @@ owner and performs actions.
 ## Roadmap
 
 1. **Store**: catalog (`vela_tech_catalog`) ✅ · custom theme (`vela_theme`): ✅ all phases (header, footer, homepage + motion, shop, product page, cart, checkout, empty states, dark mode)
-2. **Analytics addon** (`vela_analytics`, plan `docs/plans/0001`): phase A capture ✅ (consented page/product views, clicks, search, cart, checkout errors, trusted orders, outbox; menu *CommercePulse ▸ Tracking*) · B delivery ✅ (outbox → HTTP bridge, retries; `VELA_DELIVERY_MODE` in `.env`) · C metrics & alerts
+2. **Analytics addon** (`vela_analytics`, plan `docs/plans/0001`): phase A capture ✅ (consented page/product views, clicks, search, cart, checkout errors, trusted orders, outbox; menu *CommercePulse ▸ Tracking*) · B delivery ✅ (outbox → HTTP bridge, retries; `VELA_DELIVERY_MODE` in `.env`) · C insights ✅ (5-minute metrics, alerts with evidence, demo traffic: *Configuration ▸ Generate demo traffic* or `scripts/analytics_demo.sh`)
 3. **Big data pipeline** (`pipeline/`): Kafka → Spark → HDFS
 4. **AI agent addon** (`vela_ai_agent`): voice/text agent with analytics tools and actions
 
@@ -61,9 +61,9 @@ addons/
   vela_setup/          the store's state: all apps + our addons + shared settings
   vela_theme/          look & feel (Sidi Bou Said palette, Archivo, glass header, motion)
   vela_tech_catalog/   demo catalog (JSON + loader + real CC-licensed images)
-  vela_analytics/      consent-aware event tracking (vela.events.v1) + outbox
+  vela_analytics/      consent-aware event tracking (vela.events.v1), outbox, metrics, alerts
 pipeline/            Kafka / Spark / Hadoop (step 3)
-scripts/             setup · update · drift · backup · restore · screenshot · catalog/
+scripts/             setup · update · drift · backup · restore · screenshot · analytics_demo · catalog/
 docs/                adr/ (decisions), specs/ (requirements), plans/ (implementation plans)
 .claude/             shared Claude Code config: rules, skills, agents, hooks
 ```
