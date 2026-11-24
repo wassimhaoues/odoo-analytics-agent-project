@@ -46,24 +46,34 @@ Areas: `header`, `megamenu`, `hero`, `rail`, `bento`, `deals`, `shop`, `filters`
 ```json
 { "v": 1, "event_id": "<uuid, stable across retries>", "event": "click",
   "track": "hero.cta.shop_now", "ts": "2026-11-15T10:00:00.000Z",
-  "visitor": "<website.visitor access_token>", "session": "<uuid per tab session>",
-  "website_id": 1, "page": "/shop/category/laptops", "ref": "<document.referrer>",
+  "visitor": "<16-hex HMAC of the Odoo visitor token>", "session": "<uuid, vela_session cookie>",
+  "website_id": 1, "page": "/shop/category/laptops", "ref": "<referrer host>",
   "product": "VT-LAP-001", "category": "laptops", "position": 3,
-  "device": "desktop", "source": "instagram", "is_synthetic": false,
+  "device": "desktop", "source": "instagram", "is_synthetic": false, "origin": "browser",
   "viewport": "1440x900", "utm": {"source": "", "medium": "", "campaign": ""} }
 ```
 
 This is also the spec's canonical Kafka event (docs/specs/02-big-data.md §3, ADR 0008).
-Required: `v`, `event_id`, `event`, `ts`, `session`, `website_id`, `is_synthetic`.
+Required: `v`, `event_id`, `event`, `ts`, `session`, `website_id`, `is_synthetic`
+(`session` is absent only on `order_confirmed` without consent).
 `event` is one of `page_view`, `product_view`, `search`, `add_to_cart`, `checkout_started`,
 `checkout_error`, `order_confirmed` (server only, never from the browser), or `click` for any
 other tracked control (its `track` id says which). Optional bounded fields: `quantity`,
-`search_results_count`, `region` (country level), `error_code`.
+`search_results_count`, `region` (country level), `error_code`, `variant`.
+Since ADR 0010: `origin` = `browser` / `server` / `demo`; the browser may send only
+`page_view`, `product_view`, `click`, `checkout_started`, `checkout_error` (`form_validation`);
+`search`, `add_to_cart`, the other `error_code` values (`address_invalid`,
+`delivery_unavailable`, `out_of_stock`, `payment_error`, `payment_rejected`, `server_error`)
+and `order_confirmed` come from Odoo. `product` is the theme's SKU (template code for
+multi-variant products); `variant` carries the exact variant code. `page` has no query string,
+`ref` is a host. Events without consent are never stored, except `order_confirmed` without
+`session`/`visitor`.
 
 ## Rules
 
 - Ids describe **intent, not layout**: `product.add_to_cart`, not `button_3`.
-- No personal data in events (no names, emails, addresses, typed text).
-  The visitor id is Odoo's `website.visitor` token.
-- Respect Do Not Track / consent once the cookie banner exists: no beacon before consent.
+- No personal data in events (no names, emails, addresses, typed text, search text).
+  The visitor id is a salted hash of Odoo's `website.visitor` token, computed server-side (ADR 0010).
+- Consent: no beacon before the cookie banner's "accept"; events raised earlier wait in
+  memory and are dropped on refusal. Implementation: `vela_analytics/static/src/js/tracker.js`.
 - Built-in Odoo tracking (`website.track`, visitor page views) stays on. We add to it.

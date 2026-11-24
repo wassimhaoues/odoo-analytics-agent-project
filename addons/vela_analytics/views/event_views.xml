@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_event_list" model="ir.ui.view">
+        <field name="name">vela.analytics.event.list</field>
+        <field name="model">vela.analytics.event</field>
+        <field name="arch" type="xml">
+            <list create="0" edit="0">
+                <field name="occurred_at"/>
+                <field name="event" decoration-danger="event == 'checkout_error'"
+                       decoration-success="event == 'order_confirmed'"/>
+                <field name="track" optional="show"/>
+                <field name="page" optional="show"/>
+                <field name="sku" optional="show"/>
+                <field name="error_code" optional="show"/>
+                <field name="device" optional="show"/>
+                <field name="session" optional="hide"/>
+                <field name="origin" optional="show"/>
+                <field name="consent" optional="hide"/>
+                <field name="is_synthetic" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_event_form" model="ir.ui.view">
+        <field name="name">vela.analytics.event.form</field>
+        <field name="model">vela.analytics.event</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0">
+                <sheet>
+                    <div class="oe_title"><h1><field name="event"/></h1></div>
+                    <group>
+                        <group string="Event">
+                            <field name="event_id"/>
+                            <field name="track"/>
+                            <field name="occurred_at"/>
+                            <field name="received_at"/>
+                            <field name="origin"/>
+                            <field name="is_synthetic"/>
+                        </group>
+                        <group string="Context">
+                            <field name="page"/>
+                            <field name="ref"/>
+                            <field name="source"/>
+                            <field name="device"/>
+                            <field name="website_id"/>
+                            <field name="consent"/>
+                            <field name="session"/>
+                            <field name="visitor"/>
+                        </group>
+                        <group string="Commerce">
+                            <field name="product_id"/>
+                            <field name="sku"/>
+                            <field name="category"/>
+                            <field name="position"/>
+                            <field name="quantity"/>
+                            <field name="search_results_count" invisible="event != 'search'"/>
+                            <field name="error_code" invisible="not error_code"/>
+                            <field name="sale_order_id"/>
+                        </group>
+                        <group string="Extra">
+                            <field name="payload" widget="json" nolabel="1" colspan="2"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_event_pivot" model="ir.ui.view">
+        <field name="name">vela.analytics.event.pivot</field>
+        <field name="model">vela.analytics.event</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="event" type="row"/>
+                <field name="occurred_at" interval="day" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_event_graph" model="ir.ui.view">
+        <field name="name">vela.analytics.event.graph</field>
+        <field name="model">vela.analytics.event</field>
+        <field name="arch" type="xml">
+            <graph type="line">
+                <field name="occurred_at" interval="hour"/>
+                <field name="event"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_event_search" model="ir.ui.view">
+        <field name="name">vela.analytics.event.search</field>
+        <field name="model">vela.analytics.event</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="event"/>
+                <field name="track"/>
+                <field name="sku"/>
+                <field name="page"/>
+                <field name="session"/>
+                <filter string="Real" name="real" domain="[('is_synthetic', '=', False)]"/>
+                <filter string="Demo" name="demo" domain="[('is_synthetic', '=', True)]"/>
+                <separator/>
+                <filter string="Clicks" name="clicks" domain="[('event', '=', 'click')]"/>
+                <filter string="Checkout errors" name="errors" domain="[('event', '=', 'checkout_error')]"/>
+                <filter string="Orders" name="orders" domain="[('event', '=', 'order_confirmed')]"/>
+                <separator/>
+                <filter string="With consent" name="consent" domain="[('consent', '=', True)]"/>
+                <separator/>
+                <filter string="Date" name="filter_occurred_at" date="occurred_at"/>
+                <group>
+                    <filter string="Event" name="group_event" context="{'group_by': 'event'}"/>
+                    <filter string="Track id" name="group_track" context="{'group_by': 'track'}"/>
+                    <filter string="Device" name="group_device" context="{'group_by': 'device'}"/>
+                    <filter string="Origin" name="group_origin" context="{'group_by': 'origin'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_events" model="ir.actions.act_window">
+        <field name="name">Event Monitor</field>
+        <field name="res_model">vela.analytics.event</field>
+        <field name="view_mode">list,pivot,graph,form</field>
+        <field name="context">{'search_default_real': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No events yet</p>
+            <p>Browse the shop after accepting cookies: page views, clicks, carts and orders appear here.</p>
+        </field>
+    </record>
+</odoo>
