@@ -103,3 +103,22 @@ Content-Type: application/json
 - Envelope extras the bridge must accept: `origin`, `variant`, `field` (browser form field on
   `checkout_error`), `fields` (list, server `address_invalid`), `utm`, `viewport`.
 
+## Metrics and alerts (shared shape: Odoo local ↔ Spark, read by `vela_ai_agent`)
+
+`vela.analytics.metric`: one row per (`metric_key`, `window_start`, `segment`, `source`, `dataset`),
+5-minute tumbling windows aligned on UTC clock time. `source` = `local` (Odoo cron) or
+`pipeline` (Spark); `dataset` = `real` or `demo` (`is_synthetic` events). Keys:
+
+| `metric_key` | `segment` | `numerator` / `denominator` → `value` |
+|---|---|---|
+| `events.<event>` | `all`, `device:<device>` | count → count |
+| `checkout_error_ratio` | `all`, `device:<device>` | checkout_error / checkout_started → ratio |
+| `add_to_cart` | `product:<sku>` | count → count |
+| `search_zero_results` | `all` | searches with 0 results → count |
+
+`vela.analytics.alert`: `checkout_error_spike`, `demand_spike`, `zero_result_search_spike`, one per
+(type, segment, window, source, dataset), with `measured`, `baseline`, `threshold`,
+`sample_size`, `detection_rule` and `evidence` (JSON numbers). Rules and defaults:
+`vela_analytics/services/metrics.py` (baseline = previous 12 windows). Event ratios are not
+session conversion rates (spec 02 §5).
+

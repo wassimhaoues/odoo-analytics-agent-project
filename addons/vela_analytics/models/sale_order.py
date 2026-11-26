@@ -27,6 +27,8 @@ class SaleOrder(models.Model):
     def _vela_order_confirmed(self):
         """Trusted order_confirmed (FR-02, D2): always recorded, linked only with consent."""
         Event = self.env["vela.analytics.event"].sudo()  # sudo: confirmation may run as public
+        if Event._tracking_paused():
+            return
         try:
             with self.env.cr.savepoint():
                 Event._record([order._vela_order_event_vals() for order in self])

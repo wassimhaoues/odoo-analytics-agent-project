@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_alert_list" model="ir.ui.view">
+        <field name="name">vela.analytics.alert.list</field>
+        <field name="model">vela.analytics.alert</field>
+        <field name="arch" type="xml">
+            <list create="0" edit="0" delete="0"
+                  decoration-muted="status == 'resolved'" decoration-bf="status == 'new'">
+                <header>
+                    <button name="action_acknowledge" type="object" string="Acknowledge"/>
+                    <button name="action_resolve" type="object" string="Resolve"/>
+                </header>
+                <field name="window_start"/>
+                <field name="name"/>
+                <field name="severity" widget="badge" decoration-danger="severity == 'high'"
+                       decoration-warning="severity == 'medium'"/>
+                <field name="measured"/>
+                <field name="baseline"/>
+                <field name="sample_size" optional="show"/>
+                <field name="product_id" optional="show"/>
+                <field name="dataset" widget="badge" decoration-warning="dataset == 'demo'"/>
+                <field name="status" widget="badge" decoration-info="status == 'new'"
+                       decoration-success="status == 'resolved'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_alert_form" model="ir.ui.view">
+        <field name="name">vela.analytics.alert.form</field>
+        <field name="model">vela.analytics.alert</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0" delete="0">
+                <header>
+                    <button name="action_acknowledge" type="object" string="Acknowledge"
+                            class="btn-primary" invisible="status != 'new'"/>
+                    <button name="action_resolve" type="object" string="Resolve"
+                            invisible="status == 'resolved'"/>
+                    <field name="status" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Demo data" bg_color="text-bg-warning"
+                            invisible="dataset != 'demo'"/>
+                    <div class="oe_title"><h1><field name="name"/></h1></div>
+                    <group>
+                        <group string="What">
+                            <field name="alert_type"/>
+                            <field name="severity"/>
+                            <field name="segment"/>
+                            <field name="product_id" invisible="not product_id"/>
+                            <field name="window_start"/>
+                            <field name="window_end"/>
+                        </group>
+                        <group string="Numbers">
+                            <field name="measured"/>
+                            <field name="baseline"/>
+                            <field name="threshold"/>
+                            <field name="sample_size"/>
+                            <field name="dataset"/>
+                            <field name="source"/>
+                        </group>
+                    </group>
+                    <group string="Why">
+                        <field name="detection_rule"/>
+                        <field name="evidence" widget="json"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_alert_search" model="ir.ui.view">
+        <field name="name">vela.analytics.alert.search</field>
+        <field name="model">vela.analytics.alert</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="product_id"/>
+                <filter string="Open" name="open" domain="[('status', '!=', 'resolved')]"/>
+                <separator/>
+                <filter string="Real" name="real" domain="[('dataset', '=', 'real')]"/>
+                <filter string="Demo" name="demo" domain="[('dataset', '=', 'demo')]"/>
+                <separator/>
+                <filter string="High severity" name="high" domain="[('severity', '=', 'high')]"/>
+                <group>
+                    <filter string="Type" name="group_type" context="{'group_by': 'alert_type'}"/>
+                    <filter string="Status" name="group_status" context="{'group_by': 'status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_alerts" model="ir.actions.act_window">
+        <field name="name">Alerts</field>
+        <field name="res_model">vela.analytics.alert</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_real': 1, 'search_default_open': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No open alerts</p>
+            <p>Alerts appear when a 5-minute window breaks a rule (checkout errors, demand,
+               zero-result searches). Thresholds are in Settings.</p>
+        </field>
+    </record>
+</odoo>

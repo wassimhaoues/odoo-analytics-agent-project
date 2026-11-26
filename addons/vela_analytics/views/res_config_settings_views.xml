@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.vela_analytics</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="CommercePulse" string="CommercePulse" name="vela_analytics"
+                     groups="vela_analytics.group_analytics_manager">
+                    <block title="Tracking">
+                        <setting help="Stop recording visitor and order events. Kafka delivery is set in .env (VELA_DELIVERY_MODE).">
+                            <field name="vela_tracking_paused"/>
+                        </setting>
+                        <setting help="Raw events older than this are deleted every night (promised on /privacy).">
+                            <field name="vela_retention_days"/>
+                        </setting>
+                    </block>
+                    <block title="Alert rules (per 5-minute window, baseline = previous hour)">
+                        <setting string="Checkout error spike"
+                                 help="Error ratio at least this many times its baseline, with enough volume.">
+                            <div class="content-group">
+                                <div class="row"><label for="vela_checkout_error_factor" class="col-lg-6"/><field name="vela_checkout_error_factor"/></div>
+                                <div class="row"><label for="vela_checkout_error_min_errors" class="col-lg-6"/><field name="vela_checkout_error_min_errors"/></div>
+                                <div class="row"><label for="vela_checkout_error_min_starts" class="col-lg-6"/><field name="vela_checkout_error_min_starts"/></div>
+                            </div>
+                        </setting>
+                        <setting string="Demand spike" help="A product's add-to-carts above mean + N standard deviations.">
+                            <div class="content-group">
+                                <div class="row"><label for="vela_demand_sigma" class="col-lg-6"/><field name="vela_demand_sigma"/></div>
+                                <div class="row"><label for="vela_demand_min_adds" class="col-lg-6"/><field name="vela_demand_min_adds"/></div>
+                            </div>
+                        </setting>
+                        <setting string="Zero-result search spike" help="Searches that find nothing, compared with the previous hour.">
+                            <div class="content-group">
+                                <div class="row"><label for="vela_zero_search_factor" class="col-lg-6"/><field name="vela_zero_search_factor"/></div>
+                                <div class="row"><label for="vela_zero_search_min" class="col-lg-6"/><field name="vela_zero_search_min"/></div>
+                            </div>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_settings" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_id" ref="res_config_settings_view_form"/>
+        <field name="view_mode">form</field>
+        <field name="context">{'module': 'vela_analytics'}</field>
+    </record>
+</odoo>

@@ -1,6 +1,6 @@
 # Plan 0001: `vela_analytics`, the event tracker
 
-- Status: approved (decisions agreed 2026-11-21). Phases A and B done (ADR 0010); C to do
+- Status: approved (decisions agreed 2026-11-21). Phases A, B, C done (ADR 0010)
 - Spec: [docs/specs/01-odoo-addons.md](../specs/01-odoo-addons.md) (FR-01…03, FR-07, T1–T4, T6),
   [03-combined-architecture.md](../specs/03-combined-architecture.md) (IN-01…04),
   event format [02-big-data.md §3](../specs/02-big-data.md)
@@ -218,15 +218,21 @@ Kafka key = `session`, or `event_id` when there's no session (orders without con
 - Menu **CommercePulse ▸ Tracking**: Event Monitor (list / pivot / graph, filters: event,
   dataset, consent, period), Outbox (state, attempts, last error, Retry), Metrics (graph/pivot),
   Alerts (list + form with evidence), Generate demo traffic (wizard).
-- **Settings** (`res.config.settings`, encoded in `vela_setup` defaults): tracking on/off,
-  delivery mode, retention days, rate limit, alert thresholds.
+- **Settings** (`res.config.settings`, *CommercePulse ▸ Configuration ▸ Settings*): pause
+  tracking, retention days, alert thresholds. As built: team defaults live in code
+  (`services/metrics.py` `THRESHOLDS`, `RETENTION_DAYS`); the Settings page stores local overrides
+  in `ir.config_parameter` for demos. Change a team default in code, not in the UI.
+  Delivery mode is in `.env` (phase B); the rate limit stays a code constant.
 - **Groups**: *Analytics User* (read events, metrics, alerts; acknowledge alerts),
   *Analytics Manager* (settings, Retry, demo generator, delete). Public users have no model
   access; only the endpoint writes, after validation.
 
 ## 11. Demo generator (D7)
 
-Wizard (managers) and `scripts/analytics_demo.py` (runs through `odoo shell`), same function.
+Wizard (managers, *Configuration ▸ Generate demo traffic*) and `scripts/analytics_demo.sh`
+(runs through `odoo shell`), same function `vela.analytics.demo._generate`. The generator
+computes metrics and alerts for its own time range (the cron only recomputes recent windows).
+"Delete all demo data" removes synthetic events and demo metrics/alerts.
 Scenarios: `normal`, `checkout_error_spike`, `demand_spike` (choose a SKU), `zero_result_search`.
 Parameters: duration (minutes back from now), volume. Events use real SKUs and paths,
 `is_synthetic = true`, `origin = demo`, random sessions; option "also send to pipeline"

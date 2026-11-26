@@ -67,12 +67,16 @@ class VelaAnalyticsEvent(models.Model):
         return salt
 
     @api.model
+    def _tracking_paused(self):
+        return self.env["ir.config_parameter"].sudo().get_bool("vela_analytics.tracking_paused")
+
+    @api.model
     def _request_context(self):
         """Trusted, server-derived fields for the current request (plan §4).
 
         Without consent: no session, no visitor. Returns None outside a website request.
         """
-        if not request or not request.env:
+        if not request or not request.env or self._tracking_paused():
             return None
         website = self.env.website
         if not website:
@@ -97,8 +101,10 @@ class VelaAnalyticsEvent(models.Model):
     # ---- writing ------------------------------------------------------------------------
 
     @api.model
-    def _record(self, vals_list):
+    def _record(self, vals_list, outbox=True):
         """Create events + their outbox rows; existing event ids are skipped (dedup).
+
+        outbox=False: keep the events in Odoo only (demo data not meant for the pipeline).
 
         Callers pass already-validated values and call this with sudo() at the trust boundary.
         """
@@ -118,7 +124,8 @@ class VelaAnalyticsEvent(models.Model):
                 vals["product_id"] = products.get(vals["sku"])
             fresh.append(vals)
         events = self.create(fresh)
-        self.env["vela.analytics.outbox"].create([{"event_ref_id": e.id} for e in events])
+        if outbox:
+            self.env["vela.analytics.outbox"].create([{"event_ref_id": e.id} for e in events])
         return events
 
     @api.model
@@ -203,7 +210,9 @@ class VelaAnalyticsEvent(models.Model):
     # ---- retention ----------------------------------------------------------------------
 
     @api.model
-    def _cron_retention(self, days=RETENTION_DAYS):
+    def _cron_retention(self, days=None):
+        days = days or self.env["ir.config_parameter"].sudo().get_int(
+            "vela_analytics.retention_days", RETENTION_DAYS) or RETENTION_DAYS
         cutoff = fields.Datetime.now() - timedelta(days=days)
         old = self.search([("occurred_at", "<", cutoff)], limit=10_000)
         old.unlink()
