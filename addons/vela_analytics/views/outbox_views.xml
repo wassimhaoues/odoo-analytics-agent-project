@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_outbox_list" model="ir.ui.view">
+        <field name="name">vela.analytics.outbox.list</field>
+        <field name="model">vela.analytics.outbox</field>
+        <field name="arch" type="xml">
+            <list create="0" edit="0">
+                <header>
+                    <button name="action_retry" type="object" string="Retry"
+                            groups="vela_analytics.group_analytics_manager"/>
+                </header>
+                <field name="event_ref_id"/>
+                <field name="event"/>
+                <field name="state" widget="badge" decoration-success="state == 'sent'"
+                       decoration-warning="state == 'failed'" decoration-danger="state == 'dead'"/>
+                <field name="channel" optional="show"/>
+                <field name="attempts"/>
+                <field name="next_retry_at"/>
+                <field name="sent_at"/>
+                <field name="last_error" optional="show"/>
+                <field name="is_synthetic" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_outbox_search" model="ir.ui.view">
+        <field name="name">vela.analytics.outbox.search</field>
+        <field name="model">vela.analytics.outbox</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="event_id"/>
+                <filter string="Pending" name="pending" domain="[('state', '=', 'pending')]"/>
+                <filter string="Failed" name="failed" domain="[('state', 'in', ('failed', 'dead'))]"/>
+                <filter string="Sent" name="sent" domain="[('state', '=', 'sent')]"/>
+                <separator/>
+                <filter string="Sent locally only" name="local" domain="[('channel', '=', 'local')]"/>
+                <group>
+                    <filter string="State" name="group_state" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_outbox" model="ir.actions.act_window">
+        <field name="name">Outbox</field>
+        <field name="res_model">vela.analytics.outbox</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Outbox is empty</p>
+            <p>Every event waits here until it is delivered to the Kafka bridge (every minute).
+               With VELA_DELIVERY_MODE=local, rows are marked "Local only" without any network call.</p>
+        </field>
+    </record>
+</odoo>

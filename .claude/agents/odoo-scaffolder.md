@@ -18,7 +18,7 @@ Then:
 2. Verify every core model/field/view you inherit actually exists in v20:
    `docker compose exec -T odoo grep -rn "<name>" /usr/lib/python3/dist-packages/odoo/addons/<module>`.
 3. Create only what the brief needs: manifest (`version "20.0.1.0.0"`, `license LGPL-3`),
-   `__init__.py`, models, `security/ir.model.access.csv` for every new model, views + one
+   `__init__.py`, models, `security/ir.access.csv (v20)` for every new model, views + one
    menu if the model is user-facing, `tests/test_<name>.py` with one meaningful test tagged
    `@tagged("post_install", "-at_install", "vela")`.
 4. Dry-run install on `vela_test` (see `.claude/skills/odoo-addon-workflow/SKILL.md`) and

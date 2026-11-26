@@ -11,3 +11,4 @@
 | [0007](0007-tracking-areas-v1.md) | Tracking areas consent, recommend, carousel, empty, configurator, auto-fallback | accepted |
 | [0008](0008-specs-use-repo-names.md) | Specs adopt repo names (`vela_analytics`, `vela_ai_agent`, `vela.*` models, topic `vela.events.v1`); one event envelope | accepted |
 | [0009](0009-cash-on-delivery-only.md) | Cash on delivery only, 19% VAT on every product, cookie bar + content pages, tracking area `page` | accepted |
+| [0010](0010-tracker-architecture.md) | Tracker: outbox + HTTP bridge to Kafka, cookie-bar consent with in-memory hold, session cookie + hashed visitor, server-only trusted events | accepted |

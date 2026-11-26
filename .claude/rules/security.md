@@ -10,8 +10,8 @@
 
 ## Odoo
 
-- Every model: `ir.model.access.csv`. Public/portal access only when the feature needs it,
-  with record rules restricting rows.
+- Every model: `security/ir.access.csv` (v20 `ir.access`). Public/portal access only when the
+  feature needs it, with an `ir.access` domain restricting rows.
 - `sudo()` only at a trust boundary (public controller that must write analytics events),
   with a one-line comment, and only after validating the input.
 - Public controllers (`auth="public"`): validate types and sizes, cap payload size,

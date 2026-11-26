@@ -10,7 +10,7 @@ data platform. **Two developers** each run an identical store built from git
 | # | Step | Lives in | Status |
 |---|---|---|---|
 | 1 | Store: catalog + custom theme | `addons/vela_tech_catalog`, `addons/vela_theme` | catalog ✅ · theme: phase A ✅ (tokens, fonts, header, footer, logo) · B ✅ (homepage + motion) · C ✅ (shop, cards, filters, product page) · D ✅ (cart, checkout, empty states, cookie bar, dark mode) |
-| 2 | Analytics addon: who clicked/viewed what | `addons/vela_analytics` | planned |
+| 2 | Analytics addon: who clicked/viewed what | `addons/vela_analytics` | plan `docs/plans/0001` · A ✅ (capture, consent, server events, outbox rows) · B ✅ (outbox cron → HTTP bridge, backoff, fake bridge) · C (metrics, alerts, demo) |
 | 3 | Big-data pipeline: Kafka → Spark → HDFS | `pipeline/` | planned |
 | 4 | AI agent addon (voice + text) that reads analytics and acts | `addons/vela_ai_agent` | planned |
 
@@ -26,11 +26,12 @@ addons/              our Odoo addons, mounted at /mnt/extra-addons
   vela_setup/          THE store state: depends on every app + our addons; shared settings
   vela_theme/          look & feel: palette, self-hosted fonts, tokens, header/footer, logo, motion
   vela_tech_catalog/   demo catalog loader: JSON in data/catalog → products, variants, stock…
+  vela_analytics/      event tracking: endpoint /vela/analytics/events, tracker.js, server hooks, outbox (ADR 0010)
 pipeline/            Kafka / Spark / Hadoop (step 3)
 .github/workflows/   ci.yml: lint · secret scan · store built from scratch + browser checks
 scripts/             setup.sh (bootstrap) · update.sh (after pull) · drift.sh (DB vs git) · ci/
                      backup.sh · restore.sh · screenshot.sh · catalog/ (image + validation tools)
-docs/                adr/, specs/
+docs/                adr/, specs/, plans/
 .claude/             this config
 ```
 

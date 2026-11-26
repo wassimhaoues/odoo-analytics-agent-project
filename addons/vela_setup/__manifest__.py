@@ -39,6 +39,7 @@ UI, add it here too, or your teammate won't have it.
         # our addons
         "vela_theme",
         "vela_tech_catalog",
+        "vela_analytics",
     ],
     "data": [
         "data/blog_posts.xml",
